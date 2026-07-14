@@ -1,199 +1,55 @@
+# m.o.d.u.l. - Fundus-Schema
 
-Skip to main content
-Gruppe 1
-	
-Name
-	
-Bilder
-	
-Design
-	
-VORLAGEN
-	
-Anlagen übersicht und plan.md
-	
-fundus.md
-	
-modul-methode.odt
-	3 folders and 3 files
+Dieses Dokument definiert den Aufbau des gemeinsamen Materialfundus.
+Jeder Datensatz (`item`) ist eine nummerierte Einheit mit optionalen Feldern je nach verfügbarem Material.
+Die Module greifen auf die Felder zu, die sie benötigen; nicht jedes Item muss alle Felder haben.
 
-© 2026 GMK
+---
 
-Get your own free account
-fundus.md
-#
-m.o.d.u.l. - Fundus-Schema
+## Feldübersicht
 
-Dieses Dokument definiert den Aufbau des gemeinsamen Materialfundus. Jeder Datensatz (item) ist eine nummerierte Einheit mit optionalen Feldern je nach verfügbarem Material. Die Module greifen auf die Felder zu, die sie benötigen; nicht jedes Item muss alle Felder haben.
-#
-Feldübersicht
-Feld
-	
-Typ
-	
-Pflicht
-	
-Beschreibung
-id
-	
-string
-	
-ja
-	
-eindeutige ID, z.B. DS001
-thema
-	
-string
-	
-ja
-	
-Oberthema (z.B. "Klimawandel", "Migration", "KI")
-typ
-	
-list
-	
-ja
-	
-Welche Felder vorhanden sind; Werte: bild, ueberschrift, einleitung, artikel, meme, claim, video
-echtheit
-	
-enum
-	
-ja
-	
-echt / ki-generiert / manipuliert / fake
-freigabe
-	
-bool
-	
-ja
-	
-Darf das Item mit Jugendlichen verwendet werden?
-achsen
-	
-list
-	
-nein
-	
-Empfohlene Skalen-Achsen für "Checkst du?" (nur Name, kein Wert)
-quelle.name
-	
-string
-	
-nein
-	
-Name der Quelle (z.B. "taz", "Bild", "AFP")
-quelle.url
-	
-string
-	
-nein
-	
-URL zum Originalartikel
-quelle.datum
-	
-date
-	
-nein
-	
-Erscheinungsdatum (ISO: YYYY-MM-DD)
-quelle.lizenz
-	
-string
-	
-nein
-	
-z.B. "CC BY 4.0", "Pressebild", "Screenshot"
-kontext
-	
-string
-	
-nein
-	
-Kurze Beschreibung des Inhalts / Hintergrunds (für Fachkraft)
-bild.datei
-	
-string
-	
-nein
-	
-Dateiname im Fundus-Ordner, z.B. DS001_titelbild.jpg
-bild.beschreibung
-	
-string
-	
-nein
-	
-Alt-Text / kurze Bildbeschreibung
-ueberschrift.text
-	
-string
-	
-nein
-	
-Die echte Überschrift
-einleitung.text
-	
-string
-	
-nein
-	
-Der echte Einleitungsabsatz
-artikel.text
-	
-string
-	
-nein
-	
-Volltext oder Zusammenfassung des echten Artikels
-meme.datei
-	
-string
-	
-nein
-	
-Dateiname des Meme-Bildes
-meme.ursprung
-	
-string
-	
-nein
-	
-Wo das Meme zuerst auftauchte / Verbreitungskontext
-claim.text
-	
-string
-	
-nein
-	
-Zu prüfende Aussage (für Source Hunter)
-claim.bewertung
-	
-string
-	
-nein
-	
-Faktencheckergebnis + Quelle
-#
-Achsen (für "Checkst du?")
+| Feld | Typ | Pflicht | Beschreibung |
+|---|---|---|---|
+| `id` | string | ja | eindeutige ID, z.B. `DS001` |
+| `thema` | string | ja | Oberthema (z.B. "Klimawandel", "Migration", "KI") |
+| `typ` | list | ja | Welche Felder vorhanden sind; Werte: `bild`, `ueberschrift`, `einleitung`, `artikel`, `meme`, `claim`, `video` |
+| `echtheit` | enum | ja | `echt` / `ki-generiert` / `manipuliert` / `fake` |
+| `freigabe` | bool | ja | Darf das Item mit Jugendlichen verwendet werden? |
+| `achsen` | list | nein | Empfohlene Skalen-Achsen für "Checkst du?" (nur Name, kein Wert) |
+| `quelle.name` | string | nein | Name der Quelle (z.B. "taz", "Bild", "AFP") |
+| `quelle.url` | string | nein | URL zum Originalartikel |
+| `quelle.datum` | date | nein | Erscheinungsdatum (ISO: YYYY-MM-DD) |
+| `quelle.lizenz` | string | nein | z.B. "CC BY 4.0", "Pressebild", "Screenshot" |
+| `kontext` | string | nein | Kurze Beschreibung des Inhalts / Hintergrunds (für Fachkraft) |
+| `bild.datei` | string | nein | Dateiname im Fundus-Ordner, z.B. `DS001_titelbild.jpg` |
+| `bild.beschreibung` | string | nein | Alt-Text / kurze Bildbeschreibung |
+| `ueberschrift.text` | string | nein | Die echte Überschrift |
+| `einleitung.text` | string | nein | Der echte Einleitungsabsatz |
+| `artikel.text` | string | nein | Volltext oder Zusammenfassung des echten Artikels |
+| `meme.datei` | string | nein | Dateiname des Meme-Bildes |
+| `meme.ursprung` | string | nein | Wo das Meme zuerst auftauchte / Verbreitungskontext |
+| `claim.text` | string | nein | Zu prüfende Aussage (für Source Hunter) |
+| `claim.bewertung` | string | nein | Faktencheckergebnis + Quelle |
+
+---
+
+## Achsen (für "Checkst du?")
 
 Nur Empfehlung welche Achsen zu diesem Item passen; Werte kommen ausschließlich aus dem Spiel.
 
 Vordefinierte Achsen:
 
-    echt-fake - Wie echt wirkt das Material?
+- `echt-fake` - Wie echt wirkt das Material?
+- `harmlos-gefaehrlich` - Wie gefährlich ist die Fehlinformation?
+- `meinung-fakt` - Handelt es sich um eine Meinung oder einen Fakt?
+- `lokal-global` - Wie weit trägt das Thema?
+- `alt-aktuell` - Wie zeitgebunden ist das Material?
 
-    harmlos-gefaehrlich - Wie gefährlich ist die Fehlinformation?
+---
 
-    meinung-fakt - Handelt es sich um eine Meinung oder einen Fakt?
+## Beispieldaten
 
-    lokal-global - Wie weit trägt das Thema?
-
-    alt-aktuell - Wie zeitgebunden ist das Material?
-
-#
-Beispieldaten
-
+```yaml
 - id: fundus001
   thema: Klimawandel
   typ: [bild, ueberschrift, einleitung, artikel]
@@ -282,10 +138,13 @@ Beispieldaten
     datei: fundus004_meme.jpg
     ursprung: >
       Erstellt mit [Tool] für Schulungszwecke; nie öffentlich verbreitet.
+```
 
-#
-Dateistruktur (Vorschlag)
+---
 
+## Dateistruktur (Vorschlag)
+
+```
 fundus/
 ├── fundus.yaml          <- diese Datei (alle Metadaten)
 ├── bilder/
@@ -295,34 +154,24 @@ fundus/
 └── texte/
     ├── fundus001_artikel.txt
     └── fundus003_claim.txt
+```
 
-#
-Typ-Feldmatrix
+---
 
-Welches typ-Feld ermöglicht welche Module:
-typ-Wert
-	
-ermöglicht
-bild
-	
-Deutungshoheit, Bild ohne Titel, Titel ohne Bild (Auflösung), Checkst du?
-ueberschrift
-	
-Bild ohne Titel (Auflösung), Titel ohne Bild, Newsflash
-einleitung
-	
-Newsflash
-artikel
-	
-Newsflash (Auflösung)
-meme
-	
-Memix, Checkst du?
-claim
-	
-Source Hunter, Checkst du?
-video
-	
-Checkst du?, Deutungshoheit
+## Typ-Feldmatrix
 
+Welches `typ`-Feld ermöglicht welche Module:
 
+| typ-Wert | ermöglicht |
+|---|---|
+| `bild` | Deutungshoheit, Bild ohne Titel, Titel ohne Bild (Auflösung), Checkst du? |
+| `ueberschrift` | Bild ohne Titel (Auflösung), Titel ohne Bild, Newsflash |
+| `einleitung` | Newsflash |
+| `artikel` | Newsflash (Auflösung) |
+| `meme` | Memix, Checkst du? |
+| `claim` | Source Hunter, Checkst du? |
+| `video` | Checkst du?, Deutungshoheit |
+
+---
+
+*Stand: Juli 2026 - Schema v0.1*
