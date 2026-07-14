@@ -172,6 +172,4 @@ Welches `typ`-Feld ermöglicht welche Module:
 | `claim` | Source Hunter, Checkst du? |
 | `video` | Checkst du?, Deutungshoheit |
 
----
 
-*Stand: Juli 2026 - Schema v0.1*
