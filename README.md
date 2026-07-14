@@ -146,7 +146,9 @@ Vordefinierte Achsen:
 
 ```
 fundus/
-├── fundus.yaml          <- diese Datei (alle Metadaten)
+├── readme.md            <- diese Datei 
+├── fundus.yaml          <- alle Metadaten
+├── index.html           <- die Übersicht
 ├── bilder/
 │   ├── fundus001_titelbild.jpg
 │   ├── fundus002_titelbild.jpg
