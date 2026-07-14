@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>m.o.d.u.l. Fundus</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+  <style>
+    :root {
+      --black: #111111;
+      --white: #f5f5f0;
+      --accent: #d4e800;
+      --mid: #888880;
+      --border: #111111;
+      --tag-bg: #e8e8e0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "IBM Plex Mono", "Courier New", monospace;
+      background: var(--white);
+      color: var(--black);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    header {
+      background: var(--black);
+      color: var(--accent);
+      padding: 1.5rem 2rem;
+      border-bottom: 3px solid var(--accent);
+      display: flex;
+      align-items: baseline;
+      gap: 1.5rem;
+    }
+
+    header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    header span {
+      color: var(--mid);
+      font-size: 0.85rem;
+    }
+
+    .controls {
+      padding: 1rem 2rem;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .controls label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--mid);
+      margin-right: 0.25rem;
+    }
+
+    .controls select,
+    .controls input {
+      font-family: inherit;
+      font-size: 0.8rem;
+      border: 2px solid var(--border);
+      background: var(--white);
+      padding: 0.3rem 0.5rem;
+      appearance: none;
+      cursor: pointer;
+    }
+
+    .controls select:focus,
+    .controls input:focus {
+      outline: 3px solid var(--accent);
+      outline-offset: 1px;
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .count {
+      margin-left: auto;
+      font-size: 0.75rem;
+      color: var(--mid);
+    }
+
+    .table-wrap {
+      padding: 0 2rem 2rem;
+      overflow-x: auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 700px;
+      margin-top: 1.5rem;
+    }
+
+    thead tr {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    thead th {
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+      border-right: 1px solid #333;
+    }
+
+    thead th:last-child {
+      border-right: none;
+    }
+
+    thead th.typ-col {
+      color: var(--accent);
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #ccc;
+      cursor: pointer;
+      transition: background 0.1s;
+    }
+
+    tbody tr:hover {
+      background: #eeeee8;
+    }
+
+    tbody tr.expanded {
+      background: #eeeee8;
+    }
+
+    td {
+      padding: 0.5rem 0.75rem;
+      vertical-align: top;
+      border-right: 1px solid #ddd;
+    }
+
+    td:last-child {
+      border-right: none;
+    }
+
+    td.center {
+      text-align: center;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border: 2px solid var(--black);
+    }
+
+    .dot.filled {
+      background: var(--black);
+    }
+
+    .dot.accent {
+      background: var(--accent);
+      border-color: var(--black);
+    }
+
+    .echtheit-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.15rem 0.4rem;
+      border: 2px solid var(--black);
+    }
+
+    .echtheit-echt        { background: #b8f0b0; }
+    .echtheit-fake        { background: #f5b0b0; }
+    .echtheit-manipuliert { background: #f5d9a0; }
+    .echtheit-ki-generiert { background: #b0d4f5; }
+
+    .freigabe-yes { color: #2a8a2a; font-weight: 700; }
+    .freigabe-no  { color: #cc2222; font-weight: 700; }
+
+    .detail-row td {
+      padding: 0;
+      border-right: none;
+    }
+
+    .detail-box {
+      background: #111;
+      color: #f5f5f0;
+      padding: 1rem 1.5rem;
+      border-top: 2px solid var(--accent);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+    }
+
+    .detail-box h4 {
+      color: var(--accent);
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.3rem;
+    }
+
+    .detail-box p {
+      font-size: 0.78rem;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .detail-box a {
+      color: var(--accent);
+    }
+
+    .achsen-section {
+      margin: 2rem 2rem 0;
+      border-top: 3px solid var(--black);
+      padding-top: 1.5rem;
+    }
+
+    .achsen-section h2 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--mid);
+      margin-bottom: 1rem;
+    }
+
+    .achsen-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .achse-card {
+      border: 2px solid var(--black);
+      padding: 0.4rem 0.75rem;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .achse-card .achse-name {
+      font-weight: 700;
+    }
+
+    .achse-card .achse-count {
+      color: var(--mid);
+      font-size: 0.7rem;
+    }
+
+    .achse-card.active {
+      background: var(--accent);
+      cursor: pointer;
+    }
+
+    footer {
+      margin: 2rem 2rem 1rem;
+      border-top: 1px solid #ccc;
+      padding-top: 0.75rem;
+      font-size: 0.7rem;
+      color: var(--mid);
+    }
+
+    #loading {
+      padding: 3rem 2rem;
+      color: var(--mid);
+      font-size: 0.85rem;
+    }
+
+    #error {
+      padding: 1rem 2rem;
+      color: #cc2222;
+      font-size: 0.85rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>m.o.d.u.l.</h1>
+  <span>Modular - Open - Dynamic - Universal - Ludic / Materialfundus</span>
+</header>
+
+<div id="loading">Lade fundus.yaml...</div>
+<div id="error"></div>
+
+<div id="app" style="display:none">
+  <div class="controls">
+    <div class="filter-group">
+      <label>Thema</label>
+      <select id="filter-thema">
+        <option value="">alle</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Echtheit</label>
+      <select id="filter-echtheit">
+        <option value="">alle</option>
+        <option value="echt">echt</option>
+        <option value="fake">fake</option>
+        <option value="manipuliert">manipuliert</option>
+        <option value="ki-generiert">ki-generiert</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Typ</label>
+      <select id="filter-typ">
+        <option value="">alle</option>
+      </select>
+    </div>
+    <div class="filter-group">
+      <label>Freigabe</label>
+      <select id="filter-freigabe">
+        <option value="">alle</option>
+        <option value="true">ja</option>
+        <option value="false">nein</option>
+      </select>
+    </div>
+    <span class="count" id="count"></span>
+  </div>
+
+  <div class="table-wrap">
+    <table id="fundus-table">
+      <thead id="table-head"></thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+
+  <div class="achsen-section">
+    <h2>Achsen im Fundus</h2>
+    <div class="achsen-grid" id="achsen-grid"></div>
+  </div>
+
+  <footer>
+    m.o.d.u.l. Fundus - Datenbasis: fundus.yaml - Schema v0.1
+  </footer>
+</div>
+
+<script>
+  const ALL_TYPEN = ['bild', 'ueberschrift', 'einleitung', 'artikel', 'meme', 'claim', 'video'];
+  const ECHTHEIT_ORDER = ['echt', 'manipuliert', 'ki-generiert', 'fake'];
+
+  let allData = [];
+  let activeAchse = null;
+
+  async function loadFundus() {
+    try {
+      const resp = await fetch('fundus.yaml');
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      const text = await resp.text();
+      allData = jsyaml.load(text) || [];
+      init();
+    } catch (e) {
+      document.getElementById('loading').style.display = 'none';
+      const err = document.getElementById('error');
+      err.style.display = 'block';
+      err.textContent = `Fehler beim Laden von fundus.yaml: ${e.message}. Stelle sicher, dass fundus.yaml im gleichen Verzeichnis liegt und der Server CORS erlaubt.`;
+    }
+  }
+
+  function init() {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('app').style.display = 'block';
+
+    // populate thema filter
+    const themen = [...new Set(allData.map(d => d.thema))].sort();
+    const themaSelect = document.getElementById('filter-thema');
+    themen.forEach(t => {
+      const o = document.createElement('option');
+      o.value = t; o.textContent = t;
+      themaSelect.appendChild(o);
+    });
+
+    // populate typ filter
+    const typenFound = [...new Set(allData.flatMap(d => d.typ || []))].sort();
+    const typSelect = document.getElementById('filter-typ');
+    typenFound.forEach(t => {
+      const o = document.createElement('option');
+      o.value = t; o.textContent = t;
+      typSelect.appendChild(o);
+    });
+
+    buildHeader();
+    render();
+    buildAchsen();
+
+    ['filter-thema','filter-echtheit','filter-typ','filter-freigabe'].forEach(id => {
+      document.getElementById(id).addEventListener('change', render);
+    });
+  }
+
+  function buildHeader() {
+    const thead = document.getElementById('table-head');
+    const tr = document.createElement('tr');
+    const cols = [
+      {label: 'Eintrag', key: 'id'},
+      {label: 'Thema', key: 'thema'},
+      ...ALL_TYPEN.map(t => ({label: 'typ.' + t, key: 'typ-' + t, cls: 'typ-col'})),
+      {label: 'Echtheit', key: 'echtheit'},
+      {label: 'Freigabe', key: 'freigabe'},
+      {label: 'Quelle', key: 'quelle'},
+    ];
+    cols.forEach(c => {
+      const th = document.createElement('th');
+      th.textContent = c.label;
+      if (c.cls) th.classList.add(c.cls);
+      tr.appendChild(th);
+    });
+    thead.appendChild(tr);
+  }
+
+  function getFiltered() {
+    const thema = document.getElementById('filter-thema').value;
+    const echtheit = document.getElementById('filter-echtheit').value;
+    const typ = document.getElementById('filter-typ').value;
+    const freigabe = document.getElementById('filter-freigabe').value;
+
+    return allData.filter(d => {
+      if (thema && d.thema !== thema) return false;
+      if (echtheit && d.echtheit !== echtheit) return false;
+      if (typ && !(d.typ || []).includes(typ)) return false;
+      if (freigabe !== '' && String(d.freigabe) !== freigabe) return false;
+      if (activeAchse && !(d.achsen || []).includes(activeAchse)) return false;
+      return true;
+    });
+  }
+
+  function render() {
+    const filtered = getFiltered();
+    document.getElementById('count').textContent = `${filtered.length} / ${allData.length} Einträge`;
+
+    const tbody = document.getElementById('table-body');
+    tbody.innerHTML = '';
+
+    filtered.forEach(item => {
+      const tr = document.createElement('tr');
+      tr.dataset.id = item.id;
+
+      // id
+      addTd(tr, item.id, 'id-col');
+      // thema
+      addTd(tr, item.thema);
+      // typ dots
+      ALL_TYPEN.forEach(t => {
+        const td = document.createElement('td');
+        td.classList.add('center');
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if ((item.typ || []).includes(t)) dot.classList.add('filled');
+        td.appendChild(dot);
+        tr.appendChild(td);
+      });
+      // echtheit
+      const eTd = document.createElement('td');
+      const eTag = document.createElement('span');
+      eTag.classList.add('echtheit-tag', 'echtheit-' + (item.echtheit || '').replace('-',''));
+      eTag.textContent = item.echtheit || '-';
+      eTd.appendChild(eTag);
+      tr.appendChild(eTd);
+      // freigabe
+      const fTd = document.createElement('td');
+      fTd.classList.add('center');
+      fTd.innerHTML = item.freigabe
+        ? '<span class="freigabe-yes">ja</span>'
+        : '<span class="freigabe-no">nein</span>';
+      tr.appendChild(fTd);
+      // quelle
+      const qName = item.quelle?.name || '-';
+      const qUrl = item.quelle?.url;
+      const qTd = document.createElement('td');
+      if (qUrl && qUrl !== '~' && qUrl !== 'null') {
+        const a = document.createElement('a');
+        a.href = qUrl; a.target = '_blank'; a.textContent = qName;
+        qTd.appendChild(a);
+      } else {
+        qTd.textContent = qName;
+      }
+      tr.appendChild(qTd);
+
+      tbody.appendChild(tr);
+
+      // detail row (hidden)
+      const detailTr = document.createElement('tr');
+      detailTr.classList.add('detail-row');
+      detailTr.style.display = 'none';
+      detailTr.dataset.for = item.id;
+      const detailTd = document.createElement('td');
+      detailTd.colSpan = 4 + ALL_TYPEN.length;
+      detailTd.appendChild(buildDetail(item));
+      detailTr.appendChild(detailTd);
+      tbody.appendChild(detailTr);
+
+      tr.addEventListener('click', () => toggleDetail(item.id, tr, detailTr));
+    });
+  }
+
+  function addTd(tr, text, cls) {
+    const td = document.createElement('td');
+    td.textContent = text || '-';
+    if (cls) td.classList.add(cls);
+    tr.appendChild(td);
+    return td;
+  }
+
+  function buildDetail(item) {
+    const box = document.createElement('div');
+    box.classList.add('detail-box');
+
+    const fields = [];
+
+    if (item.kontext) fields.push({label: 'Kontext', val: item.kontext});
+    if (item.ueberschrift?.text) fields.push({label: 'Überschrift', val: item.ueberschrift.text});
+    if (item.einleitung?.text) fields.push({label: 'Einleitung', val: item.einleitung.text});
+    if (item.claim?.text) fields.push({label: 'Claim', val: item.claim.text});
+    if (item.claim?.bewertung) fields.push({label: 'Faktcheck', val: item.claim.bewertung});
+    if (item.bild?.beschreibung) fields.push({label: 'Bild', val: item.bild.beschreibung + (item.bild.datei ? ` [${item.bild.datei}]` : '')});
+    if (item.meme?.ursprung) fields.push({label: 'Meme-Ursprung', val: item.meme.ursprung});
+    if (item.quelle?.datum) fields.push({label: 'Datum', val: item.quelle.datum});
+    if (item.quelle?.lizenz) fields.push({label: 'Lizenz', val: item.quelle.lizenz});
+    if (item.achsen?.length) fields.push({label: 'Achsen', val: item.achsen.join(', ')});
+
+    fields.forEach(f => {
+      const div = document.createElement('div');
+      div.innerHTML = `<h4>${f.label}</h4><p>${f.val}</p>`;
+      box.appendChild(div);
+    });
+
+    return box;
+  }
+
+  function toggleDetail(id, mainTr, detailTr) {
+    const visible = detailTr.style.display !== 'none';
+    // close all
+    document.querySelectorAll('.detail-row').forEach(r => r.style.display = 'none');
+    document.querySelectorAll('tbody tr:not(.detail-row)').forEach(r => r.classList.remove('expanded'));
+    if (!visible) {
+      detailTr.style.display = '';
+      mainTr.classList.add('expanded');
+    }
+  }
+
+  function buildAchsen() {
+    const counts = {};
+    allData.forEach(d => {
+      (d.achsen || []).forEach(a => {
+        counts[a] = (counts[a] || 0) + 1;
+      });
+    });
+
+    const grid = document.getElementById('achsen-grid');
+    grid.innerHTML = '';
+
+    // all achsen sorted by count desc
+    Object.entries(counts)
+      .sort((a,b) => b[1] - a[1])
+      .forEach(([name, count]) => {
+        const card = document.createElement('div');
+        card.classList.add('achse-card');
+        if (activeAchse === name) card.classList.add('active');
+        card.innerHTML = `<span class="achse-name">${name}</span><span class="achse-count">${count}x</span>`;
+        card.addEventListener('click', () => {
+          activeAchse = (activeAchse === name) ? null : name;
+          buildAchsen();
+          render();
+        });
+        grid.appendChild(card);
+      });
+
+    // reset hint
+    if (activeAchse) {
+      const reset = document.createElement('div');
+      reset.classList.add('achse-card');
+      reset.style.cursor = 'pointer';
+      reset.style.borderStyle = 'dashed';
+      reset.textContent = 'Filter aufheben';
+      reset.addEventListener('click', () => { activeAchse = null; buildAchsen(); render(); });
+      grid.appendChild(reset);
+    }
+  }
+
+  loadFundus();
+</script>
+
+</body>
+</html>
