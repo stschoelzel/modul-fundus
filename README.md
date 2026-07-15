@@ -1,6 +1,7 @@
 # m.o.d.u.l. - Fundus-Schema
 
-Dieses Dokument definiert den Aufbau des gemeinsamen Materialfundus.
+Dieses Dokument definiert den Aufbau des gemeinsamen Materialfundus.Die Trennung erfolgt nach **Medientyp** (Ordner), nicht nach inhaltlicher Rolle; welche Rolle eine Datei innerhalb ihres Medientyps hat (`titelbild` vs. `meme`, `artikel` vs. `claim`), steht bereits im `bezeichner`-Teil des Dateinamens (siehe Dateinamen-Syntax oben). Ein Ordner pro Rolle wäre doppelt gemoppelt - bei kleinen Materialmengen macht das die Suche eher umständlicher als klarer.
+
 Jeder Datensatz (`item`) ist eine nummerierte Einheit mit optionalen Feldern je nach verfügbarem Material.
 Die Module greifen auf die Felder zu, die sie benötigen; nicht jedes Item muss alle Felder haben.
 
@@ -219,7 +220,9 @@ fundus/
 ├── audio/                <- alle Audiodateien (mp3, wav), falls vorhanden
 └── video/                <- alle Videodateien (mp4), falls vorhanden
 ```
-Die Trennung erfolgt nach **Medientyp** (Ordner), nicht nach inhaltlicher Rolle; welche Rolle eine Datei innerhalb ihres Medientyps hat (`titelbild` vs. `meme`, `artikel` vs. `claim`), steht bereits im `bezeichner`-Teil des Dateinamens (siehe Dateinamen-Syntax oben). Ein Ordner pro Rolle wäre doppelt gemoppelt - bei kleinen Materialmengen macht das die Suche eher umständlicher als klarer.
+
+Die Trennung erfolgt nach **Medientyp** (Ordner), nicht nach inhaltlicher Rolle; welche Rolle eine Datei innerhalb ihres Medientyps hat (`titelbild` vs. `meme`, `artikel` vs. `claim`), steht bereits 
+im `bezeichner`-Teil des Dateinamens (siehe Dateinamen-Syntax oben). Ein Ordner pro Rolle wäre doppelt gemoppelt - bei kleinen Materialmengen macht das die Suche eher umständlicher als klarer.
 
 ---
 ### Dateinamen-Syntax
