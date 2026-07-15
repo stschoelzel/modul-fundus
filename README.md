@@ -220,11 +220,11 @@ fundus/
 ├── audio/                <- alle Audiodateien (mp3, wav), falls vorhanden
 └── video/                <- alle Videodateien (mp4), falls vorhanden
 ```
-
 Die Trennung erfolgt nach **Medientyp** (Ordner), nicht nach inhaltlicher Rolle; welche Rolle eine Datei innerhalb ihres Medientyps hat (`titelbild` vs. `meme`, `artikel` vs. `claim`), steht bereits 
 im `bezeichner`-Teil des Dateinamens (siehe Dateinamen-Syntax oben). Ein Ordner pro Rolle wäre doppelt gemoppelt - bei kleinen Materialmengen macht das die Suche eher umständlicher als klarer.
 
 ---
+
 ### Dateinamen-Syntax
 
 Alle Dateien in `bilder/` und `texte/` folgen dem Muster:
@@ -249,6 +249,7 @@ Beispiele:
     fundus004_meme.jpg
 
 Der Dateiname taucht immer 1:1 im entsprechenden `<bezeichner>.datei`-Feld der fundus.yaml wieder auf; das Tool selbst löst keine Pfade automatisch auf.
+
 ---
 
 ## Typ-Feldmatrix
