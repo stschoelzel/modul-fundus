@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>m.o.d.u.l. Fundus</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+  <script src="fundus-data.js"></script>
   <style>
     :root {
       --black: #111111;
@@ -301,7 +301,7 @@
   <span>Modular - Open - Dynamic - Universal - Ludic / Materialfundus</span>
 </header>
 
-<div id="loading">Lade fundus.yaml...</div>
+<div id="loading">Lade Fundus...</div>
 <div id="error"></div>
 
 <div id="app" style="display:none">
@@ -362,20 +362,62 @@
 
   let allData = [];
   let activeAchse = null;
+  let previewBox = null;
 
-  async function loadFundus() {
-    try {
-      const resp = await fetch('fundus.yaml');
-      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-      const text = await resp.text();
-      allData = jsyaml.load(text) || [];
-      init();
-    } catch (e) {
+  function getPreviewBox() {
+    if (!previewBox) {
+      previewBox = document.createElement('div');
+      previewBox.id = 'media-preview';
+      previewBox.style.cssText = 'position:fixed; display:none; z-index:1000; border:2px solid var(--black); background:var(--white); padding:4px; pointer-events:none;';
+      const img = document.createElement('img');
+      img.style.cssText = 'max-width:220px; max-height:220px; display:block;';
+      previewBox.appendChild(img);
+      document.body.appendChild(previewBox);
+    }
+    return previewBox;
+  }
+
+  function showPreview(url, evt) {
+    const box = getPreviewBox();
+    box.querySelector('img').src = url;
+    box.style.display = 'block';
+    movePreview(evt);
+  }
+
+  function movePreview(evt) {
+    if (!previewBox || previewBox.style.display === 'none') return;
+    previewBox.style.left = (evt.clientX + 16) + 'px';
+    previewBox.style.top = (evt.clientY + 16) + 'px';
+  }
+
+  function hidePreview() {
+    if (previewBox) previewBox.style.display = 'none';
+  }
+
+  // Hover-Vorschau + Klick-zum-Öffnen für bild.datei/meme.datei; funktioniert
+  // identisch für relative Pfade und absolute URLs.
+  function attachMediaPreview(el, url) {
+    if (!url) return;
+    el.style.cursor = 'pointer';
+    el.addEventListener('mouseenter', e => showPreview(url, e));
+    el.addEventListener('mousemove', movePreview);
+    el.addEventListener('mouseleave', hidePreview);
+    el.addEventListener('click', e => {
+      e.stopPropagation();
+      window.open(url, '_blank');
+    });
+  }
+
+  function loadFundus() {
+    if (!Array.isArray(window.FUNDUS_DATA) || window.FUNDUS_DATA.length === 0) {
       document.getElementById('loading').style.display = 'none';
       const err = document.getElementById('error');
       err.style.display = 'block';
-      err.textContent = `Fehler beim Laden von fundus.yaml: ${e.message}. Stelle sicher, dass fundus.yaml im gleichen Verzeichnis liegt und der Server CORS erlaubt.`;
+      err.textContent = 'fundus-data.js fehlt oder wurde nicht gebaut. Siehe README ("Daten pflegen") - npm run build in build/ ausführen oder auf den Push der GitHub Action warten.';
+      return;
     }
+    allData = window.FUNDUS_DATA;
+    init();
   }
 
   function init() {
@@ -468,12 +510,14 @@
         dot.classList.add('dot');
         if ((item.typ || []).includes(t)) dot.classList.add('filled');
         td.appendChild(dot);
+        const mediaUrl = t === 'bild' ? item.bild?.datei : t === 'meme' ? item.meme?.datei : null;
+        if (mediaUrl) attachMediaPreview(td, mediaUrl);
         tr.appendChild(td);
       });
       // echtheit
       const eTd = document.createElement('td');
       const eTag = document.createElement('span');
-      eTag.classList.add('echtheit-tag', 'echtheit-' + (item.echtheit || '').replace('-',''));
+      eTag.classList.add('echtheit-tag', 'echtheit-' + (item.echtheit || ''));
       eTag.textContent = item.echtheit || '-';
       eTd.appendChild(eTag);
       tr.appendChild(eTd);
@@ -495,6 +539,22 @@
       } else {
         qTd.textContent = qName;
       }
+      const q2Name = item.quelle2?.name;
+      const q2Url = item.quelle2?.url;
+      if (q2Name || (q2Url && q2Url !== '~' && q2Url !== 'null')) {
+        qTd.appendChild(document.createElement('br'));
+        const small = document.createElement('span');
+        small.style.cssText = 'font-size:0.7rem; color:var(--mid);';
+        if (q2Url && q2Url !== '~' && q2Url !== 'null') {
+          const a2 = document.createElement('a');
+          a2.href = q2Url; a2.target = '_blank'; a2.textContent = q2Name || q2Url;
+          a2.style.color = 'inherit';
+          small.appendChild(a2);
+        } else {
+          small.textContent = q2Name;
+        }
+        qTd.appendChild(small);
+      }
       tr.appendChild(qTd);
 
       tbody.appendChild(tr);
@@ -505,7 +565,7 @@
       detailTr.style.display = 'none';
       detailTr.dataset.for = item.id;
       const detailTd = document.createElement('td');
-      detailTd.colSpan = 4 + ALL_TYPEN.length;
+      detailTd.colSpan = 5 + ALL_TYPEN.length;
       detailTd.appendChild(buildDetail(item));
       detailTr.appendChild(detailTd);
       tbody.appendChild(detailTr);
@@ -533,15 +593,30 @@
     if (item.einleitung?.text) fields.push({label: 'Einleitung', val: item.einleitung.text});
     if (item.claim?.text) fields.push({label: 'Claim', val: item.claim.text});
     if (item.claim?.bewertung) fields.push({label: 'Faktcheck', val: item.claim.bewertung});
-    if (item.bild?.beschreibung) fields.push({label: 'Bild', val: item.bild.beschreibung + (item.bild.datei ? ` [${item.bild.datei}]` : '')});
-    if (item.meme?.ursprung) fields.push({label: 'Meme-Ursprung', val: item.meme.ursprung});
+    if (item.bild?.beschreibung) fields.push({label: 'Bild', val: item.bild.beschreibung + (item.bild.datei ? ` [${item.bild.datei}]` : ''), thumb: item.bild.datei});
+    if (item.meme?.ursprung) fields.push({label: 'Meme-Ursprung', val: item.meme.ursprung, thumb: item.meme.datei});
     if (item.quelle?.datum) fields.push({label: 'Datum', val: item.quelle.datum});
     if (item.quelle?.lizenz) fields.push({label: 'Lizenz', val: item.quelle.lizenz});
+    if (item.quelle2?.name || item.quelle2?.url) {
+      const val = item.quelle2.url
+        ? `<a href="${item.quelle2.url}" target="_blank">${item.quelle2.name || item.quelle2.url}</a>`
+        : item.quelle2.name;
+      fields.push({label: 'Weitere Quelle', val});
+    }
+    if (item.ki?.model) fields.push({label: 'KI-Modell', val: item.ki.model});
+    if (item.ki?.prompt) fields.push({label: 'KI-Prompt', val: item.ki.prompt});
     if (item.achsen?.length) fields.push({label: 'Achsen', val: item.achsen.join(', ')});
 
     fields.forEach(f => {
       const div = document.createElement('div');
       div.innerHTML = `<h4>${f.label}</h4><p>${f.val}</p>`;
+      if (f.thumb) {
+        const img = document.createElement('img');
+        img.src = f.thumb;
+        img.style.cssText = 'max-width:160px; max-height:160px; display:block; margin-top:0.4rem; cursor:pointer; border:2px solid #444;';
+        img.addEventListener('click', e => { e.stopPropagation(); window.open(f.thumb, '_blank'); });
+        div.appendChild(img);
+      }
       box.appendChild(div);
     });
 

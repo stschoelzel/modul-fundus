@@ -1,0 +1,11 @@
+{
+  "name": "fundus-build",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node compile-fundus.js"
+  },
+  "devDependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}

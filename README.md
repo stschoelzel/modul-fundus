@@ -7,6 +7,30 @@ Die Module greifen auf die Felder zu, die sie benötigen; nicht jedes Item muss 
 
 ---
 
+## Nutzung
+
+Für alle, die den Fundus nur ansehen wollen:
+
+1. Repo klonen (oder als ZIP herunterladen).
+2. `index.html` per Doppelklick öffnen.
+
+Fertig - kein Server, kein Node, kein npm nötig. `fundus-data.js` liegt bereits fertig gebaut im Repo und wird von `index.html` direkt eingebunden.
+
+## Daten pflegen / lokale Entwicklung
+
+Nur relevant, wenn du `fundus.yaml` bearbeitest:
+
+- `fundus.yaml` ändern, committen, pushen (auf `main`) reicht. Eine GitHub Action baut `fundus-data.js` automatisch auf GitHubs Servern und committed sie zurück - lokal ist nichts zu installieren.
+- Falls du vor dem Push schon lokal die aktualisierte `fundus-data.js` sehen willst, ist das ein optionaler Zwischenschritt:
+  ```
+  cd build
+  npm install
+  npm run build
+  ```
+  Das schreibt `fundus-data.js` im Repo-Root neu. Kein Muss - die GitHub Action holt das nach dem Push ohnehin nach.
+
+---
+
 ## Feldübersicht
 
 | Feld | Typ | Pflicht | Beschreibung |
@@ -22,15 +46,21 @@ Die Module greifen auf die Felder zu, die sie benötigen; nicht jedes Item muss 
 | `quelle.datum` | date | nein | Erscheinungsdatum (ISO: YYYY-MM-DD) |
 | `quelle.lizenz` | string | nein | z.B. "CC BY 4.0", "Pressebild", "Screenshot" |
 | `kontext` | string | nein | Kurze Beschreibung des Inhalts / Hintergrunds (für Fachkraft) |
-| `bild.datei` | string | nein | Dateiname im Fundus-Ordner, z.B. `DS001_titelbild.jpg` |
+| `bild.datei` | string | nein | Dateiname im Fundus-Ordner, z.B. `DS001_titelbild.jpg`. Kann ein relativer Pfad im Fundus-Ordner ODER eine absolute URL sein, falls das Bild nur verlinkt werden darf. |
 | `bild.beschreibung` | string | nein | Alt-Text / kurze Bildbeschreibung |
 | `ueberschrift.text` | string | nein | Die echte Überschrift |
 | `einleitung.text` | string | nein | Der echte Einleitungsabsatz |
 | `artikel.text` | string | nein | Volltext oder Zusammenfassung des echten Artikels |
-| `meme.datei` | string | nein | Dateiname des Meme-Bildes |
+| `meme.datei` | string | nein | Dateiname des Meme-Bildes. Kann ein relativer Pfad im Fundus-Ordner ODER eine absolute URL sein, falls das Bild nur verlinkt werden darf. |
 | `meme.ursprung` | string | nein | Wo das Meme zuerst auftauchte / Verbreitungskontext |
 | `claim.text` | string | nein | Zu prüfende Aussage (für Source Hunter) |
 | `claim.bewertung` | string | nein | Faktencheckergebnis + Quelle |
+| `ki.model` | string | nein* | Verwendetes KI-Tool, z.B. `Midjourney v6`, `ChatGPT-4o`, `Sora` |
+| `ki.prompt` | string | nein* | Der verwendete Prompt, falls bekannt/rekonstruierbar |
+| `quelle2.name` | string | nein | Name einer zweiten Referenz (Faktencheck, Gegendarstellung, Hintergrundartikel) |
+| `quelle2.url` | string | nein | URL zur zweiten Referenz |
+
+\* `ki.model`/`ki.prompt` sind generell optional, aber empfohlen (quasi-Pflicht), sobald `echtheit: ki-generiert` gesetzt ist.
 
 ---
 
@@ -199,6 +229,35 @@ wird beim Einlesen zu einem durchgehenden Satz, nicht zu zwei Zeilen.
     datei: fundus004_meme.jpg
     ursprung: >
       Erstellt mit [Tool] für Schulungszwecke; nie öffentlich verbreitet.
+  ki:
+    model: Midjourney v6
+    prompt: >
+      photorealistic press photo of a german politician holding a sign with
+      a fake quote, studio lighting, 35mm
+
+- id: fundus005
+  thema: Umweltverschmutzung
+  typ: [ueberschrift, artikel]
+  echtheit: echt
+  freigabe: true
+  achsen: [meinung-fakt, harmlos-gefaehrlich]
+  quelle:
+    name: heute.de
+    url: https://www.heute.de/beispiel/loeffelweise-plastik-im-hirn
+    datum: 2024-09-05
+    lizenz: Pressebild
+  quelle2:
+    name: Correctiv Faktencheck
+    url: https://correctiv.org/faktencheck/beispiel-plastik-im-hirn
+  kontext: >
+    Meldung über Mikroplastik im menschlichen Gehirn, dazu ein Faktencheck,
+    der die Studienlage einordnet. Gut geeignet, um zu zeigen, dass auch bei
+    seriösen Quellen eine zweite Einordnung sinnvoll ist.
+  ueberschrift:
+    text: "Löffelweise - so viel Plastik haben wir schon im Hirn"
+  artikel:
+    text: >
+      [Volltext oder Zusammenfassung des Originalartikels]
 ```
 
 ---

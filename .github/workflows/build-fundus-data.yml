@@ -1,0 +1,33 @@
+name: Build fundus-data.js
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - fundus.yaml
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install build deps
+        working-directory: build
+        run: npm install
+
+      - name: Compile fundus.yaml -> fundus-data.js
+        working-directory: build
+        run: npm run build
+
+      - name: Commit fundus-data.js
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: rebuild fundus-data.js from fundus.yaml"
+          file_pattern: fundus-data.js

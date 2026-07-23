@@ -83,3 +83,32 @@
     datei: fundus004_meme.jpg
     ursprung: >
       Erstellt mit [Tool] für Schulungszwecke; nie öffentlich verbreitet.
+  ki:
+    model: Midjourney v6
+    prompt: >
+      photorealistic press photo of a german politician holding a sign with
+      a fake quote, studio lighting, 35mm
+
+- id: fundus005
+  thema: Umweltverschmutzung
+  typ: [ueberschrift, artikel]
+  echtheit: echt
+  freigabe: true
+  achsen: [meinung-fakt, harmlos-gefaehrlich]
+  quelle:
+    name: heute.de
+    url: https://www.heute.de/beispiel/loeffelweise-plastik-im-hirn
+    datum: 2024-09-05
+    lizenz: Pressebild
+  quelle2:
+    name: Correctiv Faktencheck
+    url: https://correctiv.org/faktencheck/beispiel-plastik-im-hirn
+  kontext: >
+    Meldung über Mikroplastik im menschlichen Gehirn, dazu ein Faktencheck,
+    der die Studienlage einordnet. Gut geeignet, um zu zeigen, dass auch bei
+    seriösen Quellen eine zweite Einordnung sinnvoll ist.
+  ueberschrift:
+    text: "Löffelweise - so viel Plastik haben wir schon im Hirn"
+  artikel:
+    text: >
+      [Volltext oder Zusammenfassung des Originalartikels]
