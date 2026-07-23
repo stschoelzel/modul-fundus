@@ -45,6 +45,8 @@ Nur relevant, wenn du `fundus.yaml` bearbeitest:
 | `quelle.url` | string | nein | URL zum Originalartikel |
 | `quelle.datum` | date | nein | Erscheinungsdatum (ISO: YYYY-MM-DD) |
 | `quelle.lizenz` | string | nein | z.B. "CC BY 4.0", "Pressebild", "Screenshot" |
+| `quelle2.name` | string | nein | Name einer zweiten Referenz (Faktencheck, Gegendarstellung, Hintergrundartikel) |
+| `quelle2.url` | string | nein | URL zur zweiten Referenz |
 | `kontext` | string | nein | Kurze Beschreibung des Inhalts / Hintergrunds (für Fachkraft) |
 | `bild.datei` | string | nein | Dateiname im Fundus-Ordner, z.B. `DS001_titelbild.jpg`. Kann ein relativer Pfad im Fundus-Ordner ODER eine absolute URL sein, falls das Bild nur verlinkt werden darf. |
 | `bild.beschreibung` | string | nein | Alt-Text / kurze Bildbeschreibung |
@@ -57,8 +59,7 @@ Nur relevant, wenn du `fundus.yaml` bearbeitest:
 | `claim.bewertung` | string | nein | Faktencheckergebnis + Quelle |
 | `ki.model` | string | nein* | Verwendetes KI-Tool, z.B. `Midjourney v6`, `ChatGPT-4o`, `Sora` |
 | `ki.prompt` | string | nein* | Der verwendete Prompt, falls bekannt/rekonstruierbar |
-| `quelle2.name` | string | nein | Name einer zweiten Referenz (Faktencheck, Gegendarstellung, Hintergrundartikel) |
-| `quelle2.url` | string | nein | URL zur zweiten Referenz |
+
 
 \* `ki.model`/`ki.prompt` sind generell optional, aber empfohlen (quasi-Pflicht), sobald `echtheit: ki-generiert` gesetzt ist.
 
