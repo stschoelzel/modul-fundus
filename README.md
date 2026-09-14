@@ -320,6 +320,9 @@ fundus/
 ├── texte/                <- alle Textdateien (txt): artikel, claim
 │   ├── fundus001_artikel.txt
 │   └── fundus003_claim.txt
+├── export-templates/
+│   ├── indextkarte.html
+│   └── ...
 ├── audio/                <- alle Audiodateien (mp3, wav), falls vorhanden
 └── video/                <- alle Videodateien (mp4), falls vorhanden
 ```
