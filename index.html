@@ -195,6 +195,47 @@
     .freigabe-yes { color: #2a8a2a; font-weight: 700; }
     .freigabe-no  { color: #cc2222; font-weight: 700; }
 
+    .export-btn {
+      font-family: inherit;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: var(--accent);
+      border: 2px solid var(--black);
+      padding: 0.25rem 0.5rem;
+      cursor: pointer;
+    }
+
+    dialog#export-dialog {
+      border: 3px solid var(--black);
+      padding: 1.5rem;
+      max-width: 420px;
+      width: 90%;
+      font-family: inherit;
+      color: var(--black);
+    }
+
+    dialog#export-dialog::backdrop { background: rgba(0,0,0,0.5); }
+    dialog#export-dialog h3 { margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.9rem; }
+    dialog#export-dialog label { display: block; font-size: 0.8rem; margin-bottom: 0.35rem; cursor: pointer; }
+    dialog#export-dialog fieldset { border: 2px solid var(--border); margin-top: 0.75rem; padding: 0.5rem 0.75rem; }
+    dialog#export-dialog fieldset label { display: inline-block; margin-right: 1rem; }
+
+    .export-actions { margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end; }
+    .export-actions button {
+      font-family: inherit; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      padding: 0.4rem 0.8rem; border: 2px solid var(--black); background: var(--white); cursor: pointer;
+    }
+    #export-create { background: var(--accent); }
+
+    #export-print-area { display: none; }
+
+    @media print {
+      body > *:not(#export-print-area) { display: none !important; }
+      #export-print-area { display: block !important; }
+    }
+
     .detail-row td {
       padding: 0;
       border-right: none;
@@ -356,6 +397,22 @@
   </footer>
 </div>
 
+<dialog id="export-dialog">
+  <h3 id="export-title">Export</h3>
+  <div id="export-fields"></div>
+  <fieldset>
+    <legend>Format</legend>
+    <label><input type="radio" name="export-format" value="pdf" checked> PDF</label>
+    <label><input type="radio" name="export-format" value="jpg"> JPG</label>
+  </fieldset>
+  <div class="export-actions">
+    <button type="button" id="export-cancel">Abbrechen</button>
+    <button type="button" id="export-create">Erstellen</button>
+  </div>
+</dialog>
+
+<div id="export-print-area"></div>
+
 <script>
   const ALL_TYPEN = ['bild', 'ueberschrift', 'einleitung', 'artikel', 'meme', 'claim', 'video'];
   const ECHTHEIT_ORDER = ['echt', 'manipuliert', 'ki-generiert', 'fake'];
@@ -498,8 +555,20 @@
       const tr = document.createElement('tr');
       tr.dataset.id = item.id;
 
-      // id
-      addTd(tr, item.id, 'id-col');
+      // id (wird bei Auswahl durch Export-Button ersetzt)
+      const idTd = document.createElement('td');
+      idTd.classList.add('id-col');
+      const idSpan = document.createElement('span');
+      idSpan.classList.add('id-text');
+      idSpan.textContent = item.id;
+      const exportBtn = document.createElement('button');
+      exportBtn.type = 'button';
+      exportBtn.classList.add('export-btn');
+      exportBtn.textContent = 'Export als...';
+      exportBtn.hidden = true;
+      exportBtn.addEventListener('click', e => { e.stopPropagation(); openExportDialog(item); });
+      idTd.append(idSpan, exportBtn);
+      tr.appendChild(idTd);
       // thema
       addTd(tr, item.thema);
       // typ dots
@@ -582,10 +651,8 @@
     return td;
   }
 
-  function buildDetail(item) {
-    const box = document.createElement('div');
-    box.classList.add('detail-box');
-
+  // Gemeinsame Feldliste fuer Detail-Ansicht und Export-Dialog.
+  function getExportableFields(item) {
     const fields = [];
 
     if (item.kontext) fields.push({label: 'Kontext', val: item.kontext});
@@ -607,7 +674,14 @@
     if (item.ki?.prompt) fields.push({label: 'KI-Prompt', val: item.ki.prompt});
     if (item.achsen?.length) fields.push({label: 'Achsen', val: item.achsen.join(', ')});
 
-    fields.forEach(f => {
+    return fields;
+  }
+
+  function buildDetail(item) {
+    const box = document.createElement('div');
+    box.classList.add('detail-box');
+
+    getExportableFields(item).forEach(f => {
       const div = document.createElement('div');
       div.innerHTML = `<h4>${f.label}</h4><p>${f.val}</p>`;
       if (f.thumb) {
@@ -627,11 +701,101 @@
     const visible = detailTr.style.display !== 'none';
     // close all
     document.querySelectorAll('.detail-row').forEach(r => r.style.display = 'none');
-    document.querySelectorAll('tbody tr:not(.detail-row)').forEach(r => r.classList.remove('expanded'));
+    document.querySelectorAll('tbody tr:not(.detail-row)').forEach(r => {
+      r.classList.remove('expanded');
+      r.querySelector('.id-text').hidden = false;
+      r.querySelector('.export-btn').hidden = true;
+    });
     if (!visible) {
       detailTr.style.display = '';
       mainTr.classList.add('expanded');
+      mainTr.querySelector('.id-text').hidden = true;
+      mainTr.querySelector('.export-btn').hidden = false;
     }
+  }
+
+  // --- Export ---------------------------------------------------------
+
+  let exportItem = null;
+  const exportDialog = document.getElementById('export-dialog');
+
+  function openExportDialog(item) {
+    exportItem = item;
+    document.getElementById('export-title').textContent = `Export: ${item.id}`;
+    const fieldsBox = document.getElementById('export-fields');
+    fieldsBox.innerHTML = '';
+    getExportableFields(item).forEach((f, i) => {
+      const label = document.createElement('label');
+      label.innerHTML = `<input type="checkbox" checked data-field-idx="${i}"> ${f.label}`;
+      fieldsBox.appendChild(label);
+    });
+    exportDialog.showModal();
+  }
+
+  document.getElementById('export-cancel').addEventListener('click', () => exportDialog.close());
+
+  document.getElementById('export-create').addEventListener('click', () => {
+    const format = document.querySelector('input[name="export-format"]:checked').value;
+    const checkedIdx = [...document.querySelectorAll('#export-fields input:checked')]
+      .map(cb => Number(cb.dataset.fieldIdx));
+    const fields = getExportableFields(exportItem).filter((_, i) => checkedIdx.includes(i));
+    exportDialog.close();
+    if (format === 'pdf') {
+      document.getElementById('export-print-area').innerHTML = renderExportHtml(exportItem, fields);
+      window.print();
+    } else {
+      exportAsJpg(exportItem, fields);
+    }
+  });
+
+  // Layout ist bewusst schlicht gehalten - Feinschliff folgt, sobald der Mechanismus steht.
+  function renderExportHtml(item, fields) {
+    const base = 'font-family:\'IBM Plex Mono\',\'Courier New\',monospace; color:#000; background:#fff;';
+    let html = `<div xmlns="http://www.w3.org/1999/xhtml" style="${base} padding:2rem; box-sizing:border-box;">`;
+    html += `<h2 style="margin:0 0 1rem; font-size:1.2rem;">${item.id} - ${item.thema || ''}</h2>`;
+    fields.forEach(f => {
+      html += `<div style="margin-bottom:0.9rem;">
+        <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; color:#555; margin-bottom:0.2rem;">${f.label}</div>
+        <div style="font-size:0.85rem; line-height:1.5;">${f.val}</div>
+      </div>`;
+    });
+    html += `</div>`;
+    return html;
+  }
+
+  // JPG-Export via SVG-foreignObject -> Canvas, ohne zusaetzliche Dependency.
+  // ponytail: rasterisiert nur Text (keine Thumbnails), globaler Weg statt pro Feld optimiert.
+  function exportAsJpg(item, fields) {
+    const width = 700;
+    const html = renderExportHtml(item, fields);
+    const area = document.getElementById('export-print-area');
+    area.style.cssText = `display:block; position:fixed; left:-9999px; width:${width}px;`;
+    area.innerHTML = html;
+    const height = area.scrollHeight;
+    area.style.cssText = '';
+
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">`
+      + `<foreignObject width="100%" height="100%">${html}</foreignObject></svg>`;
+    const img = new Image();
+    const url = URL.createObjectURL(new Blob([svg], {type: 'image/svg+xml;charset=utf-8'}));
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(0, 0, width, height);
+      ctx.drawImage(img, 0, 0);
+      URL.revokeObjectURL(url);
+      canvas.toBlob(blob => {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `${item.id}.jpg`;
+        a.click();
+      }, 'image/jpeg', 0.92);
+    };
+    img.onerror = () => alert('JPG-Export fehlgeschlagen.');
+    img.src = url;
   }
 
   function buildAchsen() {
