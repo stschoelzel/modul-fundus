@@ -40,6 +40,7 @@ Nur relevant, wenn du `fundus.yaml` bearbeitest:
 | `typ` | list | ja | Welche Felder vorhanden sind; Werte: `bild`, `ueberschrift`, `einleitung`, `artikel`, `meme`, `claim`, `video` |
 | `echtheit` | enum | ja | `echt` / `ki-generiert` / `manipuliert` / `fake` |
 | `freigabe` | bool | ja | Darf das Item mit Jugendlichen verwendet werden? |
+| `status` | enum | ja | Herkunft/Stand des Items, siehe [Status](#status) |
 | `achsen` | list | nein | Empfohlene Skalen-Achsen für "Checkst du?" (nur Slug, kein Wert) |
 | `quelle.name` | string | nein | Name der Quelle (z.B. "taz", "Bild", "AFP") |
 | `quelle.url` | string | nein | URL zum Originalartikel |
@@ -62,6 +63,21 @@ Nur relevant, wenn du `fundus.yaml` bearbeitest:
 
 
 \* `ki.model`/`ki.prompt` sind generell optional, aber empfohlen (quasi-Pflicht), sobald `echtheit: ki-generiert` gesetzt ist.
+
+---
+
+## Status
+
+Interner Wert, taucht **nicht** in der `index.html`-Übersicht auf (kein Tabellenfeld). Gibt an, woher ein Item stammt.
+
+| Wert | Bedeutung |
+|---|---|
+| `deprecated` | nicht mehr relevant, z.B. Testdaten (aktuell `fundus001`-`fundus005`) - einziger Wert mit aktueller Auswirkung: Items damit werden in der Übersicht ausgeblendet |
+| `methodensprint` | beim Setup/im Methodensprint angelegt - Default für alle neuen Items |
+| `gmk` | von der GMK angelegt |
+| `random` | der Rest |
+
+`methodensprint`, `gmk` und `random` sind aktuell nur hinterlegt, ohne Effekt in der Anwendung - für spätere Auswertung/Filterung vorgesehen.
 
 ---
 
@@ -169,6 +185,7 @@ wird beim Einlesen zu einem durchgehenden Satz, nicht zu zwei Zeilen.
   typ: [bild, ueberschrift, einleitung, artikel]
   echtheit: echt
   freigabe: true
+  status: deprecated
   achsen: [echt-fake, meinung-fakt, sachlich-emotionalisierend, quelle-vertrauen, informieren-manipulieren, journalismus-werbung]
   quelle:
     name: taz
@@ -197,6 +214,7 @@ wird beim Einlesen zu einem durchgehenden Satz, nicht zu zwei Zeilen.
   typ: [bild, ueberschrift]
   echtheit: manipuliert
   freigabe: true
+  status: deprecated
   achsen: [echt-fake, harmlos-gefaehrlich, informieren-manipulieren, aufklaerend-irrefuehrend, quelle-vertrauen, nobait-clickbait, teilen]
   quelle:
     name: unbekannt (Social Media)
@@ -218,6 +236,7 @@ wird beim Einlesen zu einem durchgehenden Satz, nicht zu zwei Zeilen.
   typ: [claim]
   echtheit: fake
   freigabe: true
+  status: deprecated
   achsen: [meinung-fakt, harmlos-gefaehrlich, glauben, informieren-manipulieren, quelle-vertrauen, aufklaerend-irrefuehrend, teilen]
   quelle:
     name: Telegram-Kanal (anonym)
@@ -238,6 +257,7 @@ wird beim Einlesen zu einem durchgehenden Satz, nicht zu zwei Zeilen.
   typ: [meme]
   echtheit: ki-generiert
   freigabe: true
+  status: deprecated
   achsen: [echt-fake, harmlos-gefaehrlich, satire-ernst, teilen, informieren-manipulieren]
   quelle:
     name: eigene Erstellung (KI-Tool)
@@ -263,6 +283,7 @@ wird beim Einlesen zu einem durchgehenden Satz, nicht zu zwei Zeilen.
   typ: [ueberschrift, artikel]
   echtheit: echt
   freigabe: true
+  status: deprecated
   achsen: [meinung-fakt, harmlos-gefaehrlich, nobait-clickbait, sachlich-emotionalisierend, quelle-vertrauen, aufklaerend-irrefuehrend]
   quelle:
     name: heute.de

@@ -11,6 +11,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "deprecated",
     "achsen": [
       "echt-fake",
       "meinung-fakt",
@@ -49,6 +50,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "manipuliert",
     "freigabe": true,
+    "status": "deprecated",
     "achsen": [
       "echt-fake",
       "harmlos-gefaehrlich",
@@ -80,6 +82,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "fake",
     "freigabe": true,
+    "status": "deprecated",
     "achsen": [
       "meinung-fakt",
       "harmlos-gefaehrlich",
@@ -108,6 +111,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "deprecated",
     "achsen": [
       "echt-fake",
       "harmlos-gefaehrlich",
@@ -139,6 +143,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "deprecated",
     "achsen": [
       "meinung-fakt",
       "harmlos-gefaehrlich",
@@ -173,6 +178,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "journalismus-werbung",
       "quelle-vertrauen",
@@ -201,6 +207,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "quelle-vertrauen",
       "lokal-global",
@@ -230,6 +237,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "lokal-global",
       "glauben",
@@ -258,6 +266,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "satire-ernst",
       "harmlos-gefaehrlich",
@@ -286,6 +295,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "satire-ernst",
       "nobait-clickbait",
@@ -314,6 +324,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "glauben",
       "journalismus-werbung",
@@ -343,6 +354,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-fake",
       "quelle-vertrauen",
@@ -372,6 +384,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "journalismus-werbung",
       "echt-fake",
@@ -400,6 +413,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "quelle-vertrauen",
       "nobait-clickbait",
@@ -428,6 +442,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-fake",
       "lokal-global",
@@ -456,6 +471,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "satire-ernst",
       "echt-fake",
@@ -486,6 +502,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "lokal-global",
       "meinung-fakt",
@@ -515,6 +532,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "nobait-clickbait",
       "aufklaerend-irrefuehrend",
@@ -545,6 +563,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "sachlich-emotionalisierend",
       "aufklaerend-irrefuehrend",
@@ -575,6 +594,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "sachlich-emotionalisierend",
       "echt-fake",
@@ -605,6 +625,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -635,6 +656,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -664,6 +686,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -693,6 +716,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -723,6 +747,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -753,6 +778,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -783,6 +809,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -813,6 +840,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -842,6 +870,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -872,6 +901,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -901,6 +931,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -930,6 +961,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -960,6 +992,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -990,6 +1023,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1020,6 +1054,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1050,6 +1085,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1080,6 +1116,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1110,6 +1147,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1141,6 +1179,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1171,6 +1210,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1201,6 +1241,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1230,6 +1271,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1259,6 +1301,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1288,6 +1331,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1317,6 +1361,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1347,6 +1392,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1377,6 +1423,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1407,6 +1454,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1432,6 +1480,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1457,6 +1506,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1482,6 +1532,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1507,6 +1558,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "echt",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1532,6 +1584,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1561,6 +1614,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1590,6 +1644,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1620,6 +1675,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1650,6 +1706,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1680,6 +1737,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1709,6 +1767,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1739,6 +1798,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1768,6 +1828,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",
@@ -1797,6 +1858,7 @@ window.FUNDUS_DATA = [
     ],
     "echtheit": "ki-generiert",
     "freigabe": true,
+    "status": "methodensprint",
     "achsen": [
       "echt-ki",
       "echt-fake",

@@ -3,6 +3,7 @@
   typ: [bild, ueberschrift, einleitung, artikel]
   echtheit: echt
   freigabe: true
+  status: deprecated
   achsen: [echt-fake, meinung-fakt, sachlich-emotionalisierend, quelle-vertrauen, informieren-manipulieren, journalismus-werbung]
   quelle:
     name: taz
@@ -31,6 +32,7 @@
   typ: [bild, ueberschrift]
   echtheit: manipuliert
   freigabe: true
+  status: deprecated
   achsen: [echt-fake, harmlos-gefaehrlich, informieren-manipulieren, aufklaerend-irrefuehrend, quelle-vertrauen, nobait-clickbait, teilen]
   quelle:
     name: unbekannt (Social Media)
@@ -51,6 +53,7 @@
   typ: [claim]
   echtheit: fake
   freigabe: true
+  status: deprecated
   achsen: [meinung-fakt, harmlos-gefaehrlich, glauben, informieren-manipulieren, quelle-vertrauen, aufklaerend-irrefuehrend, teilen]
   quelle:
     name: Telegram-Kanal (anonym)
@@ -70,6 +73,7 @@
   typ: [meme]
   echtheit: ki-generiert
   freigabe: true
+  status: deprecated
   achsen: [echt-fake, harmlos-gefaehrlich, satire-ernst, teilen, informieren-manipulieren]
   quelle:
     name: eigene Erstellung (KI-Tool)
@@ -94,6 +98,7 @@
   typ: [ueberschrift, artikel]
   echtheit: echt
   freigabe: true
+  status: deprecated
   achsen: [meinung-fakt, harmlos-gefaehrlich, nobait-clickbait, sachlich-emotionalisierend, quelle-vertrauen, aufklaerend-irrefuehrend]
   quelle:
     name: heute.de
@@ -117,6 +122,7 @@
   typ: [ueberschrift]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [journalismus-werbung, quelle-vertrauen, meinung-fakt, lokal-global, sachlich-emotionalisierend, nobait-clickbait, informieren-manipulieren]
   quelle:
     name: zdfheute
@@ -134,6 +140,7 @@
   typ: [ueberschrift]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [quelle-vertrauen, lokal-global, echt-fake, glauben, harmlos-gefaehrlich, sachlich-emotionalisierend, nobait-clickbait, teilen]
   quelle:
     name: NDR
@@ -150,6 +157,7 @@
   typ: [ueberschrift]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [lokal-global, glauben, echt-fake, nobait-clickbait, sachlich-emotionalisierend, harmlos-gefaehrlich, quelle-vertrauen]
   quelle:
     name: MOPO
@@ -166,6 +174,7 @@
   typ: [ueberschrift]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [satire-ernst, harmlos-gefaehrlich, nobait-clickbait, echt-fake, glauben, sachlich-emotionalisierend, journalismus-werbung]
   quelle:
     name: ORF Science
@@ -182,6 +191,7 @@
   typ: [ueberschrift]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [satire-ernst, nobait-clickbait, glauben, echt-fake, harmlos-gefaehrlich, lokal-global, quelle-vertrauen]
   quelle:
     name: Schwarzwälder Bote
@@ -199,6 +209,7 @@
   typ: [ueberschrift]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [glauben, journalismus-werbung, aufklaerend-irrefuehrend, echt-fake, harmlos-gefaehrlich, nobait-clickbait, sachlich-emotionalisierend, quelle-vertrauen]
   quelle:
     name: WEB.DE
@@ -215,6 +226,7 @@
   typ: [ueberschrift]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [echt-fake, quelle-vertrauen, lokal-global, glauben, nobait-clickbait, harmlos-gefaehrlich, satire-ernst, teilen]
   quelle:
     name: Tagesspiegel
@@ -231,6 +243,7 @@
   typ: [ueberschrift]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [journalismus-werbung, echt-fake, quelle-vertrauen, meinung-fakt, sachlich-emotionalisierend, informieren-manipulieren, lokal-global]
   quelle:
     name: Süddeutsche Zeitung
@@ -247,6 +260,7 @@
   typ: [ueberschrift]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [quelle-vertrauen, nobait-clickbait, glauben, sachlich-emotionalisierend, harmlos-gefaehrlich, echt-fake, informieren-manipulieren]
   quelle:
     name: WELT (dpa)
@@ -263,6 +277,7 @@
   typ: [ueberschrift]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [echt-fake, lokal-global, nobait-clickbait, glauben, harmlos-gefaehrlich, sachlich-emotionalisierend, quelle-vertrauen]
   quelle:
     name: FAZ
@@ -279,6 +294,7 @@
   typ: [ueberschrift]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [satire-ernst, echt-fake, teilen, glauben, harmlos-gefaehrlich, informieren-manipulieren, meinung-fakt, lokal-global, nobait-clickbait]
   quelle:
     name: WDR
@@ -295,6 +311,7 @@
   typ: [ueberschrift]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [lokal-global, meinung-fakt, echt-fake, informieren-manipulieren, satire-ernst, sachlich-emotionalisierend, nobait-clickbait, harmlos-gefaehrlich]
   quelle:
     name: Süddeutsche Zeitung
@@ -311,6 +328,7 @@
   typ: [ueberschrift]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [nobait-clickbait, aufklaerend-irrefuehrend, meinung-fakt, quelle-vertrauen, sachlich-emotionalisierend, informieren-manipulieren, glauben, journalismus-werbung, echt-fake]
   quelle:
     name: Promiflash
@@ -327,6 +345,7 @@
   typ: [ueberschrift]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [sachlich-emotionalisierend, aufklaerend-irrefuehrend, informieren-manipulieren, nobait-clickbait, quelle-vertrauen, glauben, meinung-fakt, harmlos-gefaehrlich, journalismus-werbung]
   quelle:
     name: news.de
@@ -343,6 +362,7 @@
   typ: [ueberschrift]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [sachlich-emotionalisierend, echt-fake, nobait-clickbait, glauben, quelle-vertrauen, aufklaerend-irrefuehrend, informieren-manipulieren, meinung-fakt, journalismus-werbung]
   quelle:
     name: Heute.at
@@ -362,6 +382,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, quelle-vertrauen, teilen]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -387,6 +408,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, sachlich-emotionalisierend]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -410,6 +432,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, quelle-vertrauen]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -433,6 +456,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, quelle-vertrauen, glauben, harmlos-gefaehrlich]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -460,6 +484,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, quelle-vertrauen, glauben, lokal-global]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -486,6 +511,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, harmlos-gefaehrlich, teilen, sachlich-emotionalisierend]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -512,6 +538,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, journalismus-werbung, glauben, lokal-global]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -538,6 +565,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, lokal-global]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -564,6 +592,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, journalismus-werbung, glauben, lokal-global]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -590,6 +619,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, teilen]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -616,6 +646,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, harmlos-gefaehrlich]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -642,6 +673,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, teilen, sachlich-emotionalisierend]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -667,6 +699,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, quelle-vertrauen, teilen]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -693,6 +726,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, sachlich-emotionalisierend, teilen, informieren-manipulieren]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -719,6 +753,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, teilen, sachlich-emotionalisierend]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -745,6 +780,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, quelle-vertrauen, harmlos-gefaehrlich, informieren-manipulieren]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -771,6 +807,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, harmlos-gefaehrlich, teilen, informieren-manipulieren]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -797,6 +834,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, sachlich-emotionalisierend, informieren-manipulieren, teilen, harmlos-gefaehrlich]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -824,6 +862,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, harmlos-gefaehrlich, informieren-manipulieren, sachlich-emotionalisierend]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -850,6 +889,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, quelle-vertrauen, meinung-fakt, informieren-manipulieren]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -876,6 +916,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, journalismus-werbung]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -902,6 +943,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, lokal-global]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -927,6 +969,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, lokal-global]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -952,6 +995,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, harmlos-gefaehrlich]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -977,6 +1021,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, harmlos-gefaehrlich, sachlich-emotionalisierend, informieren-manipulieren]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -1003,6 +1048,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, meinung-fakt, informieren-manipulieren, teilen]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -1028,6 +1074,7 @@
   typ: [bild]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, meinung-fakt, informieren-manipulieren, teilen]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -1055,6 +1102,7 @@
   typ: [bild]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, quelle-vertrauen]
   quelle:
     name: Aleksandra Dementeva (Unsplash)
@@ -1074,6 +1122,7 @@
   typ: [bild]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, quelle-vertrauen]
   quelle:
     name: Kristaps Ungurs (Unsplash)
@@ -1093,6 +1142,7 @@
   typ: [bild]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, sachlich-emotionalisierend]
   quelle:
     name: Kristaps Ungurs (Unsplash)
@@ -1112,6 +1162,7 @@
   typ: [bild]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, quelle-vertrauen]
   quelle:
     name: qui nguyen (Unsplash)
@@ -1131,6 +1182,7 @@
   typ: [bild]
   echtheit: echt
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, quelle-vertrauen]
   quelle:
     name: Anton Sobotyak (Unsplash)
@@ -1155,6 +1207,7 @@
   typ: [video]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, teilen]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -1179,6 +1232,7 @@
   typ: [video]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, teilen]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -1201,6 +1255,7 @@
   typ: [video]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, teilen, harmlos-gefaehrlich]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -1228,6 +1283,7 @@
   typ: [video]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, teilen, harmlos-gefaehrlich]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -1255,6 +1311,7 @@
   typ: [video]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, quelle-vertrauen, informieren-manipulieren, glauben]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -1281,6 +1338,7 @@
   typ: [video]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, teilen]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -1307,6 +1365,7 @@
   typ: [video]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, harmlos-gefaehrlich, informieren-manipulieren, sachlich-emotionalisierend]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -1333,6 +1392,7 @@
   typ: [video]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, journalismus-werbung]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -1357,6 +1417,7 @@
   typ: [video]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, lokal-global]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)
@@ -1383,6 +1444,7 @@
   typ: [video]
   echtheit: ki-generiert
   freigabe: true
+  status: methodensprint
   achsen: [echt-ki, echt-fake, glauben, teilen]
   quelle:
     name: eigene Erstellung (KI-Tool, OpenArt)

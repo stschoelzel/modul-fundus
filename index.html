@@ -473,7 +473,8 @@
       err.textContent = 'fundus-data.js fehlt oder wurde nicht gebaut. Siehe README ("Daten pflegen") - npm run build in build/ ausführen oder auf den Push der GitHub Action warten.';
       return;
     }
-    allData = window.FUNDUS_DATA;
+    // status ist ein interner Wert (siehe README) - deprecated taucht in der Übersicht nicht auf.
+    allData = window.FUNDUS_DATA.filter(d => d.status !== 'deprecated');
     init();
   }
 
