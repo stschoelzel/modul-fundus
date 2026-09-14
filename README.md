@@ -18,16 +18,16 @@ Fertig - kein Server, kein Node, kein npm nötig. `fundus-data.js` liegt bereits
 
 ## Daten pflegen / lokale Entwicklung
 
-Nur relevant, wenn du `fundus.yaml` bearbeitest:
+Nur relevant, wenn du `fundus.yaml` oder die Export-Vorlagen in `export-templates/` bearbeitest (siehe [Export-Vorlagen](#export-vorlagen)):
 
-- `fundus.yaml` ändern, committen, pushen (auf `main`) reicht. Eine GitHub Action baut `fundus-data.js` automatisch auf GitHubs Servern und committed sie zurück - lokal ist nichts zu installieren.
-- Falls du vor dem Push schon lokal die aktualisierte `fundus-data.js` sehen willst, ist das ein optionaler Zwischenschritt:
+- Ändern, committen, pushen (auf `main`) reicht. Eine GitHub Action baut `fundus-data.js` bzw. `export-templates-data.js` automatisch auf GitHubs Servern und committed sie zurück - lokal ist nichts zu installieren.
+- Falls du vor dem Push schon lokal das Ergebnis sehen willst, ist das ein optionaler Zwischenschritt:
   ```
   cd build
   npm install
-  npm run build
+  npm run build:all
   ```
-  Das schreibt `fundus-data.js` im Repo-Root neu. Kein Muss - die GitHub Action holt das nach dem Push ohnehin nach.
+  Das schreibt `fundus-data.js` und `export-templates-data.js` im Repo-Root neu (einzeln auch per `npm run build` bzw. `npm run build:templates`). Kein Muss - die GitHub Action holt das nach dem Push ohnehin nach.
 
 ---
 
@@ -368,5 +368,31 @@ Welches `typ`-Feld ermöglicht welche Module:
 | `meme` | Memix, Checkst du? |
 | `claim` | Source Hunter, Checkst du? |
 | `video` | Checkst du?, Deutungshoheit |
+
+---
+
+## Export-Vorlagen
+
+In `index.html` gibt es pro Item einen Export-Dialog (Klick auf die Zeile, dann "Export als..."). Oben zeigt er Vorlagen (aktuell zwei Test-Vorlagen "Indexkarte 1"/"Indexkarte 2") mit je einem JPG- und PDF-Button, die sofort exportieren. Darunter, eingeklappt unter "Weitere Optionen (Freestyle)", lässt sich die Feldauswahl/Größe/Format frei wählen - das deckt alles ab, was keine eigene Vorlage hat.
+
+**Wo Vorlagen liegen:** im Ordner `export-templates/`.
+
+- `templates.yaml` - Liste der Vorlagen (`id`, `label`, `size`: `auto`/`a4`/`a5`, `html`: Dateiname).
+- `<id>.html` - das Layout der Vorlage, reines HTML mit Platzhaltern.
+- `export-templates.css` - Styles, für alle Vorlagen gemeinsam.
+- `<id>-preview.png` (oder `.jpg`/`.jpeg`/`.svg`) - optionales Vorschaubild, erscheint beim Hover auf "Vorschau" im Export-Dialog. Fehlt es, zeigt der Dialog "kein Vorschaubild" statt des Hover-Links.
+
+**Platzhalter in den HTML-Dateien:** `{{id}}` sowie ein `{{key}}` pro Feld aus der [Feldübersicht](#feldübersicht) - `kontext`, `ueberschrift`, `einleitung`, `claim`, `faktcheck`, `bild`, `memeUrsprung`, `datum`, `lizenz`, `quelle2`, `kiModel`, `kiPrompt`, `achsen`. Für `bild` und `memeUrsprung` gibt es zusätzlich `{{bild_img}}`/`{{memeUrsprung_img}}` - wird zu einem `<img>`-Tag, falls eine Datei hinterlegt ist.
+
+Ein Feld, das ein Item nicht hat, muss die Vorlage nicht selbst abfangen: ein umschließendes Element mit `data-field="<key>"` wird beim Export automatisch entfernt, wenn sein `<p>` leer bleibt und kein `<img>` enthält. Beispiel aus `indexkarte1.html`:
+
+```html
+<div class="tpl-field" data-field="kontext">
+  <h4>Kontext</h4>
+  <p>{{kontext}}</p>
+</div>
+```
+
+Nach dem Bearbeiten: `npm run build:templates` in `build/` (oder committen/pushen, die GitHub Action holt das nach) - siehe [Daten pflegen](#daten-pflegen--lokale-entwicklung).
 
 

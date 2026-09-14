@@ -1,10 +1,11 @@
-name: Build fundus-data.js
+name: Build fundus-data.js & export-templates-data.js
 
 on:
   push:
     branches: [main]
     paths:
       - fundus.yaml
+      - export-templates/**
 
 jobs:
   build:
@@ -22,12 +23,12 @@ jobs:
         working-directory: build
         run: npm install
 
-      - name: Compile fundus.yaml -> fundus-data.js
+      - name: Compile fundus.yaml + export-templates/ -> *-data.js
         working-directory: build
-        run: npm run build
+        run: npm run build:all
 
-      - name: Commit fundus-data.js
+      - name: Commit generated data files
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "chore: rebuild fundus-data.js from fundus.yaml"
-          file_pattern: fundus-data.js
+          commit_message: "chore: rebuild fundus-data.js / export-templates-data.js"
+          file_pattern: fundus-data.js export-templates-data.js

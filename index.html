@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>m.o.d.u.l. Fundus</title>
   <script src="fundus-data.js"></script>
+  <script src="export-templates-data.js"></script>
   <style>
     :root {
       --black: #111111;
@@ -229,6 +230,30 @@
     }
     #export-create { background: var(--accent); }
 
+    .export-template-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .export-template-row .tpl-name { font-size: 0.8rem; font-weight: 700; flex: 1; }
+    .export-template-row button {
+      font-family: inherit; font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      padding: 0.3rem 0.6rem; border: 2px solid var(--black); background: var(--white); cursor: pointer;
+    }
+    .export-template-row .tpl-preview {
+      font-size: 0.7rem; color: var(--mid); text-decoration: underline dotted;
+    }
+    .export-template-row .tpl-preview-missing {
+      font-size: 0.7rem; color: #bbb; font-style: italic;
+    }
+
+    dialog#export-dialog summary {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+      color: var(--mid); cursor: pointer; margin-top: 1rem;
+    }
+
     #export-print-area { display: none; }
 
     dialog#lightbox {
@@ -413,21 +438,30 @@
 
 <dialog id="export-dialog">
   <h3 id="export-title">Export</h3>
-  <div id="export-fields"></div>
-  <fieldset>
-    <legend>Größe</legend>
-    <label><input type="radio" name="export-size" value="auto" checked> Auto</label>
-    <label><input type="radio" name="export-size" value="a4"> A4 quer</label>
-    <label><input type="radio" name="export-size" value="a5"> A5 quer</label>
-  </fieldset>
-  <fieldset>
-    <legend>Format</legend>
-    <label><input type="radio" name="export-format" value="pdf" checked> PDF</label>
-    <label><input type="radio" name="export-format" value="jpg"> JPG</label>
-  </fieldset>
+
+  <div id="export-templates"></div>
+
+  <details id="export-freestyle">
+    <summary>Weitere Optionen (Freestyle)</summary>
+    <div id="export-fields"></div>
+    <fieldset>
+      <legend>Größe</legend>
+      <label><input type="radio" name="export-size" value="auto" checked> Auto</label>
+      <label><input type="radio" name="export-size" value="a4"> A4 quer</label>
+      <label><input type="radio" name="export-size" value="a5"> A5 quer</label>
+    </fieldset>
+    <fieldset>
+      <legend>Format</legend>
+      <label><input type="radio" name="export-format" value="pdf" checked> PDF</label>
+      <label><input type="radio" name="export-format" value="jpg"> JPG</label>
+    </fieldset>
+    <div class="export-actions">
+      <button type="button" id="export-create">Erstellen</button>
+    </div>
+  </details>
+
   <div class="export-actions">
     <button type="button" id="export-cancel">Abbrechen</button>
-    <button type="button" id="export-create">Erstellen</button>
   </div>
 </dialog>
 
@@ -687,24 +721,24 @@
   function getExportableFields(item) {
     const fields = [];
 
-    if (item.kontext) fields.push({label: 'Kontext', val: item.kontext});
-    if (item.ueberschrift?.text) fields.push({label: 'Überschrift', val: item.ueberschrift.text});
-    if (item.einleitung?.text) fields.push({label: 'Einleitung', val: item.einleitung.text});
-    if (item.claim?.text) fields.push({label: 'Claim', val: item.claim.text});
-    if (item.claim?.bewertung) fields.push({label: 'Faktcheck', val: item.claim.bewertung});
-    if (item.bild?.beschreibung) fields.push({label: 'Bild', val: item.bild.beschreibung, thumb: item.bild.datei});
-    if (item.meme?.ursprung) fields.push({label: 'Meme-Ursprung', val: item.meme.ursprung, thumb: item.meme.datei});
-    if (item.quelle?.datum) fields.push({label: 'Datum', val: item.quelle.datum});
-    if (item.quelle?.lizenz) fields.push({label: 'Lizenz', val: item.quelle.lizenz});
+    if (item.kontext) fields.push({key: 'kontext', label: 'Kontext', val: item.kontext});
+    if (item.ueberschrift?.text) fields.push({key: 'ueberschrift', label: 'Überschrift', val: item.ueberschrift.text});
+    if (item.einleitung?.text) fields.push({key: 'einleitung', label: 'Einleitung', val: item.einleitung.text});
+    if (item.claim?.text) fields.push({key: 'claim', label: 'Claim', val: item.claim.text});
+    if (item.claim?.bewertung) fields.push({key: 'faktcheck', label: 'Faktcheck', val: item.claim.bewertung});
+    if (item.bild?.beschreibung) fields.push({key: 'bild', label: 'Bild', val: item.bild.beschreibung, thumb: item.bild.datei});
+    if (item.meme?.ursprung) fields.push({key: 'memeUrsprung', label: 'Meme-Ursprung', val: item.meme.ursprung, thumb: item.meme.datei});
+    if (item.quelle?.datum) fields.push({key: 'datum', label: 'Datum', val: item.quelle.datum});
+    if (item.quelle?.lizenz) fields.push({key: 'lizenz', label: 'Lizenz', val: item.quelle.lizenz});
     if (item.quelle2?.name || item.quelle2?.url) {
       const val = item.quelle2.url
         ? `<a href="${item.quelle2.url}" target="_blank">${item.quelle2.name || item.quelle2.url}</a>`
         : item.quelle2.name;
-      fields.push({label: 'Weitere Quelle', val});
+      fields.push({key: 'quelle2', label: 'Weitere Quelle', val});
     }
-    if (item.ki?.model) fields.push({label: 'KI-Modell', val: item.ki.model});
-    if (item.ki?.prompt) fields.push({label: 'KI-Prompt', val: item.ki.prompt});
-    if (item.achsen?.length) fields.push({label: 'Achsen', val: item.achsen.join(', ')});
+    if (item.ki?.model) fields.push({key: 'kiModel', label: 'KI-Modell', val: item.ki.model});
+    if (item.ki?.prompt) fields.push({key: 'kiPrompt', label: 'KI-Prompt', val: item.ki.prompt});
+    if (item.achsen?.length) fields.push({key: 'achsen', label: 'Achsen', val: item.achsen.join(', ')});
 
     return fields;
   }
@@ -754,6 +788,25 @@
   function openExportDialog(item) {
     exportItem = item;
     document.getElementById('export-title').textContent = `Export: ${item.id}`;
+
+    const tplBox = document.getElementById('export-templates');
+    tplBox.innerHTML = '';
+    (window.EXPORT_TEMPLATES || []).forEach(tpl => {
+      const row = document.createElement('div');
+      row.classList.add('export-template-row');
+      row.innerHTML = `<span class="tpl-name">${tpl.label}</span>
+        <button type="button" data-format="jpg">JPG</button>
+        <button type="button" data-format="pdf">PDF</button>
+        ${tpl.preview ? '<span class="tpl-preview">Vorschau</span>' : '<span class="tpl-preview-missing">kein Vorschaubild</span>'}`;
+      row.querySelectorAll('button').forEach(btn => {
+        btn.addEventListener('click', () => exportTemplate(tpl, btn.dataset.format));
+      });
+      // Vorschau ist ein normales Bild - dieselbe Hover-Box/Klick-zum-Vergroessern wie bei
+      // Medien-Thumbnails in der Tabelle (attachMediaPreview).
+      if (tpl.preview) attachMediaPreview(row.querySelector('.tpl-preview'), tpl.preview);
+      tplBox.appendChild(row);
+    });
+
     const fieldsBox = document.getElementById('export-fields');
     fieldsBox.innerHTML = '';
     getExportableFields(item).forEach((f, i) => {
@@ -772,17 +825,49 @@
     const checkedIdx = [...document.querySelectorAll('#export-fields input:checked')]
       .map(cb => Number(cb.dataset.fieldIdx));
     const fields = getExportableFields(exportItem).filter((_, i) => checkedIdx.includes(i));
-    exportDialog.close();
-    if (format === 'pdf') {
-      const cfg = PAGE_SIZES[size];
-      document.getElementById('export-print-area').innerHTML =
-        wrapExportHtml(renderExportBody(exportItem, fields), {width: cfg.width, height: cfg.height});
-      setPrintPageSize(size);
-      window.print();
-    } else {
-      exportAsJpg(exportItem, fields, size);
-    }
+    const cfg = PAGE_SIZES[size];
+    const html = wrapExportHtml(renderExportBody(exportItem, fields), cfg);
+    finishExport(html, size, format, `${exportItem.id}.jpg`);
   });
+
+  // Vorlagen (export-templates/*.html, kompiliert nach export-templates-data.js) exportieren
+  // sofort per Klick - kein Zwischenschritt wie bei "Erstellen".
+  function exportTemplate(tpl, format) {
+    const cfg = PAGE_SIZES[tpl.size];
+    const html = wrapTemplateHtml(renderTemplateBody(exportItem, tpl), cfg);
+    finishExport(html, tpl.size, format, `${exportItem.id}_${tpl.id}.jpg`);
+  }
+
+  // Ersetzt {{token}}-Platzhalter (siehe getExportContext) im Vorlagen-HTML durch die
+  // Item-Daten. Ein Feld-Wrapper mit data-field="..." wird entfernt, wenn sein <p> leer
+  // bleibt und kein <img> enthaelt - Vorlagen muessen also nicht pruefen, ob ein Feld existiert.
+  function renderTemplateBody(item, tpl) {
+    const ctx = getExportContext(item);
+    const substituted = tpl.html.replace(/\{\{(\w+)\}\}/g, (_, key) => ctx[key] ?? '');
+    const container = document.createElement('div');
+    container.innerHTML = substituted;
+    container.querySelectorAll('[data-field]').forEach(el => {
+      const p = el.querySelector('p');
+      const hasText = p && p.textContent.trim() !== '';
+      if (!hasText && !el.querySelector('img')) el.remove();
+    });
+    return container.innerHTML;
+  }
+
+  function getExportContext(item) {
+    const ctx = {id: item.id};
+    getExportableFields(item).forEach(f => {
+      ctx[f.key] = f.val;
+      if (f.thumb) ctx[f.key + '_img'] = `<img src="${f.thumb}" class="tpl-img">`;
+    });
+    return ctx;
+  }
+
+  function wrapTemplateHtml(bodyHtml, dims) {
+    const sizeCss = `width:${dims.width}px;` + (dims.height ? ` height:${dims.height}px;` : '');
+    const css = window.EXPORT_TEMPLATES_CSS || '';
+    return `<div xmlns="http://www.w3.org/1999/xhtml" class="tpl-page" style="position:relative; box-sizing:border-box; ${sizeCss}"><style>${css}</style>${bodyHtml}</div>`;
+  }
 
   // Seitengroessen in CSS-Referenzpixeln (96dpi) fuer A4/A5 quer; 'auto' hat nur eine
   // feste Breite, die Hoehe richtet sich nach dem Inhalt.
@@ -804,7 +889,20 @@
     styleEl.textContent = paper ? `@page { size: ${paper} landscape; margin: 12mm; }` : '';
   }
 
-  // Layout ist bewusst schlicht gehalten - Feinschliff folgt, sobald der Mechanismus steht.
+  // Von "Erstellen" (Freestyle) und den Template-Buttons gemeinsam genutzt: html ist bereits
+  // fertig aufgebautes, groessen-fertiges Markup (wrapExportHtml/wrapTemplateHtml).
+  async function finishExport(html, size, format, filename) {
+    exportDialog.close();
+    if (format === 'pdf') {
+      document.getElementById('export-print-area').innerHTML = html;
+      setPrintPageSize(size);
+      window.print();
+    } else {
+      const cfg = PAGE_SIZES[size];
+      await rasterizeToJpg(html, cfg.width, cfg.height, filename);
+    }
+  }
+
   // ID steht immer oben rechts in grau, unabhaengig von der Feldauswahl.
   function renderExportBody(item, fields) {
     let html = `<div style="position:absolute; top:1rem; right:1.5rem; color:#888; font-size:0.75rem; letter-spacing:0.05em;">${item.id}</div>`;
@@ -813,7 +911,6 @@
         <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; color:#555; margin-bottom:0.2rem;">${f.label}</div>
         <div style="font-size:0.85rem; line-height:1.5;">${f.val}</div>
         ${f.thumb ? `<img src="${f.thumb}" style="max-width:280px; max-height:280px; display:block; margin-top:0.4rem; border:2px solid #444;">` : ''}
-        ${f.thumbError ? `<div style="color:#c22; font-size:0.7rem; margin-top:0.3rem;">Bild konnte nicht eingebettet werden (lokaler Dateizugriff blockiert - index.html über einen lokalen Server statt per Doppelklick öffnen)</div>` : ''}
       </div>`;
     });
     return html;
@@ -825,10 +922,9 @@
     return `<div xmlns="http://www.w3.org/1999/xhtml" style="${base} position:relative; box-sizing:border-box; padding:2rem; ${sizeCss}">${bodyHtml}</div>`;
   }
 
-  // JPG-Export via SVG-foreignObject -> Canvas, ohne zusaetzliche Dependency.
   // ponytail: Bilder von fremden Domains (statt lokalem Fundus-Ordner) koennen den Canvas
-  // "tainten" (CORS) - toBlob() schlaegt dann fehl, abgefangen unten. Upgrade: crossOrigin-Proxy,
-  // falls absolute Bild-URLs von Fremd-Hosts haeufiger werden.
+  // "tainten" (CORS) bzw. unter file:// generell fehlschlagen - abgefangen in inlineImages/
+  // rasterizeToJpg unten. Upgrade: crossOrigin-Proxy, falls das haeufiger vorkommt.
   // Laedt ein Bild ueber ein normales <img> (funktioniert auch unter file://) und liefert es
   // als data:-URL zurueck, damit foreignObject es nicht nachladen muss.
   function toDataUrl(src) {
@@ -850,46 +946,63 @@
     });
   }
 
-  async function exportAsJpg(item, fields, size) {
-    const cfg = PAGE_SIZES[size];
-    // Bilder vorab einbetten - foreignObject laedt referenzierte <img>-Quellen nicht nach.
-    fields = await Promise.all(fields.map(async f => {
-      if (!f.thumb) return f;
-      try {
-        return {...f, thumb: await toDataUrl(f.thumb)};
-      } catch {
-        return {...f, thumb: null, thumbError: true};
-      }
-    }));
-    const body = renderExportBody(item, fields);
-    let height = cfg.height;
-    if (!height) {
-      const area = document.getElementById('export-print-area');
-      area.style.cssText = `display:block; position:fixed; left:-9999px; width:${cfg.width}px;`;
-      area.innerHTML = wrapExportHtml(body, {width: cfg.width});
-      height = area.scrollHeight;
-      area.style.cssText = '';
-    }
+  // Schreibt html in den (unsichtbaren) Druckbereich, um dessen natuerliche Hoehe zu messen -
+  // fuer Groesse "auto", wo keine feste Hoehe vorgegeben ist. html traegt seine Breite schon
+  // selbst (wrapExportHtml/wrapTemplateHtml).
+  function measureHeight(html) {
+    const area = document.getElementById('export-print-area');
+    area.style.cssText = 'display:block; position:fixed; left:-9999px;';
+    area.innerHTML = html;
+    const height = area.scrollHeight;
+    area.style.cssText = '';
+    return height;
+  }
 
-    const html = wrapExportHtml(body, {width: cfg.width, height});
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${cfg.width}" height="${height}">`
+  // Ersetzt alle <img src> im HTML-String durch data:-URLs (siehe toDataUrl) - foreignObject
+  // laedt referenzierte Bilder sonst nicht nach. Bilder, die nicht eingebettet werden koennen,
+  // werden durch einen sichtbaren Hinweis ersetzt statt den Export stillschweigend kaputtzumachen.
+  async function inlineImages(html) {
+    const area = document.getElementById('export-print-area');
+    area.style.cssText = 'display:block; position:fixed; left:-9999px;';
+    area.innerHTML = html;
+    for (const img of [...area.querySelectorAll('img')]) {
+      try {
+        img.src = await toDataUrl(img.getAttribute('src'));
+      } catch {
+        const note = document.createElement('div');
+        note.style.cssText = 'color:#c22; font-size:0.7rem;';
+        note.textContent = 'Bild konnte nicht eingebettet werden (lokaler Dateizugriff blockiert - index.html über einen lokalen Server statt per Doppelklick öffnen)';
+        img.replaceWith(note);
+      }
+    }
+    const result = area.innerHTML;
+    area.style.cssText = '';
+    return result;
+  }
+
+  // JPG-Export via SVG-foreignObject -> Canvas, ohne zusaetzliche Dependency.
+  async function rasterizeToJpg(rawHtml, width, height, filename) {
+    const html = await inlineImages(rawHtml);
+    if (!height) height = measureHeight(html);
+
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">`
       + `<foreignObject width="100%" height="100%">${html}</foreignObject></svg>`;
     const img = new Image();
     const url = URL.createObjectURL(new Blob([svg], {type: 'image/svg+xml;charset=utf-8'}));
     img.onload = () => {
       const canvas = document.createElement('canvas');
-      canvas.width = cfg.width;
+      canvas.width = width;
       canvas.height = height;
       const ctx = canvas.getContext('2d');
       ctx.fillStyle = '#fff';
-      ctx.fillRect(0, 0, cfg.width, height);
+      ctx.fillRect(0, 0, width, height);
       ctx.drawImage(img, 0, 0);
       URL.revokeObjectURL(url);
       try {
         canvas.toBlob(blob => {
           const a = document.createElement('a');
           a.href = URL.createObjectURL(blob);
-          a.download = `${item.id}.jpg`;
+          a.download = filename;
           a.click();
         }, 'image/jpeg', 0.92);
       } catch (err) {

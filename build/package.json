@@ -3,7 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "build": "node compile-fundus.js"
+    "build": "node compile-fundus.js",
+    "build:templates": "node compile-templates.js",
+    "build:all": "npm run build && npm run build:templates"
   },
   "devDependencies": {
     "js-yaml": "^4.1.0"
