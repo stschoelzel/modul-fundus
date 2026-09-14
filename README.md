@@ -35,12 +35,12 @@ Nur relevant, wenn du `fundus.yaml` bearbeitest:
 
 | Feld | Typ | Pflicht | Beschreibung |
 |---|---|---|---|
-| `id` | string | ja | eindeutige ID, z.B. `Fundud001` |
+| `id` | string | ja | eindeutige ID, z.B. `fundus001` |
 | `thema` | string | ja | Oberthema (z.B. "Klimawandel", "Migration", "KI") |
 | `typ` | list | ja | Welche Felder vorhanden sind; Werte: `bild`, `ueberschrift`, `einleitung`, `artikel`, `meme`, `claim`, `video` |
 | `echtheit` | enum | ja | `echt` / `ki-generiert` / `manipuliert` / `fake` |
 | `freigabe` | bool | ja | Darf das Item mit Jugendlichen verwendet werden? |
-| `achsen` | list | nein | Empfohlene Skalen-Achsen für "Checkst du?" (nur Name, kein Wert) |
+| `achsen` | list | nein | Empfohlene Skalen-Achsen für "Checkst du?" (nur Slug, kein Wert) |
 | `quelle.name` | string | nein | Name der Quelle (z.B. "taz", "Bild", "AFP") |
 | `quelle.url` | string | nein | URL zum Originalartikel |
 | `quelle.datum` | date | nein | Erscheinungsdatum (ISO: YYYY-MM-DD) |
@@ -69,13 +69,35 @@ Nur relevant, wenn du `fundus.yaml` bearbeitest:
 
 Nur Empfehlung welche Achsen zu diesem Item passen; Werte kommen ausschließlich aus dem Spiel.
 
+Die Achsen sind Skalen mit zwei Polen. **Der zuerst genannte Pol steht links**, der zweite rechts.
+
+Als Slug wird eine feste Kurzform notiert: kleingeschrieben, ohne Umlaute, mit Bindestrich. Nur diese Slugs gehören ins `achsen`-Feld - die ausgeschriebene Bezeichnung steht nur hier in der Tabelle.
+
 Vordefinierte Achsen:
 
-- `echt-fake` - Wie echt wirkt das Material?
-- `harmlos-gefaehrlich` - Wie gefährlich ist die Fehlinformation?
-- `meinung-fakt` - Handelt es sich um eine Meinung oder einen Fakt?
-- `lokal-global` - Wie weit trägt das Thema?
-- `alt-aktuell` - Wie zeitgebunden ist das Material?
+| Slug | linker Pol | rechter Pol | Gruppe |
+|---|---|---|---|
+| `echt-fake` | echt | fake | Echtheit & Herkunft |
+| `echt-ki` | echt | KI | Echtheit & Herkunft |
+| `bearbeitung` | unbearbeitet | stark bearbeitet | Echtheit & Herkunft |
+| `informieren-manipulieren` | informieren | manipulieren | Absicht |
+| `satire-ernst` | Satire | ernst gemeint | Absicht |
+| `journalismus-werbung` | Journalismus | Werbung | Absicht |
+| `sachlich-emotionalisierend` | sachlich | emotionalisierend | Wirkung |
+| `nobait-clickbait` | No-bait | Clickbait | Wirkung |
+| `harmlos-gefaehrlich` | harmlos | gefährlich | Wirkung |
+| `aufklaerend-irrefuehrend` | aufklärend | irreführend | Wirkung |
+| `kritisch-hetzerisch` | kritisch | hetzerisch | Wirkung |
+| `teilen` | würde ich sofort teilen | würde ich nie teilen | Handlungsebene |
+| `glauben` | glaub ich sofort | glaub ich nie | Handlungsebene |
+| `quelle-vertrauen` | vertrauenswürdige Quelle | zweifelhafte Quelle | Quelle & Einordnung |
+| `meinung-fakt` | Meinung | Fakt | Quelle & Einordnung |
+| `lokal-global` | lokal | global | Quelle & Einordnung |
+| `alt-aktuell` | alt | aktuell | Quelle & Einordnung |
+
+`bearbeitung`, `kritisch-hetzerisch` und `alt-aktuell` sind vorgesehen, haben aber noch kein Material.
+
+Ein Item kann mehrere Achsen tragen - je nach Modul und Gruppe ist eine andere davon die interessante.
 
 ---
 
@@ -147,7 +169,7 @@ wird beim Einlesen zu einem durchgehenden Satz, nicht zu zwei Zeilen.
   typ: [bild, ueberschrift, einleitung, artikel]
   echtheit: echt
   freigabe: true
-  achsen: [echt-fake, meinung-fakt]
+  achsen: [echt-fake, meinung-fakt, sachlich-emotionalisierend, quelle-vertrauen, informieren-manipulieren, journalismus-werbung]
   quelle:
     name: taz
     url: https://taz.de/beispielartikel
@@ -175,7 +197,7 @@ wird beim Einlesen zu einem durchgehenden Satz, nicht zu zwei Zeilen.
   typ: [bild, ueberschrift]
   echtheit: manipuliert
   freigabe: true
-  achsen: [echt-fake, harmlos-gefaehrlich]
+  achsen: [echt-fake, harmlos-gefaehrlich, informieren-manipulieren, aufklaerend-irrefuehrend, quelle-vertrauen, nobait-clickbait, teilen]
   quelle:
     name: unbekannt (Social Media)
     url: ~
@@ -196,7 +218,7 @@ wird beim Einlesen zu einem durchgehenden Satz, nicht zu zwei Zeilen.
   typ: [claim]
   echtheit: fake
   freigabe: true
-  achsen: [meinung-fakt, harmlos-gefaehrlich]
+  achsen: [meinung-fakt, harmlos-gefaehrlich, glauben, informieren-manipulieren, quelle-vertrauen, aufklaerend-irrefuehrend, teilen]
   quelle:
     name: Telegram-Kanal (anonym)
     url: ~
@@ -216,7 +238,7 @@ wird beim Einlesen zu einem durchgehenden Satz, nicht zu zwei Zeilen.
   typ: [meme]
   echtheit: ki-generiert
   freigabe: true
-  achsen: [echt-fake, harmlos-gefaehrlich]
+  achsen: [echt-fake, harmlos-gefaehrlich, satire-ernst, teilen, informieren-manipulieren]
   quelle:
     name: eigene Erstellung (KI-Tool)
     url: ~
@@ -241,7 +263,7 @@ wird beim Einlesen zu einem durchgehenden Satz, nicht zu zwei Zeilen.
   typ: [ueberschrift, artikel]
   echtheit: echt
   freigabe: true
-  achsen: [meinung-fakt, harmlos-gefaehrlich]
+  achsen: [meinung-fakt, harmlos-gefaehrlich, nobait-clickbait, sachlich-emotionalisierend, quelle-vertrauen, aufklaerend-irrefuehrend]
   quelle:
     name: heute.de
     url: https://www.heute.de/beispiel/loeffelweise-plastik-im-hirn
