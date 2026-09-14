@@ -231,6 +231,20 @@
 
     #export-print-area { display: none; }
 
+    dialog#lightbox {
+      border: none;
+      padding: 0;
+      margin: 0;
+      max-width: 100vw;
+      max-height: 100vh;
+      width: 100vw;
+      height: 100vh;
+      background: transparent;
+    }
+    dialog#lightbox[open] { display: flex; align-items: center; justify-content: center; }
+    dialog#lightbox::backdrop { background: rgba(0, 0, 0, 0.9); }
+    dialog#lightbox img { max-width: 100vw; max-height: 100vh; cursor: zoom-out; }
+
     @media print {
       body > *:not(#export-print-area) { display: none !important; }
       #export-print-area { display: block !important; }
@@ -401,6 +415,12 @@
   <h3 id="export-title">Export</h3>
   <div id="export-fields"></div>
   <fieldset>
+    <legend>Größe</legend>
+    <label><input type="radio" name="export-size" value="auto" checked> Auto</label>
+    <label><input type="radio" name="export-size" value="a4"> A4 quer</label>
+    <label><input type="radio" name="export-size" value="a5"> A5 quer</label>
+  </fieldset>
+  <fieldset>
     <legend>Format</legend>
     <label><input type="radio" name="export-format" value="pdf" checked> PDF</label>
     <label><input type="radio" name="export-format" value="jpg"> JPG</label>
@@ -412,6 +432,10 @@
 </dialog>
 
 <div id="export-print-area"></div>
+
+<dialog id="lightbox">
+  <img id="lightbox-img" src="" alt="">
+</dialog>
 
 <script>
   const ALL_TYPEN = ['bild', 'ueberschrift', 'einleitung', 'artikel', 'meme', 'claim', 'video'];
@@ -461,9 +485,16 @@
     el.addEventListener('mouseleave', hidePreview);
     el.addEventListener('click', e => {
       e.stopPropagation();
-      window.open(url, '_blank');
+      openLightbox(url);
     });
   }
+
+  function openLightbox(url) {
+    document.getElementById('lightbox-img').src = url;
+    document.getElementById('lightbox').showModal();
+  }
+
+  document.getElementById('lightbox').addEventListener('click', function() { this.close(); });
 
   function loadFundus() {
     if (!Array.isArray(window.FUNDUS_DATA) || window.FUNDUS_DATA.length === 0) {
@@ -661,7 +692,7 @@
     if (item.einleitung?.text) fields.push({label: 'Einleitung', val: item.einleitung.text});
     if (item.claim?.text) fields.push({label: 'Claim', val: item.claim.text});
     if (item.claim?.bewertung) fields.push({label: 'Faktcheck', val: item.claim.bewertung});
-    if (item.bild?.beschreibung) fields.push({label: 'Bild', val: item.bild.beschreibung + (item.bild.datei ? ` [${item.bild.datei}]` : ''), thumb: item.bild.datei});
+    if (item.bild?.beschreibung) fields.push({label: 'Bild', val: item.bild.beschreibung, thumb: item.bild.datei});
     if (item.meme?.ursprung) fields.push({label: 'Meme-Ursprung', val: item.meme.ursprung, thumb: item.meme.datei});
     if (item.quelle?.datum) fields.push({label: 'Datum', val: item.quelle.datum});
     if (item.quelle?.lizenz) fields.push({label: 'Lizenz', val: item.quelle.lizenz});
@@ -689,7 +720,7 @@
         const img = document.createElement('img');
         img.src = f.thumb;
         img.style.cssText = 'max-width:160px; max-height:160px; display:block; margin-top:0.4rem; cursor:pointer; border:2px solid #444;';
-        img.addEventListener('click', e => { e.stopPropagation(); window.open(f.thumb, '_blank'); });
+        img.addEventListener('click', e => { e.stopPropagation(); openLightbox(f.thumb); });
         div.appendChild(img);
       }
       box.appendChild(div);
@@ -737,63 +768,133 @@
 
   document.getElementById('export-create').addEventListener('click', () => {
     const format = document.querySelector('input[name="export-format"]:checked').value;
+    const size = document.querySelector('input[name="export-size"]:checked').value;
     const checkedIdx = [...document.querySelectorAll('#export-fields input:checked')]
       .map(cb => Number(cb.dataset.fieldIdx));
     const fields = getExportableFields(exportItem).filter((_, i) => checkedIdx.includes(i));
     exportDialog.close();
     if (format === 'pdf') {
-      document.getElementById('export-print-area').innerHTML = renderExportHtml(exportItem, fields);
+      const cfg = PAGE_SIZES[size];
+      document.getElementById('export-print-area').innerHTML =
+        wrapExportHtml(renderExportBody(exportItem, fields), {width: cfg.width, height: cfg.height});
+      setPrintPageSize(size);
       window.print();
     } else {
-      exportAsJpg(exportItem, fields);
+      exportAsJpg(exportItem, fields, size);
     }
   });
 
+  // Seitengroessen in CSS-Referenzpixeln (96dpi) fuer A4/A5 quer; 'auto' hat nur eine
+  // feste Breite, die Hoehe richtet sich nach dem Inhalt.
+  const PAGE_SIZES = {
+    auto: {width: 700},
+    a4:   {width: 1122, height: 794},
+    a5:   {width: 794,  height: 559},
+  };
+  const PRINT_PAGE = {a4: 'A4', a5: 'A5'};
+
+  function setPrintPageSize(size) {
+    let styleEl = document.getElementById('export-page-style');
+    if (!styleEl) {
+      styleEl = document.createElement('style');
+      styleEl.id = 'export-page-style';
+      document.head.appendChild(styleEl);
+    }
+    const paper = PRINT_PAGE[size];
+    styleEl.textContent = paper ? `@page { size: ${paper} landscape; margin: 12mm; }` : '';
+  }
+
   // Layout ist bewusst schlicht gehalten - Feinschliff folgt, sobald der Mechanismus steht.
-  function renderExportHtml(item, fields) {
-    const base = 'font-family:\'IBM Plex Mono\',\'Courier New\',monospace; color:#000; background:#fff;';
-    let html = `<div xmlns="http://www.w3.org/1999/xhtml" style="${base} padding:2rem; box-sizing:border-box;">`;
-    html += `<h2 style="margin:0 0 1rem; font-size:1.2rem;">${item.id} - ${item.thema || ''}</h2>`;
+  // ID steht immer oben rechts in grau, unabhaengig von der Feldauswahl.
+  function renderExportBody(item, fields) {
+    let html = `<div style="position:absolute; top:1rem; right:1.5rem; color:#888; font-size:0.75rem; letter-spacing:0.05em;">${item.id}</div>`;
     fields.forEach(f => {
-      html += `<div style="margin-bottom:0.9rem;">
+      html += `<div style="margin-bottom:0.9rem; max-width:85%;">
         <div style="font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; color:#555; margin-bottom:0.2rem;">${f.label}</div>
         <div style="font-size:0.85rem; line-height:1.5;">${f.val}</div>
+        ${f.thumb ? `<img src="${f.thumb}" style="max-width:280px; max-height:280px; display:block; margin-top:0.4rem; border:2px solid #444;">` : ''}
+        ${f.thumbError ? `<div style="color:#c22; font-size:0.7rem; margin-top:0.3rem;">Bild konnte nicht eingebettet werden (lokaler Dateizugriff blockiert - index.html über einen lokalen Server statt per Doppelklick öffnen)</div>` : ''}
       </div>`;
     });
-    html += `</div>`;
     return html;
   }
 
-  // JPG-Export via SVG-foreignObject -> Canvas, ohne zusaetzliche Dependency.
-  // ponytail: rasterisiert nur Text (keine Thumbnails), globaler Weg statt pro Feld optimiert.
-  function exportAsJpg(item, fields) {
-    const width = 700;
-    const html = renderExportHtml(item, fields);
-    const area = document.getElementById('export-print-area');
-    area.style.cssText = `display:block; position:fixed; left:-9999px; width:${width}px;`;
-    area.innerHTML = html;
-    const height = area.scrollHeight;
-    area.style.cssText = '';
+  function wrapExportHtml(bodyHtml, dims) {
+    const base = 'font-family:\'IBM Plex Mono\',\'Courier New\',monospace; color:#000; background:#fff;';
+    const sizeCss = `width:${dims.width}px;` + (dims.height ? ` height:${dims.height}px;` : '');
+    return `<div xmlns="http://www.w3.org/1999/xhtml" style="${base} position:relative; box-sizing:border-box; padding:2rem; ${sizeCss}">${bodyHtml}</div>`;
+  }
 
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">`
+  // JPG-Export via SVG-foreignObject -> Canvas, ohne zusaetzliche Dependency.
+  // ponytail: Bilder von fremden Domains (statt lokalem Fundus-Ordner) koennen den Canvas
+  // "tainten" (CORS) - toBlob() schlaegt dann fehl, abgefangen unten. Upgrade: crossOrigin-Proxy,
+  // falls absolute Bild-URLs von Fremd-Hosts haeufiger werden.
+  // Laedt ein Bild ueber ein normales <img> (funktioniert auch unter file://) und liefert es
+  // als data:-URL zurueck, damit foreignObject es nicht nachladen muss.
+  function toDataUrl(src) {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => {
+        const c = document.createElement('canvas');
+        c.width = img.naturalWidth;
+        c.height = img.naturalHeight;
+        c.getContext('2d').drawImage(img, 0, 0);
+        try {
+          resolve(c.toDataURL('image/jpeg', 0.9));
+        } catch (err) {
+          reject(err);
+        }
+      };
+      img.onerror = reject;
+      img.src = src;
+    });
+  }
+
+  async function exportAsJpg(item, fields, size) {
+    const cfg = PAGE_SIZES[size];
+    // Bilder vorab einbetten - foreignObject laedt referenzierte <img>-Quellen nicht nach.
+    fields = await Promise.all(fields.map(async f => {
+      if (!f.thumb) return f;
+      try {
+        return {...f, thumb: await toDataUrl(f.thumb)};
+      } catch {
+        return {...f, thumb: null, thumbError: true};
+      }
+    }));
+    const body = renderExportBody(item, fields);
+    let height = cfg.height;
+    if (!height) {
+      const area = document.getElementById('export-print-area');
+      area.style.cssText = `display:block; position:fixed; left:-9999px; width:${cfg.width}px;`;
+      area.innerHTML = wrapExportHtml(body, {width: cfg.width});
+      height = area.scrollHeight;
+      area.style.cssText = '';
+    }
+
+    const html = wrapExportHtml(body, {width: cfg.width, height});
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${cfg.width}" height="${height}">`
       + `<foreignObject width="100%" height="100%">${html}</foreignObject></svg>`;
     const img = new Image();
     const url = URL.createObjectURL(new Blob([svg], {type: 'image/svg+xml;charset=utf-8'}));
     img.onload = () => {
       const canvas = document.createElement('canvas');
-      canvas.width = width;
+      canvas.width = cfg.width;
       canvas.height = height;
       const ctx = canvas.getContext('2d');
       ctx.fillStyle = '#fff';
-      ctx.fillRect(0, 0, width, height);
+      ctx.fillRect(0, 0, cfg.width, height);
       ctx.drawImage(img, 0, 0);
       URL.revokeObjectURL(url);
-      canvas.toBlob(blob => {
-        const a = document.createElement('a');
-        a.href = URL.createObjectURL(blob);
-        a.download = `${item.id}.jpg`;
-        a.click();
-      }, 'image/jpeg', 0.92);
+      try {
+        canvas.toBlob(blob => {
+          const a = document.createElement('a');
+          a.href = URL.createObjectURL(blob);
+          a.download = `${item.id}.jpg`;
+          a.click();
+        }, 'image/jpeg', 0.92);
+      } catch (err) {
+        alert('JPG-Export fehlgeschlagen: ein eingebundenes Bild stammt von einer fremden Domain und blockiert die Rasterung.');
+      }
     };
     img.onerror = () => alert('JPG-Export fehlgeschlagen.');
     img.src = url;
