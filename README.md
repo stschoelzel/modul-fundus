@@ -56,6 +56,8 @@ Nur relevant, wenn du `fundus.yaml` oder die Export-Vorlagen in `export-template
 | `artikel.text` | string | nein | Volltext oder Zusammenfassung des echten Artikels |
 | `meme.datei` | string | nein | Dateiname des Meme-Bildes. Kann ein relativer Pfad im Fundus-Ordner ODER eine absolute URL sein, falls das Bild nur verlinkt werden darf. |
 | `meme.ursprung` | string | nein | Wo das Meme zuerst auftauchte / Verbreitungskontext |
+| `video.datei` | string | nein | Dateiname im Video-Ordner, z.B. `video/fundus063.mp4`. Kann ein relativer Pfad im Fundus-Ordner ODER eine absolute URL sein, falls das Video nur verlinkt werden darf. |
+| `video.beschreibung` | string | nein | Kurze Beschreibung des Videoinhalts |
 | `claim.text` | string | nein | Zu prüfende Aussage (für Source Hunter) |
 | `claim.bewertung` | string | nein | Faktencheckergebnis + Quelle |
 | `ki.model` | string | nein* | Verwendetes KI-Tool, z.B. `Midjourney v6`, `ChatGPT-4o`, `Sora` |
@@ -104,8 +106,8 @@ Vordefinierte Achsen:
 | `harmlos-gefaehrlich` | harmlos | gefährlich | Wirkung |
 | `aufklaerend-irrefuehrend` | aufklärend | irreführend | Wirkung |
 | `kritisch-hetzerisch` | kritisch | hetzerisch | Wirkung |
-| `teilen` | würde ich sofort teilen | würde ich nie teilen | Handlungsebene |
-| `glauben` | glaub ich sofort | glaub ich nie | Handlungsebene |
+| `wuerde-ich-sofort-teilen-wuerde-ich-nie-teilen` | würde ich sofort teilen | würde ich nie teilen | Handlungsebene |
+| `glaube-ich-sofort-glaube-ich-nie` | glaub ich sofort | glaub ich nie | Handlungsebene |
 | `quelle-vertrauen` | vertrauenswürdige Quelle | zweifelhafte Quelle | Quelle & Einordnung |
 | `meinung-fakt` | Meinung | Fakt | Quelle & Einordnung |
 | `lokal-global` | lokal | global | Quelle & Einordnung |
@@ -215,7 +217,7 @@ wird beim Einlesen zu einem durchgehenden Satz, nicht zu zwei Zeilen.
   echtheit: manipuliert
   freigabe: true
   status: deprecated
-  achsen: [echt-fake, harmlos-gefaehrlich, informieren-manipulieren, aufklaerend-irrefuehrend, quelle-vertrauen, nobait-clickbait, teilen]
+  achsen: [echt-fake, harmlos-gefaehrlich, informieren-manipulieren, aufklaerend-irrefuehrend, quelle-vertrauen, nobait-clickbait, wuerde-ich-sofort-teilen-wuerde-ich-nie-teilen]
   quelle:
     name: unbekannt (Social Media)
     url: ~
@@ -237,7 +239,7 @@ wird beim Einlesen zu einem durchgehenden Satz, nicht zu zwei Zeilen.
   echtheit: fake
   freigabe: true
   status: deprecated
-  achsen: [meinung-fakt, harmlos-gefaehrlich, glauben, informieren-manipulieren, quelle-vertrauen, aufklaerend-irrefuehrend, teilen]
+  achsen: [meinung-fakt, harmlos-gefaehrlich, glaube-ich-sofort-glaube-ich-nie, informieren-manipulieren, quelle-vertrauen, aufklaerend-irrefuehrend, wuerde-ich-sofort-teilen-wuerde-ich-nie-teilen]
   quelle:
     name: Telegram-Kanal (anonym)
     url: ~
@@ -258,7 +260,7 @@ wird beim Einlesen zu einem durchgehenden Satz, nicht zu zwei Zeilen.
   echtheit: ki-generiert
   freigabe: true
   status: deprecated
-  achsen: [echt-fake, harmlos-gefaehrlich, satire-ernst, teilen, informieren-manipulieren]
+  achsen: [echt-fake, harmlos-gefaehrlich, satire-ernst, wuerde-ich-sofort-teilen-wuerde-ich-nie-teilen, informieren-manipulieren]
   quelle:
     name: eigene Erstellung (KI-Tool)
     url: ~
