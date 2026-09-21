@@ -6,6 +6,7 @@
   <title>m.o.d.u.l. Fundus</title>
   <script src="fundus-data.js"></script>
   <script src="export-templates-data.js"></script>
+  <script src="vendor/html2canvas.min.js"></script>
   <style>
     :root {
       --black: #111111;
@@ -901,6 +902,8 @@
   };
   const PRINT_PAGE = {a4: 'A4', a5: 'A5'};
 
+  // PAGE_SIZES.a4/a5 sind bereits die exakten physischen Seitenmasse (96dpi) - margin:12mm
+  // obendrauf wuerde den Inhalt ueber eine zweite Seite laufen lassen, darum margin:0.
   function setPrintPageSize(size) {
     let styleEl = document.getElementById('export-page-style');
     if (!styleEl) {
@@ -909,7 +912,17 @@
       document.head.appendChild(styleEl);
     }
     const paper = PRINT_PAGE[size];
-    styleEl.textContent = paper ? `@page { size: ${paper} landscape; margin: 12mm; }` : '';
+    styleEl.textContent = paper ? `@page { size: ${paper} landscape; margin: 0; }` : '';
+  }
+
+  // Wartet, bis alle <img> in area geladen (oder endgueltig fehlgeschlagen) sind - ohne das
+  // wuerde window.print() bei externen Bildern oft feuern, bevor der Netzwerk-Request fertig ist,
+  // und die PDF-Vorschau zeigt eine Luecke statt des Bilds.
+  function waitForImages(area) {
+    const imgs = [...area.querySelectorAll('img')];
+    return Promise.all(imgs.map(img => img.complete ? Promise.resolve() : new Promise(res => {
+      img.onload = img.onerror = res;
+    })));
   }
 
   // Von "Erstellen" (Freestyle) und den Template-Buttons gemeinsam genutzt: html ist bereits
@@ -917,7 +930,9 @@
   async function finishExport(html, size, format, filename) {
     exportDialog.close();
     if (format === 'pdf') {
-      document.getElementById('export-print-area').innerHTML = html;
+      const area = document.getElementById('export-print-area');
+      area.innerHTML = html;
+      await waitForImages(area);
       setPrintPageSize(size);
       window.print();
     } else {
@@ -945,14 +960,12 @@
     return `<div xmlns="http://www.w3.org/1999/xhtml" style="${base} position:relative; box-sizing:border-box; padding:2rem; ${sizeCss}">${bodyHtml}</div>`;
   }
 
-  // ponytail: Bilder von fremden Domains (statt lokalem Fundus-Ordner) koennen den Canvas
-  // "tainten" (CORS) bzw. unter file:// generell fehlschlagen - abgefangen in inlineImages/
-  // rasterizeToJpg unten. Upgrade: crossOrigin-Proxy, falls das haeufiger vorkommt.
-  // Laedt ein Bild ueber ein normales <img> (funktioniert auch unter file://) und liefert es
-  // als data:-URL zurueck, damit foreignObject es nicht nachladen muss.
+  // Laedt ein Bild ueber ein normales <img> und liefert es als data:-URL zurueck. Bilder von
+  // fremden Domains ohne CORS-Freigabe koennen dabei scheitern - wird in embedImages() abgefangen.
   function toDataUrl(src) {
     return new Promise((resolve, reject) => {
       const img = new Image();
+      img.crossOrigin = 'anonymous';
       img.onload = () => {
         const c = document.createElement('canvas');
         c.width = img.naturalWidth;
@@ -969,71 +982,47 @@
     });
   }
 
-  // Schreibt html in den (unsichtbaren) Druckbereich, um dessen natuerliche Hoehe zu messen -
-  // fuer Groesse "auto", wo keine feste Hoehe vorgegeben ist. html traegt seine Breite schon
-  // selbst (wrapExportHtml/wrapTemplateHtml).
-  function measureHeight(html) {
-    const area = document.getElementById('export-print-area');
-    area.style.cssText = 'display:block; position:fixed; left:-9999px;';
-    area.innerHTML = html;
-    const height = area.scrollHeight;
-    area.style.cssText = '';
-    return height;
-  }
-
-  // Ersetzt alle <img src> im HTML-String durch data:-URLs (siehe toDataUrl) - foreignObject
-  // laedt referenzierte Bilder sonst nicht nach. Bilder, die nicht eingebettet werden koennen,
-  // werden durch einen sichtbaren Hinweis ersetzt statt den Export stillschweigend kaputtzumachen.
-  async function inlineImages(html) {
-    const area = document.getElementById('export-print-area');
-    area.style.cssText = 'display:block; position:fixed; left:-9999px;';
-    area.innerHTML = html;
+  // Ersetzt img.src durch data:-URLs (siehe toDataUrl), direkt im uebergebenen Live-DOM-Element.
+  // Bilder, die nicht eingebettet werden koennen, werden durch einen sichtbaren Hinweis ersetzt
+  // statt den Export stillschweigend (oder ganz) kaputtzumachen.
+  async function embedImages(area) {
     for (const img of [...area.querySelectorAll('img')]) {
       try {
         img.src = await toDataUrl(img.getAttribute('src'));
       } catch {
         const note = document.createElement('div');
         note.style.cssText = 'color:#c22; font-size:0.7rem;';
-        note.textContent = 'Bild konnte nicht eingebettet werden (lokaler Dateizugriff blockiert - index.html über einen lokalen Server statt per Doppelklick öffnen)';
+        note.textContent = 'Bild konnte nicht eingebettet werden (Datei fehlt oder fremde Domain ohne CORS-Freigabe)';
         img.replaceWith(note);
       }
     }
-    const result = area.innerHTML;
-    area.style.cssText = '';
-    return result;
   }
 
-  // JPG-Export via SVG-foreignObject -> Canvas, ohne zusaetzliche Dependency.
+  // JPG-Export via html2canvas (vendor/html2canvas.min.js) - zeichnet das DOM direkt auf einen
+  // Canvas statt ueber SVG-foreignObject zu gehen, das Chromium fuer toBlob()/toDataURL() als
+  // "tainted" behandelt, unabhaengig vom Bildinhalt.
   async function rasterizeToJpg(rawHtml, width, height, filename) {
-    const html = await inlineImages(rawHtml);
-    if (!height) height = measureHeight(html);
-
-    const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">`
-      + `<foreignObject width="100%" height="100%">${html}</foreignObject></svg>`;
-    const img = new Image();
-    const url = URL.createObjectURL(new Blob([svg], {type: 'image/svg+xml;charset=utf-8'}));
-    img.onload = () => {
-      const canvas = document.createElement('canvas');
-      canvas.width = width;
-      canvas.height = height;
-      const ctx = canvas.getContext('2d');
-      ctx.fillStyle = '#fff';
-      ctx.fillRect(0, 0, width, height);
-      ctx.drawImage(img, 0, 0);
-      URL.revokeObjectURL(url);
-      try {
-        canvas.toBlob(blob => {
-          const a = document.createElement('a');
-          a.href = URL.createObjectURL(blob);
-          a.download = filename;
-          a.click();
-        }, 'image/jpeg', 0.92);
-      } catch (err) {
-        alert('JPG-Export fehlgeschlagen: ein eingebundenes Bild stammt von einer fremden Domain und blockiert die Rasterung.');
-      }
-    };
-    img.onerror = () => alert('JPG-Export fehlgeschlagen.');
-    img.src = url;
+    const area = document.getElementById('export-print-area');
+    area.style.cssText = 'display:block; position:fixed; left:-9999px; top:0;';
+    area.innerHTML = rawHtml;
+    await embedImages(area);
+    try {
+      const canvas = await html2canvas(area, {
+        backgroundColor: '#ffffff',
+        useCORS: true,
+        width,
+        height: height || undefined,
+      });
+      const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', 0.92));
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = filename;
+      a.click();
+    } catch (err) {
+      alert('JPG-Export fehlgeschlagen: ' + err.message);
+    } finally {
+      area.style.cssText = '';
+    }
   }
 
   function buildAchsen() {

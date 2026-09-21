@@ -17,3 +17,8 @@
   label: Indexkarte 2
   size: auto
   html: indexkarte2.html
+
+- id: impulskarte
+  label: Impulskarte
+  size: a4
+  html: impulskarte.html
