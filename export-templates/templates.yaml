@@ -7,16 +7,10 @@
 #
 # Ein Vorschaubild ist optional: legt eine Datei <id>-preview.png (oder .jpg/.jpeg/.svg)
 # in diesen Ordner, wird beim naechsten Build automatisch gefunden - kein Eintrag hier noetig.
-
-- id: indexkarte1
-  label: Indexkarte 1
-  size: auto
-  html: indexkarte1.html
-
-- id: indexkarte2
-  label: Indexkarte 2
-  size: auto
-  html: indexkarte2.html
+#
+# Neue Vorlage bauen: template-template.html in diesem Ordner kopieren/umbenennen (nicht
+# selbst hier eintragen, dient nur als kommentierte Vorlage fuer die Vorlage) und hier
+# referenzieren.
 
 - id: impulskarte
   label: Impulskarte

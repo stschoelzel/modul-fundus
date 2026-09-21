@@ -1,0 +1,162 @@
+<!--
+  TEMPLATE-TEMPLATE - Ausgangspunkt fuer eine neue Export-Vorlage.
+
+  Wird NICHT in templates.yaml eingetragen (taucht sonst als echte, kaputte Vorlage im
+  Export-Dialog auf) - stattdessen kopieren, umbenennen (Datei + <div class="..."> unten
+  auf den neuen Namen anpassen) und die Kopie in templates.yaml eintragen.
+
+  Ablauf beim Export (siehe index.html, renderTemplateBody/getExportContext):
+  1. index.html baut aus dem Item ein Kontext-Objekt (ctx) mit allen Feldern, die das Item
+     tatsaechlich hat (siehe getExportableFields).
+  2. Jedes {{platzhalter}} hier in der Datei wird 1:1 durch ctx[platzhalter] ersetzt (regex
+     {{\w+}}) - fehlt das Feld beim Item, wird der Platzhalter zu einem leeren String.
+  3. Jeder Wrapper mit data-field="xyz" wird automatisch KOMPLETT entfernt, wenn sein <p>
+     leer bleibt UND kein <img> enthaelt - eine Vorlage muss also nicht selbst pruefen, ob
+     ein Feld existiert. Der data-field-Name muss zum Platzhalter-Namen passen (ohne "_img").
+  4. Das Ergebnis landet in einem gemeinsamen Container ".tpl-page", den index.html automatisch
+     drumherum baut (Breite/Hoehe je nach "size" in templates.yaml, siehe PAGE_SIZES dort) -
+     das hier in der Datei ist nur der INHALT davon.
+-->
+
+<!--
+  Warum alles in EINEN Container (unten: class="template-template"):
+
+  - .tpl-page (der automatische Rahmen von index.html) hat zwar schon position:relative und
+    bei size:auto/a4/a5 eine Breite/Hoehe, aber wie der Inhalt sich darin anordnet (Flex/Grid,
+    Bild vs. Textblock, Reihenfolge) ist Sache der Vorlage - dafuer der eigene Container.
+  - Bei fester Groesse (size: a4/a5 in templates.yaml) MUSS dieser Container eine explizite
+    Breite/Hoehe in px bekommen, die zu PAGE_SIZES[size] in index.html passt (a4 = 1122x794,
+    a5 = 794x559, jeweils 96dpi) - NICHT height:100% verwenden. Grund: beim PDF-Druck
+    (window.print) werden Prozent-Hoehen ueber verschachtelte Flex-Boxen nicht zuverlaessig
+    aufgeloest, das Bild/der Inhalt schrumpft dann auf Mini-Groesse und der Rest laeuft auf
+    eine zweite Seite. Mit fester px-Groesse + overflow:hidden passiert das nicht (siehe
+    impulskarte.html als Beispiel, dort genau so gefixt).
+  - Bei size: auto ist das kein Thema (Hoehe richtet sich nach Inhalt), dann reicht width:100%
+    oder gar keine explizite Groesse auf dem Container.
+  - Ein einzelner Container macht das Template ausserdem leicht kopierbar: eigenes <style>
+    scoped auf eine eigene Klasse (wie hier .template-template), keine Kollision mit anderen
+    Vorlagen, die dieselbe export-templates.css mitbenutzen.
+-->
+<style>
+  /* Alle Regeln unten auf .template-template scoped, damit sie keine andere Vorlage treffen -
+     export-templates.css wird fuer JEDE Vorlage gleichzeitig eingebunden. */
+
+  .template-template {
+    /* Bei fester Groesse (a4/a5): width/height hier exakt auf PAGE_SIZES[size] setzen,
+       z.B. width: 1122px; height: 794px; overflow: hidden; - siehe impulskarte.html. */
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  /* .tpl-img (aus export-templates.css) deckelt Bilder standardmaessig auf 280x280px (fuer
+     die Feldliste in einer Karte gedacht). Soll ein Bild groesser/full-bleed sein, hier
+     max-width/max-height explizit aufheben (sonst wirkt der Deckel trotz eigenem
+     width/height weiter) - Beispiel siehe impulskarte.html. */
+  .template-template img.tpl-img {
+    /* max-width: none; max-height: none; */
+  }
+</style>
+
+<div class="template-template">
+
+  <!-- .tpl-id: ID des Datensatzes (z.B. "fundus042"), aus export-templates.css schon fertig
+       oben-rechts positioniert (position:absolute, muss also nicht im Fluss stehen). -->
+  <div class="tpl-id">{{id}}</div>
+
+  <!-- Kontext-Feld: item.kontext - kurze Beschreibung/Hintergrund fuer die Fachkraft. -->
+  <div class="tpl-field" data-field="kontext">
+    <h4>Kontext</h4>
+    <p>{{kontext}}</p>
+  </div>
+
+  <!-- Ueberschrift-Feld: item.ueberschrift.text - die echte Schlagzeile. -->
+  <div class="tpl-field" data-field="ueberschrift">
+    <h4>Überschrift</h4>
+    <p>{{ueberschrift}}</p>
+  </div>
+
+  <!-- Einleitung-Feld: item.einleitung.text - der echte Einleitungsabsatz. -->
+  <div class="tpl-field" data-field="einleitung">
+    <h4>Einleitung</h4>
+    <p>{{einleitung}}</p>
+  </div>
+
+  <!-- Claim-Feld: item.claim.text - die zu pruefende Aussage (Source Hunter). -->
+  <div class="tpl-field" data-field="claim">
+    <h4>Claim</h4>
+    <p>{{claim}}</p>
+  </div>
+
+  <!-- Faktcheck-Feld: item.claim.bewertung - das Faktencheck-Ergebnis zum Claim oben.
+       Heisst bewusst "faktcheck" nicht "claimBewertung" als Platzhalter-Name (siehe
+       getExportContext in index.html) - hier trotzdem eingetragen, weil das der Name ist. -->
+  <div class="tpl-field" data-field="faktcheck">
+    <h4>Faktcheck</h4>
+    <p>{{faktcheck}}</p>
+  </div>
+
+  <!-- Bild-Feld: item.bild.beschreibung (Text/Alt-Beschreibung) + {{bild_img}}, das
+       automatisch zu <img src="item.bild.datei" class="tpl-img"> wird - NUR wenn
+       item.bild.beschreibung gesetzt ist (siehe getExportableFields). item.bild.datei kann
+       ein lokaler Pfad ODER eine externe URL sein: externe Bilder erscheinen nur im PDF
+       (window.print zeigt sie einfach an), nicht im JPG (canvas-Export braucht CORS-
+       Freigabe vom fremden Server, die selten gesetzt ist). -->
+  <div class="tpl-field" data-field="bild">
+    <h4>Bild</h4>
+    <p>{{bild}}</p>
+    {{bild_img}}
+  </div>
+
+  <!-- Meme-Ursprung-Feld: item.meme.ursprung (Text) + {{memeUrsprung_img}} analog zu Bild
+       oben, aus item.meme.datei. -->
+  <div class="tpl-field" data-field="memeUrsprung">
+    <h4>Meme-Ursprung</h4>
+    <p>{{memeUrsprung}}</p>
+    {{memeUrsprung_img}}
+  </div>
+
+  <!-- Kein Platzhalter fuer Video: item.video.datei/beschreibung hat aktuell KEIN {{...}} in
+       getExportContext (index.html) - Video-Items zeigen in keiner Vorlage ein Vorschaubild.
+       Falls das mal noetig wird: in getExportContext + hier ergaenzen. -->
+
+  <!-- Datum-Feld: item.quelle.datum (ISO-Datum als String). -->
+  <div class="tpl-field" data-field="datum">
+    <h4>Datum</h4>
+    <p>{{datum}}</p>
+  </div>
+
+  <!-- Lizenz-Feld: item.quelle.lizenz (z.B. "Pressebild", "CC BY 4.0"). -->
+  <div class="tpl-field" data-field="lizenz">
+    <h4>Lizenz</h4>
+    <p>{{lizenz}}</p>
+  </div>
+
+  <!-- Weitere-Quelle-Feld: item.quelle2 (Faktencheck/Gegendarstellung) - kommt aus
+       index.html schon als fertiger <a href="...">Name</a>-Link, falls quelle2.url gesetzt
+       ist, sonst nur der Name als Text. -->
+  <div class="tpl-field" data-field="quelle2">
+    <h4>Weitere Quelle</h4>
+    <p>{{quelle2}}</p>
+  </div>
+
+  <!-- KI-Modell-Feld: item.ki.model (z.B. "Midjourney v6"). -->
+  <div class="tpl-field" data-field="kiModel">
+    <h4>KI-Modell</h4>
+    <p>{{kiModel}}</p>
+  </div>
+
+  <!-- KI-Prompt-Feld: item.ki.prompt - der verwendete Prompt, falls bekannt. -->
+  <div class="tpl-field" data-field="kiPrompt">
+    <h4>KI-Prompt</h4>
+    <p>{{kiPrompt}}</p>
+  </div>
+
+  <!-- Achsen-Feld: item.achsen (Liste von Slugs) - kommt hier schon als kommagetrennter
+       Text an, nicht als Liste. -->
+  <div class="tpl-field" data-field="achsen">
+    <h4>Achsen</h4>
+    <p>{{achsen}}</p>
+  </div>
+
+</div>

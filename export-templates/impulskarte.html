@@ -2,10 +2,23 @@
   /* Trennfarbe der Impulskarte - hier anpassen, wenn das Template fuer ein neues Design kopiert wird */
   .impulskarte { --divider-color: #6a1b9a; }
 
-  .impulskarte { display: flex; flex-direction: column; height: 100%; }
+  /* Feste Box statt height:100% - damit die Karte nie groesser als eine A4-Quer-Seite wird
+     und nie auf eine 2. Seite laeuft, unabhaengig vom Inhalt. Breite/Hoehe muessen zu
+     PAGE_SIZES.a4 in index.html passen (a4 quer, 96dpi, 1122x794), weil templates.yaml fuer
+     dieses Template size: a4 setzt. Hoehe bewusst auf 90% davon (715px statt 794px) - manche
+     Drucker/Browser-Druckdialoge reservieren trotz margin:0 noch etwas eigenen Rand, ohne
+     Puffer kippt das sonst auf eine 2. Seite. overflow:hidden kappt im Zweifel lieber Inhalt
+     als eine 2. Seite zu erzeugen. */
+  .impulskarte { display: flex; flex-direction: column; width: 1122px; height: 715px; overflow: hidden; }
 
   .impulskarte-bild { flex: 1 1 auto; min-height: 0; overflow: hidden; }
-  .impulskarte-bild img { width: 100%; height: 100%; object-fit: cover; display: block; margin: 0; border: 0; }
+  .impulskarte-bild img {
+    /* max-width/max-height:280px kommt von der globalen .tpl-img-Klasse (fuer die Feldliste
+       in indexkarte1/2 gedacht) - hier explizit aufheben, sonst bleibt das Bild trotz
+       width/height:100% auf 280x280px begrenzt. */
+    width: 100%; height: 100%; max-width: none; max-height: none;
+    object-fit: cover; display: block; margin: 0; border: 0;
+  }
 
   .impulskarte-trenner { flex: 0 0 auto; height: 10px; background: var(--divider-color); }
 

@@ -239,6 +239,7 @@
     }
 
     dialog#export-dialog::backdrop { background: rgba(0,0,0,0.5); }
+    .export-hint { font-size: 0.7rem; color: var(--mid); margin: 0.5rem 0; line-height: 1.4; }
     dialog#export-dialog h3 { margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.9rem; }
     dialog#export-dialog label { display: block; font-size: 0.8rem; margin-bottom: 0.35rem; cursor: pointer; }
     dialog#export-dialog fieldset { border: 2px solid var(--border); margin-top: 0.75rem; padding: 0.5rem 0.75rem; }
@@ -464,6 +465,11 @@
   <h3 id="export-title">Export</h3>
 
   <div id="export-templates"></div>
+
+  <p class="export-hint">
+    Bilder, die nur verlinkt (nicht lokal im Fundus-Ordner) sind, erscheinen nur im PDF-Export, nicht im JPG.
+    Nicht jedes Template passt zu jedem Datensatz - fehlt ein Feld (z.B. kein Bild), bleibt der Platz dafür leer.
+  </p>
 
   <details id="export-freestyle">
     <summary>Weitere Optionen (Freestyle)</summary>
