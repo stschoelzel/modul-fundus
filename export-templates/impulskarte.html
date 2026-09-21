@@ -3,13 +3,15 @@
   .impulskarte { --divider-color: #6a1b9a; }
 
   /* Feste Box statt height:100% - damit die Karte nie groesser als eine A4-Quer-Seite wird
-     und nie auf eine 2. Seite laeuft, unabhaengig vom Inhalt. Breite/Hoehe muessen zu
-     PAGE_SIZES.a4 in index.html passen (a4 quer, 96dpi, 1122x794), weil templates.yaml fuer
-     dieses Template size: a4 setzt. Hoehe bewusst auf 90% davon (715px statt 794px) - manche
-     Drucker/Browser-Druckdialoge reservieren trotz margin:0 noch etwas eigenen Rand, ohne
-     Puffer kippt das sonst auf eine 2. Seite. overflow:hidden kappt im Zweifel lieber Inhalt
-     als eine 2. Seite zu erzeugen. */
-  .impulskarte { display: flex; flex-direction: column; width: 1122px; height: 715px; overflow: hidden; }
+     und nie auf eine 2. Seite laeuft, unabhaengig vom Inhalt. Breite muss zu PAGE_SIZES.a4 in
+     index.html passen (a4 quer, 96dpi, 1122x794), weil templates.yaml fuer dieses Template
+     size: a4 setzt. Hoehe bewusst deutlich unter 794px (650px, ~150px Puffer) - Chromes
+     Druckdialog reserviert per Default oben/unten Platz fuer eigene Kopf-/Fusszeile (Titel,
+     URL, Seitenzahl), unabhaengig von @page margin:0 - das laesst sich nur im Druckdialog
+     selbst abschalten ("Headers and footers" aus, oder Margins auf "None"), nicht per CSS.
+     90% Puffer hat in der Praxis nicht gereicht, darum grosszuegiger. overflow:hidden kappt
+     im Zweifel lieber Inhalt als eine 2. Seite zu erzeugen. */
+  .impulskarte { display: flex; flex-direction: column; width: 1122px; height: 650px; overflow: hidden; }
 
   .impulskarte-bild { flex: 1 1 auto; min-height: 0; overflow: hidden; }
   .impulskarte-bild img {

@@ -26,11 +26,16 @@
     Bild vs. Textblock, Reihenfolge) ist Sache der Vorlage - dafuer der eigene Container.
   - Bei fester Groesse (size: a4/a5 in templates.yaml) MUSS dieser Container eine explizite
     Breite/Hoehe in px bekommen, die zu PAGE_SIZES[size] in index.html passt (a4 = 1122x794,
-    a5 = 794x559, jeweils 96dpi) - NICHT height:100% verwenden. Grund: beim PDF-Druck
-    (window.print) werden Prozent-Hoehen ueber verschachtelte Flex-Boxen nicht zuverlaessig
-    aufgeloest, das Bild/der Inhalt schrumpft dann auf Mini-Groesse und der Rest laeuft auf
-    eine zweite Seite. Mit fester px-Groesse + overflow:hidden passiert das nicht (siehe
-    impulskarte.html als Beispiel, dort genau so gefixt).
+    a5 = 794x559, jeweils 96dpi) - NICHT height:100% verwenden, sonst ist die tatsaechliche
+    Groesse vom Inhalt abhaengig statt umgekehrt.
+  - Hoehe dabei NICHT auf den vollen PAGE_SIZES-Wert setzen, sondern mit ordentlich Puffer
+    (bei impulskarte.html: 650px statt 794px, ~150px Puffer). Grund: Chromes Druckdialog
+    reserviert beim PDF-/Druck-Export per Default oben/unten Platz fuer eigene Kopf-/Fusszeile
+    (Titel, URL, Seitenzahl) - das passiert unabhaengig von @page margin:0 in index.html und
+    laesst sich nur im Druckdialog selbst abschalten ("Headers and footers" aus, oder Margins
+    auf "None"), nicht per CSS von hier aus. Ohne Puffer laeuft der Inhalt sonst auf eine
+    zweite (leere) Seite, auch wenn er auf dem Bildschirm exakt passt. overflow:hidden auf dem
+    Container faengt den Rest ab (lieber Inhalt kappen als eine 2. Seite erzeugen).
   - Bei size: auto ist das kein Thema (Hoehe richtet sich nach Inhalt), dann reicht width:100%
     oder gar keine explizite Groesse auf dem Container.
   - Ein einzelner Container macht das Template ausserdem leicht kopierbar: eigenes <style>
