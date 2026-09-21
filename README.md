@@ -18,6 +18,8 @@ Fertig - kein Server, kein Node, kein npm nötig. `fundus-data.js` liegt bereits
 
 ## Daten pflegen / lokale Entwicklung
 
+Neues Item anlegen? `yaml-helper.html` (per Doppelklick öffnen, kein Server nötig) fragt die Felder per Formular ab, schlägt die nächste freie `id` vor und generiert daraus den fertigen YAML-Block samt Angabe, wo die Mediendatei abgelegt werden muss - manuelles Tippen in `fundus.yaml` bleibt trotzdem nötig, das Tool erzeugt nur den Block zum Einfügen.
+
 Nur relevant, wenn du `fundus.yaml` oder die Export-Vorlagen in `export-templates/` bearbeitest (siehe [Export-Vorlagen](#export-vorlagen)):
 
 - Ändern, committen, pushen (auf `main`) reicht. Eine GitHub Action baut `fundus-data.js` bzw. `export-templates-data.js` automatisch auf GitHubs Servern und committed sie zurück - lokal ist nichts zu installieren.
