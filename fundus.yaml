@@ -2776,3 +2776,25 @@
       sky and clouds, the soft muted colour grading, the shallow depth of field with the
       sharp band in the middle of the meadow, the fine grain. Photorealistic, no text, no
       watermark.
+
+- id: fundus089
+  thema: Verkehr
+  typ: [bild, ueberschrift, einleitung]
+  echtheit: echt
+  freigabe: true
+  status: methodensprint
+  quelle:
+    name: taz
+    url: https://taz.de/Gescheiterte-Auslaender-Maut/!6214761/
+    datum: 2026-09-21
+    lizenz: ~
+  kontext: >
+    taz Onlineartikel
+  bild:
+    datei: https://taz.de/picture/8749860/1200/41722401.webp
+    beschreibung: Andreas Scheuer in der Anhörung
+  ueberschrift:
+    text: Hat Scheuer bei der Aufklärung des Maut-Debakels gelogen?
+  einleitung:
+    text: >
+      Die Staatsanwaltschaft ist davon überzeugt, dass der ehemalige Verkehrsminister falsch ausgesagt hat. Am Montag beginnt der Prozess in Berlin.

@@ -92,10 +92,30 @@
       gap: 0.3rem;
     }
 
-    .count {
+    .controls-right {
       margin-left: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.3rem;
+    }
+
+    .count {
       font-size: 0.75rem;
       color: var(--mid);
+    }
+
+    .new-entry-btn {
+      font-family: inherit;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 0.3rem 0.6rem;
+      border: 2px solid var(--black);
+      background: var(--accent);
+      color: var(--black);
+      text-decoration: none;
+      cursor: pointer;
     }
 
     .table-wrap {
@@ -416,7 +436,10 @@
         <option value="false">nein</option>
       </select>
     </div>
-    <span class="count" id="count"></span>
+    <div class="controls-right">
+      <span class="count" id="count"></span>
+      <a class="new-entry-btn" href="yaml-helper.html">+ Neuer Eintrag</a>
+    </div>
   </div>
 
   <div class="table-wrap">

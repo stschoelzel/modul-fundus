@@ -2879,5 +2879,34 @@ window.FUNDUS_DATA = [
       "model": "nano-banana-pro (OpenArt)",
       "prompt": "Recolour only. Do not re-render, recompose, crop, sharpen or restyle the image. Same 3:4 portrait framing as the input. Change the colour of every flower in the meadow to blue: the pink clover blossoms, the white flowers, the yellow flowers and the few purple ones. Each flower keeps exactly its original shape, size, position, texture and amount of blur. Do not replace the flowers with a different species, do not add or remove any flowers. The clover heads stay clover heads, only blue. Use natural variation instead of one flat colour: from pale sky blue to deep gentian blue, some with a slight violet tint, darker at the base of each blossom and lighter at the tips, following the original light and shading. The out-of-focus blossoms in the foreground and background become soft blue blurs in exactly the same places. Everything else stays identical: the green of the grass and stems, the grey-green bushes, the hillside, the sky and clouds, the soft muted colour grading, the shallow depth of field with the sharp band in the middle of the meadow, the fine grain. Photorealistic, no text, no watermark."
     }
+  },
+  {
+    "id": "fundus089",
+    "thema": "Verkehr",
+    "typ": [
+      "bild",
+      "ueberschrift",
+      "einleitung"
+    ],
+    "echtheit": "echt",
+    "freigabe": true,
+    "status": "methodensprint",
+    "quelle": {
+      "name": "taz",
+      "url": "https://taz.de/Gescheiterte-Auslaender-Maut/!6214761/",
+      "datum": "2026-09-21T00:00:00.000Z",
+      "lizenz": null
+    },
+    "kontext": "taz Onlineartikel\n",
+    "bild": {
+      "datei": "https://taz.de/picture/8749860/1200/41722401.webp",
+      "beschreibung": "Andreas Scheuer in der Anhörung"
+    },
+    "ueberschrift": {
+      "text": "Hat Scheuer bei der Aufklärung des Maut-Debakels gelogen?"
+    },
+    "einleitung": {
+      "text": "Die Staatsanwaltschaft ist davon überzeugt, dass der ehemalige Verkehrsminister falsch ausgesagt hat. Am Montag beginnt der Prozess in Berlin.\n"
+    }
   }
 ];

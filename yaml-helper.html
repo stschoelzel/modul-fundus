@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Fundus YAML-Helper</title>
+<script src="fundus-data.js"></script>
+<style>
+  :root{--bg:#f7f7f5;--panel:#fff;--border:#ddd;--accent:#2a6f4b;--mono:ui-monospace,Consolas,monospace}
+  *{box-sizing:border-box}
+  body{font-family:system-ui,sans-serif;background:var(--bg);margin:0;padding:24px;color:#222}
+  h1{font-size:1.3rem;margin:0 0 4px}
+  h2{font-size:1rem;margin:24px 0 8px;border-bottom:1px solid var(--border);padding-bottom:4px}
+  .hint{color:#666;font-size:.85rem;margin:0 0 20px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+  label{display:block;font-size:.85rem;font-weight:600;margin-bottom:3px}
+  input[type=text],input[type=date],select,textarea{width:100%;padding:6px 8px;border:1px solid var(--border);border-radius:4px;font-size:.9rem;font-family:inherit}
+  textarea{min-height:60px;resize:vertical}
+  fieldset{border:1px solid var(--border);border-radius:6px;padding:10px 12px;margin:0}
+  legend{font-weight:600;font-size:.85rem;padding:0 4px}
+  .checks{display:flex;flex-wrap:wrap;gap:8px 16px}
+  .checks label{display:flex;align-items:center;gap:5px;font-weight:400;font-size:.85rem}
+  .checks input{width:auto}
+  .field{margin-bottom:10px}
+  .section{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:16px;margin-bottom:16px;display:none}
+  .section.on{display:block}
+  .section h3{margin:0 0 10px;font-size:.9rem;color:var(--accent)}
+  .always{display:block}
+  input.suggested{color:#999;font-style:italic}
+  #files, #yamlOut{background:#1e1e1e;color:#d4d4d4;font-family:var(--mono);font-size:.85rem;padding:14px;border-radius:8px;white-space:pre-wrap;word-break:break-word}
+  #files{background:var(--panel);color:#222;border:1px solid var(--border)}
+  #files .f{font-family:var(--mono);background:#eef6f0;border:1px solid #cfe8d8;border-radius:4px;padding:8px 10px;margin-bottom:6px}
+  #files .f b{color:var(--accent)}
+  button{cursor:pointer;background:var(--accent);color:#fff;border:0;border-radius:4px;padding:6px 12px;font-size:.85rem;margin-top:8px}
+  button:hover{opacity:.9}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+</style>
+</head>
+<body>
+
+<h1>Fundus YAML-Helper</h1>
+<p class="hint">Felder ausfüllen → unten steht der fertige YAML-Block für <code>fundus.yaml</code> und wohin die Mediendateien gehören. Ersetzt nicht das Lesen der <a href="README.md">README</a>, spart nur Tipparbeit.</p>
+
+<h2>Grunddaten</h2>
+<div class="grid">
+  <div class="field"><label>id *</label><input type="text" id="id" placeholder="z.B. fundus089"></div>
+  <div class="field"><label>thema *</label><input type="text" id="thema" placeholder="z.B. Klimawandel"></div>
+  <div class="field"><label>echtheit *</label>
+    <select id="echtheit">
+      <option value="echt">echt</option>
+      <option value="ki-generiert">ki-generiert</option>
+      <option value="manipuliert">manipuliert</option>
+      <option value="fake">fake</option>
+    </select>
+  </div>
+  <div class="field"><label>status *</label>
+    <select id="status">
+      <option value="methodensprint" selected>methodensprint</option>
+      <option value="gmk">gmk</option>
+      <option value="random">random</option>
+      <option value="deprecated">deprecated</option>
+    </select>
+  </div>
+  <div class="field"><label><input type="checkbox" id="freigabe" checked style="width:auto"> freigabe (für Jugendliche nutzbar)</label></div>
+</div>
+
+<div class="field">
+  <label>typ * (bestimmt, welche Felder unten erscheinen)</label>
+  <fieldset><div class="checks" id="typChecks">
+    <label><input type="checkbox" value="bild"> bild</label>
+    <label><input type="checkbox" value="ueberschrift"> ueberschrift</label>
+    <label><input type="checkbox" value="einleitung"> einleitung</label>
+    <label><input type="checkbox" value="artikel"> artikel</label>
+    <label><input type="checkbox" value="meme"> meme</label>
+    <label><input type="checkbox" value="claim"> claim</label>
+    <label><input type="checkbox" value="video"> video</label>
+  </div></fieldset>
+</div>
+
+<div class="field">
+  <label>achsen (Mehrfachauswahl, optional)</label>
+  <fieldset><div class="checks" id="achsenChecks"></div></fieldset>
+</div>
+
+<h2>Quelle</h2>
+<div class="grid">
+  <div class="field"><label>quelle.name</label><input type="text" id="q1name" placeholder="z.B. taz"></div>
+  <div class="field"><label>quelle.url</label><input type="text" id="q1url" placeholder="https://..."></div>
+  <div class="field"><label>quelle.datum</label><input type="date" id="q1datum"></div>
+  <div class="field"><label>quelle.lizenz</label><input type="text" id="q1lizenz" placeholder="z.B. Pressebild"></div>
+  <div class="field"><label>quelle2.name (Faktencheck/Gegendarstellung, optional)</label><input type="text" id="q2name"></div>
+  <div class="field"><label>quelle2.url</label><input type="text" id="q2url"></div>
+</div>
+
+<div class="field">
+  <label>kontext (für Fachkraft)</label>
+  <textarea id="kontext" placeholder="Kurze Beschreibung des Inhalts / Hintergrunds"></textarea>
+</div>
+
+<div class="section" id="sec-bild"><h3>bild</h3>
+  <div class="field"><label>bild.url (falls das Bild nur verlinkt werden darf, statt lokaler Datei)</label>
+    <input type="text" id="bildUrl" placeholder="https://... (leer lassen für lokale Datei)"></div>
+  <div class="row2">
+    <div class="field" id="bildExtField"><label>Dateityp</label><select id="bildExt"><option value="jpg">jpg</option><option value="png">png</option></select></div>
+    <div class="field"><label>bild.beschreibung (Alt-Text)</label><input type="text" id="bildBeschreibung"></div>
+  </div>
+</div>
+
+<div class="section" id="sec-ueberschrift"><h3>ueberschrift</h3>
+  <div class="field"><label>ueberschrift.text</label><input type="text" id="ueberschriftText"></div>
+</div>
+
+<div class="section" id="sec-einleitung"><h3>einleitung</h3>
+  <div class="field"><label>einleitung.text</label><textarea id="einleitungText"></textarea></div>
+</div>
+
+<div class="section" id="sec-artikel"><h3>artikel</h3>
+  <div class="field"><label>artikel.text</label><textarea id="artikelText"></textarea></div>
+</div>
+
+<div class="section" id="sec-meme"><h3>meme</h3>
+  <div class="row2">
+    <div class="field"><label>Dateityp</label><select id="memeExt"><option value="jpg">jpg</option><option value="png">png</option></select></div>
+    <div class="field"><label>meme.ursprung</label><input type="text" id="memeUrsprung" placeholder="Wo zuerst aufgetaucht"></div>
+  </div>
+</div>
+
+<div class="section" id="sec-video"><h3>video</h3>
+  <div class="field"><label>video.beschreibung</label><input type="text" id="videoBeschreibung"></div>
+</div>
+
+<div class="section" id="sec-claim"><h3>claim</h3>
+  <div class="field"><label>claim.text (zu prüfende Aussage)</label><input type="text" id="claimText"></div>
+  <div class="field"><label>claim.bewertung (Faktencheckergebnis + Quelle)</label><textarea id="claimBewertung"></textarea></div>
+</div>
+
+<div class="section" id="sec-ki"><h3>ki (quasi-Pflicht bei echtheit: ki-generiert)</h3>
+  <div class="row2">
+    <div class="field"><label>ki.model</label><input type="text" id="kiModel" placeholder="z.B. Midjourney v6"></div>
+    <div class="field"><label>ki.prompt</label><textarea id="kiPrompt"></textarea></div>
+  </div>
+</div>
+
+<h2>Dateien ablegen</h2>
+<div id="files"></div>
+
+<h2>YAML-Block</h2>
+<p class="hint">Ans Ende von <code>fundus.yaml</code> anfügen (gleiche Einrückung wie die anderen Items, jeweils mit <code>- id:</code> beginnend). Reihenfolge in der Datei ist egal, nur die <code>id</code> muss einzigartig sein.</p>
+<p class="hint">Lokal siehst du den neuen Eintrag in <code>index.html</code> erst nach einem Build: im Ordner <code>build/</code> einmal <code>npm install</code>, danach <code>npm run build:all</code> (siehe <a href="README.md">README</a>). Ohne lokalen Build erledigt das die GitHub Action automatisch nach dem Push.</p>
+<div id="yamlOut"></div>
+<button onclick="copyYaml()">YAML kopieren</button>
+
+<script>
+const ACHSEN = [
+  ['Echtheit & Herkunft', ['echt-fake','echt-ki','bearbeitung']],
+  ['Absicht', ['informieren-manipulieren','satire-ernst','journalismus-werbung']],
+  ['Wirkung', ['sachlich-emotionalisierend','nobait-clickbait','harmlos-gefaehrlich','aufklaerend-irrefuehrend','kritisch-hetzerisch']],
+  ['Handlungsebene', ['wuerde-ich-sofort-teilen-wuerde-ich-nie-teilen','glaube-ich-sofort-glaube-ich-nie']],
+  ['Quelle & Einordnung', ['quelle-vertrauen','meinung-fakt','lokal-global','alt-aktuell']],
+];
+const achsenChecks = document.getElementById('achsenChecks');
+ACHSEN.forEach(([group, slugs]) => {
+  slugs.forEach(slug => {
+    const l = document.createElement('label');
+    l.title = group;
+    l.innerHTML = `<input type="checkbox" value="${slug}"> ${slug}`;
+    achsenChecks.appendChild(l);
+  });
+});
+
+const $ = id => document.getElementById(id);
+const typBoxes = () => [...document.querySelectorAll('#typChecks input')];
+const achsenBoxes = () => [...document.querySelectorAll('#achsenChecks input')];
+
+function selectedTypes(){ return typBoxes().filter(b=>b.checked).map(b=>b.value); }
+
+// yaml scalar: quote if it needs it, else plain
+function yStr(v){
+  v = (v||'').trim();
+  if (!v) return null;
+  const needsQuote = /[:#{}\[\],&*!|>'"%@`]/.test(v) || v !== v.trim();
+  return needsQuote ? `"${v.replace(/"/g,'\\"')}"` : v;
+}
+function yBlock(indent, v){
+  v = (v||'').trim();
+  if (!v) return null;
+  return `>\n${indent}  ${v}`;
+}
+
+function render(){
+  const types = selectedTypes();
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('on'));
+  types.forEach(t => { const s = $('sec-'+t); if (s) s.classList.add('on'); });
+  $('sec-ki').classList.toggle('on', $('echtheit').value === 'ki-generiert');
+
+  const id = ($('id').value||'').trim() || 'fundusXXX';
+  const bildExt = $('bildExt').value, memeExt = $('memeExt').value;
+  const bildUrl = ($('bildUrl').value||'').trim();
+  const bildDatei = bildUrl || `${id}_titelbild.${bildExt}`;
+  const memeDatei = `${id}_meme.${memeExt}`;
+  const videoDatei = `video/${id}.mp4`;
+
+  $('bildExtField').style.display = bildUrl ? 'none' : '';
+
+  // --- Dateien-Sektion ---
+  let files = [];
+  if (types.includes('bild') && !bildUrl) files.push(`<div class="f"><b>Bild</b> ablegen unter: <code>bilder/${bildDatei}</code></div>`);
+  if (types.includes('meme')) files.push(`<div class="f"><b>Meme</b> ablegen unter: <code>bilder/${memeDatei}</code></div>`);
+  if (types.includes('video')) files.push(`<div class="f"><b>Video</b> ablegen unter: <code>${videoDatei}</code></div>`);
+  $('files').innerHTML = files.length ? files.join('') : '<span class="hint">Kein typ mit Mediendatei ausgewählt (bild/meme/video), oder bild per URL verlinkt.</span>';
+
+  // --- YAML-Sektion ---
+  let y = `- id: ${id}\n`;
+  y += `  thema: ${yStr($('thema').value) || 'THEMA'}\n`;
+  y += `  typ: [${types.join(', ')}]\n`;
+  y += `  echtheit: ${$('echtheit').value}\n`;
+  y += `  freigabe: ${$('freigabe').checked}\n`;
+  y += `  status: ${$('status').value}\n`;
+
+  const achsen = achsenBoxes().filter(b=>b.checked).map(b=>b.value);
+  y += `  achsen: [${achsen.join(', ')}]\n`;
+
+  const q1name = yStr($('q1name').value), q1url = ($('q1url').value||'').trim(), q1datum = $('q1datum').value, q1lizenz = yStr($('q1lizenz').value);
+  if (q1name || q1url || q1datum || q1lizenz) {
+    y += `  quelle:\n`;
+    y += `    name: ${q1name || '~'}\n`;
+    y += `    url: ${q1url || '~'}\n`;
+    y += `    datum: ${q1datum || '~'}\n`;
+    y += `    lizenz: ${q1lizenz || '~'}\n`;
+  }
+  const q2name = yStr($('q2name').value), q2url = ($('q2url').value||'').trim();
+  if (q2name || q2url) {
+    y += `  quelle2:\n`;
+    y += `    name: ${q2name || '~'}\n`;
+    y += `    url: ${q2url || '~'}\n`;
+  }
+
+  const kontext = yBlock('  ', $('kontext').value);
+  if (kontext) y += `  kontext: ${kontext}\n`;
+
+  if (types.includes('bild')) {
+    y += `  bild:\n    datei: ${bildDatei}\n`;
+    const b = yStr($('bildBeschreibung').value);
+    if (b) y += `    beschreibung: ${b}\n`;
+  }
+  if (types.includes('ueberschrift')) {
+    const t = yStr($('ueberschriftText').value);
+    y += `  ueberschrift:\n    text: ${t || '""'}\n`;
+  }
+  if (types.includes('einleitung')) {
+    const t = yBlock('    ', $('einleitungText').value);
+    y += `  einleitung:\n    text: ${t || '""'}\n`;
+  }
+  if (types.includes('artikel')) {
+    const t = yBlock('    ', $('artikelText').value);
+    y += `  artikel:\n    text: ${t || '""'}\n`;
+  }
+  if (types.includes('meme')) {
+    y += `  meme:\n    datei: ${memeDatei}\n`;
+    const u = yBlock('    ', $('memeUrsprung').value);
+    if (u) y += `    ursprung: ${u}\n`;
+  }
+  if (types.includes('video')) {
+    y += `  video:\n    datei: ${videoDatei}\n`;
+    const b = yStr($('videoBeschreibung').value);
+    if (b) y += `    beschreibung: ${b}\n`;
+  }
+  if (types.includes('claim')) {
+    const t = yStr($('claimText').value);
+    const b = yBlock('    ', $('claimBewertung').value);
+    y += `  claim:\n    text: ${t || '""'}\n`;
+    if (b) y += `    bewertung: ${b}\n`;
+  }
+  if ($('echtheit').value === 'ki-generiert' || $('kiModel').value.trim() || $('kiPrompt').value.trim()) {
+    const m = yStr($('kiModel').value), p = yBlock('    ', $('kiPrompt').value);
+    if (m || p) {
+      y += `  ki:\n`;
+      if (m) y += `    model: ${m}\n`;
+      if (p) y += `    prompt: ${p}\n`;
+    }
+  }
+
+  $('yamlOut').textContent = y;
+}
+
+function copyYaml(){
+  navigator.clipboard.writeText($('yamlOut').textContent);
+}
+
+document.body.addEventListener('input', render);
+document.body.addEventListener('change', render);
+render();
+
+// ID-Vorschlag: höchste id aus fundus-data.js (+1), grau vorausfüllen, bis
+// manuell überschrieben. fundus-data.js liegt fertig gebaut im Repo (wie in
+// index.html), das geht per <script src> auch unter file:// - kein fetch nötig.
+(() => {
+  const idInput = $('id');
+  idInput.addEventListener('input', () => idInput.classList.remove('suggested'), { once: true });
+  const data = window.FUNDUS_DATA || [];
+  const nums = data.map(item => parseInt((item.id || '').replace('fundus', ''), 10)).filter(n => !isNaN(n));
+  if (nums.length) {
+    const next = String(Math.max(...nums) + 1).padStart(3, '0');
+    idInput.value = `fundus${next}`;
+    idInput.classList.add('suggested');
+    render();
+  }
+})();
+</script>
+</body>
+</html>
