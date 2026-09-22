@@ -2798,3 +2798,217 @@
   einleitung:
     text: >
       Die Staatsanwaltschaft ist davon überzeugt, dass der ehemalige Verkehrsminister falsch ausgesagt hat. Am Montag beginnt der Prozess in Berlin.
+
+- id: fundus090
+  thema: Regionales
+  typ: [bild, ueberschrift, einleitung]
+  echtheit: echt
+  freigabe: true
+  status: methodensprint
+  achsen: [echt-fake, lokal-global, sachlich-emotionalisierend, quelle-vertrauen, informieren-manipulieren, nobait-clickbait, wuerde-ich-sofort-teilen-wuerde-ich-nie-teilen, harmlos-gefaehrlich]
+  quelle:
+    name: buchholz-aktuell.de (Tobias Johanning)
+    url: https://buchholz-aktuell.de/buchholz/afd-kandidatin-zaehlt-in-buchholz-selbst-stimmen-aus-verstoss-gegen-das-wahlgesetz-19779/
+    datum: 2026-09-17
+    lizenz: Screenshot (Zitat zu Bildungszwecken)
+  kontext: >
+    Echter, sauber recherchierter Lokaljournalismus – und gerade deshalb ein gutes Item.
+    Eine AfD-Kandidatin arbeitete bei der Kommunalwahl 2026 als Beisitzerin im Wahllokal
+    und zählte dort Stimmen zur Bürgermeisterwahl mit. Das verstößt gegen § 13 Abs. 2
+    NKWG; die Landeswahlleitung Niedersachsen bestätigt den Vorgang. Der Verstoß ist also
+    real und kein Gerücht.
+
+    Der didaktische Wert liegt nicht im "Fake erkennen", sondern in der Einordnung: Der
+    Artikel beantwortet die Frage, die er selbst aufwirft, gegen die eigene Schlagzeile.
+    Er nennt zwar das auffällige AfD-Ergebnis in Trelde (22,1 % gegenüber 11,4 % stadtweit),
+    schreibt aber ausdrücklich dazu, dass dies "für sich genommen jedoch kein Beleg für
+    Unregelmäßigkeiten" sei – ländlicher Ortsteil, nur 476 Stimmen – und zitiert die
+    Landeswahlleitung, wonach es keine Anhaltspunkte für eine Einflussnahme auf das
+    Ergebnis gibt. Auch die Gegendarstellung der Stadt kommt vor. Das ist journalistisches
+    Handwerk: Vorwurf benennen, Beleglage offenlegen, überschießende Schlüsse selbst
+    abräumen.
+
+    Genau diese Relativierung überlebt das Teilen aber nicht. Die Überschrift "Verstoß
+    gegen das Wahlgesetz" plus ein Stimmzettel-Foto ergibt einen Screenshot, der sich
+    ohne jede Veränderung als Beleg für "Wahlbetrug" weiterreichen lässt – die
+    entlastenden Absätze stehen weit unten und werden mitgeteilt, aber nicht mitgelesen.
+    Eignet sich für die Frage: Was macht ein Screenshot mit einem Artikel? Wo endet das,
+    was hier tatsächlich belegt ist (Regelverstoß, Organisationsversagen der Stadt), und
+    wo beginnt das, was man hineinliest (manipuliertes Wahlergebnis)?
+
+    Hinweis für den Einsatz: Der Artikel nennt die Kandidatin namentlich. Da es sich um
+    eine lokal kandidierende Privatperson handelt, sollte der Name in der Arbeit mit der
+    Gruppe nicht im Mittelpunkt stehen – der Fall funktioniert ohne ihn.
+  bild:
+    datei: bilder/fundus090.png
+    beschreibung: >
+      Screenshot eines Onlineartikels von buchholz-aktuell.de mit Rubrikenlabels
+      "Buchholz" und "Trelde", Überschrift, Autorenzeile, Social-Media-Buttons und einem
+      Foto von Briefwahlunterlagen zur Bürgermeisterwahl, darunter der Beginn des
+      Fließtextes
+  ueberschrift:
+    text: "AfD-Kandidatin zählt in Buchholz selbst Stimmen aus – Verstoß gegen das Wahlgesetz"
+  einleitung:
+    text: >
+      Die AfD-Kandidatin hat am Sonntag in einem Buchholzer Wahllokal Stimmen für die
+      Kommunalwahl 2026 ausgezählt. Eigentlich darf das nicht passieren. Wer bei einer
+      Kommunalwahl selbst kandidiert, darf nicht in einem Wahllokal arbeiten. So steht es
+      im Kommunalwahlgesetz. Doch der Stadt war offenbar nicht bekannt, dass sie auch
+      Kandidatin ist.
+
+- id: fundus091
+  thema: Tiere
+  typ: [video]
+  echtheit: echt
+  freigabe: true
+  status: methodensprint
+  achsen: [echt-ki, echt-fake, glaube-ich-sofort-glaube-ich-nie, quelle-vertrauen, sachlich-emotionalisierend, wuerde-ich-sofort-teilen-wuerde-ich-nie-teilen, informieren-manipulieren]
+  quelle:
+    name: LADbible-Repost, geteilt über Reddit r/BeAmazed; Urheber der Aufnahme unbekannt
+    url: https://www.reddit.com/r/BeAmazed/comments/1tl4bkx/he_gives_a_squirrel_a_drink_of_water/
+    datum: ~
+    lizenz: Screenshot/Repost (Zitat zu Bildungszwecken)
+  kontext: >
+    Ein Mensch hält einem Eichhörnchen eine Wasserflasche hin, das Tier umfasst den
+    Flaschenhals mit den Vorderpfoten und trinkt. Eingebrannte Caption: "I saw a squirrel
+    in the heat, so I decided to share my water". Die Aufnahme ist nach Prüfung mit hoher
+    Wahrscheinlichkeit echt – interessant ist dieses Item aber gerade deshalb, weil es
+    zeigt, wie unterschiedlich gut einzelne Echtheitsargumente tragen.
+
+    Was belastbar für echt spricht: Die Pfoten greifen mit korrekt gegliederten Zehen und
+    Krallen um den Flaschenhals, im Makro sichtbar bis zum Wassertropfen an der Kralle –
+    eine klassische Schwachstelle generierter Videos, hier sauber. Das Flaschenetikett
+    trägt lesbare, über alle Einstellungen stabile Schrift ("KATTE EFENDİ", "SU" =
+    türkisch für Wasser), statt des typischen Pseudo-Texts. Das Tier ist als Kaukasisches
+    Eichhörnchen (Sciurus anomalus) bestimmbar, was zur trockenen Hügellandschaft und zum
+    türkischen Etikett passt – Motiv und Umgebung sind also artlich und geografisch
+    stimmig. Der Wasserstand in der Flasche sinkt über die Laufzeit plausibel,
+    Requisiten (Astform, Fraßlöcher in den Blättern, Etikett) bleiben auch über den
+    Schnitt hinweg konsistent.
+
+    Was als Argument schwächer trägt als gedacht – und didaktisch der eigentliche Punkt
+    ist: Die Länge von 61 Sekunden wird gern als Echtheitsbeweis genommen ("so lange kann
+    KI nicht"). Der Clip ist aber kein durchgehender Take: Bei 56,7 Sekunden liegt ein
+    harter Schnitt in eine engere Einstellung (maschinell messbar, Szenenwechsel-Score
+    0,37 gegenüber unter 0,17 im gesamten übrigen Verlauf). Die Wechsel zwischen Totale
+    und Makro davor sind dagegen kein Schnitt, sondern kontinuierliches Zoomen und
+    Heranführen der Kamera. Es bleiben also rund 57 Sekunden am Stück – ein starkes
+    Argument, aber eines, das man erst prüfen muss, statt es aus der Gesamtlaufzeit
+    abzulesen. Gut geeignet, um Prüfargumente nach ihrer Belastbarkeit zu sortieren,
+    statt sie nur zu sammeln: Die nominelle Länge sagt wenig, die längste ungeschnittene
+    Einstellung sagt viel, und die Detailbefunde tragen unabhängig davon.
+
+    Zweite Ebene: Echtes Bild, gedeutete Geschichte. Belegt ist, dass ein Mensch einem
+    Eichhörnchen Wasser gibt und dieses trinkt. Nicht belegt ist die Rahmung der Caption
+    – ein Tier, das derart zutraulich aus einer Flasche trinkt, ist Menschen vermutlich
+    gewohnt (Park, Rastplatz, Fütterung), was eine spontane Rettungsgeschichte
+    unwahrscheinlicher macht als eine wiederholte Begegnung. Dazu kommt: Es handelt sich
+    um einen LADbible-Repost mit eingebranntem Wasserzeichen und Caption, nicht um den
+    Original-Upload. Urheber, Ort und Datum sind nicht auffindbar, die Metadaten durch
+    Reddit-Reencodierung vollständig verloren. "Echt" heißt hier also: Die Aufnahme ist
+    echt – über ihre Entstehungsgeschichte sagt das nichts.
+  video:
+    datei: video/fundus091.mp4
+    beschreibung: >
+      Hochformatvideo (61 s) in trockener Hügellandschaft: Eine Hand hält einem
+      Eichhörnchen auf einem Ast eine blaue Wasserflasche hin; das Tier umgreift den
+      Flaschenhals mit beiden Vorderpfoten und trinkt, Wasser tropft an den Pfoten vorbei.
+      Eingeblendete Caption und LADbible-Wasserzeichen.
+
+- id: fundus092
+  thema: Verkehr
+  typ: [ueberschrift, einleitung]
+  echtheit: echt
+  freigabe: true
+  status: methodensprint
+  achsen: [meinung-fakt, sachlich-emotionalisierend, informieren-manipulieren, quelle-vertrauen, glaube-ich-sofort-glaube-ich-nie, lokal-global]
+  quelle:
+    name: watson.ch (Michael Graber)
+    url: https://www.watson.ch/schweiz/auto/316689873-so-viel-mehr-autounfaelle-verursachen-senioren-mehr-als-neulenker
+    datum: 2026-08-25
+    lizenz: ~
+  kontext: >
+    Schweizer Onlineartikel zur Frage, ob die Fahrtauglichkeit von Senioren strenger
+    überprüft werden soll. Anlass ist ein Vorstoss der Grünen-Nationalrätin Marionna
+    Schlatter, den der Bundesrat ablehnt. Der Artikel steigt mit einem tödlichen
+    Einzelfall ein (87-jähriger Fahrer, verunglückte Lehrerin) und stützt sich dann auf
+    eine Zahl, die er nicht belegt: Über 80-Jährige verursachten – hochgerechnet auf die
+    gefahrenen Kilometer – mehr Unfälle mit Personenschaden als 18- bis 24-Jährige.
+    Ergiebig für die Arbeit an der Frage, welche Bezugsgrösse eine Statistik verwendet
+    und was der emotionale Einstieg mit der Beweislage macht.
+  ueberschrift:
+    text: "Senioren verursachen mehr Autounfälle als Neulenker: Bundesrat will nichts unternehmen"
+  einleitung:
+    text: >
+      Ein Bericht sollte aufzeigen, wie die Verkehrstauglichkeit von Senioren besser
+      überprüft und gefördert werden kann. Doch die Regierung winkt ab: Das bringe nichts.
+
+- id: fundus093
+  thema: Politik
+  typ: [video, claim]
+  echtheit: fake
+  freigabe: true
+  status: methodensprint
+  achsen: [echt-fake, glaube-ich-sofort-glaube-ich-nie, quelle-vertrauen, informieren-manipulieren, aufklaerend-irrefuehrend, harmlos-gefaehrlich, sachlich-emotionalisierend, wuerde-ich-sofort-teilen-wuerde-ich-nie-teilen]
+  quelle:
+    name: X-Account "The Saviour" (Repost; Urheber unbekannt)
+    url: https://perma.cc/ZEJ5-YX8M?type=standard
+    datum: 2026-09-18
+    lizenz: Screenshot (Zitat zu Bildungszwecken)
+  quelle2:
+    name: CORRECTIV Faktencheck (Steffen Kutzner)
+    url: https://correctiv.org/faktencheck/2026/09/18/video-von-zerschnittenen-afd-stimmzetteln-in-berlin-ist-eine-faelschung/
+  kontext: >
+    44-Sekunden-Video, angeblich aus einem Berliner Wahlamt: Eine Person öffnet rosa
+    Briefwahlumschläge, entnimmt Stimmzettel und zerschneidet die mit AfD-Kreuz. Über
+    300.000 Aufrufe. CORRECTIV stuft es als Fälschung ein, der Landeswahlleiter für
+    Berlin bestätigt, dass die Unterlagen anders aussehen als das Original.
+
+    Didaktisch stark, weil die Fälschung nicht an der Bildtechnik scheitert, sondern am
+    Sachwissen: Das Video ist ein durchgehender Take ohne Schnitt, ohne KI-Artefakte,
+    ohne verräterische Physik – alles, worauf man bei Deepfakes zuerst schaut, ist
+    unauffällig. Auffliegen lässt es das Requisit. Wer weiß, wie eine deutsche Briefwahl
+    abläuft, sieht die Fehler sofort:
+
+    Erstens fehlt in allen Umschlägen der Wahlschein, den Wählende unterschreiben und
+    beilegen müssen – ohne ihn wäre keine dieser Stimmen überhaupt gültig. Zweitens fehlt
+    der zweite Stimmzettel für die Bezirksverordnetenversammlung. Drittens weicht die
+    Typografie ab: Auf dem Stimmzettelumschlag ist die ganze Zeile fett gesetzt, im
+    Original nur einzelne Wörter. Viertens haben die rosa Umschläge eine andere Form als
+    echte. Fünftens tragen die Urnen einen aufgeklebten Berliner Bären – unüblich, wie
+    der Landeswahlleiter anmerkt.
+
+    Zweite Ebene ist die Verbreitung: Das Video tauchte laut CORRECTIV praktisch
+    gleichzeitig auf mehreren großen englischsprachigen X-Accounts auf. Die Forscherin
+    Julia Smirnova (Center für Monitoring, Analyse und Strategie) ordnet es der russischen
+    Kampagne Storm-1516 zu, die wiederholt mit Wahl-Desinformation auffiel. Das simultane
+    Auftauchen auf mehreren Accounts ist selbst ein Prüfsignal – organische Viralität
+    sieht anders aus als koordinierte Einspeisung.
+
+    Gute Übung: Erst das Video ansehen und sammeln lassen, was auffällt; dann die
+    Frage stellen, was eigentlich alles in einem Briefwahlumschlag steckt. Der Fall zeigt,
+    dass Faktenprüfung oft kein Technikproblem ist, sondern ein Wissensproblem – und dass
+    Rückfrage bei der zuständigen Behörde ein gangbarer Weg ist.
+  video:
+    datei: video/fundus093.mp4
+    beschreibung: >
+      Hochformatvideo (44 s) in einem Büroraum: Auf einem Tisch liegen Stapel rosa
+      Briefwahlumschläge und Stimmzettel, daneben zwei graue Mülltonnen mit
+      aufgeklebtem Berliner Bären. Eine Person öffnet Umschläge, entnimmt Stimmzettel
+      und zerschneidet einzelne davon mit einer Schere.
+  claim:
+    text: >-
+      Ein Video aus Berlin zeigt, wie Briefwahlstimmen für die AfD im Wahlamt aussortiert
+      und zerschnitten werden.
+    bewertung: >
+      Falsch. Das Video ist eine Fälschung. Die gezeigten Wahlunterlagen entsprechen nicht
+      den echten Berliner Briefwahlunterlagen: In den Umschlägen fehlen die zwingend
+      erforderlichen Wahlscheine ebenso wie der zweite Stimmzettel für die
+      Bezirksverordnetenversammlung, die Typografie des Stimmzettelumschlags weicht ab
+      (ganze Zeile fett statt einzelner Wörter), die rosa Umschläge haben eine andere
+      Form, und die Urnen sind mit einem Berliner Bären beklebt, was unüblich ist. Der
+      Landeswahlleiter für Berlin bestätigte gegenüber CORRECTIV, dass die Unterlagen im
+      Video anders aussehen als das Original. Das Video erschien praktisch gleichzeitig
+      auf mehreren großen englischsprachigen X-Accounts; die Forscherin Julia Smirnova
+      ordnet es der russischen Desinformationskampagne Storm-1516 zu. Quelle: CORRECTIV,
+      18. September 2026.
