@@ -174,7 +174,8 @@ window.FUNDUS_DATA = [
     "id": "fundus006",
     "thema": "Musik",
     "typ": [
-      "ueberschrift"
+      "ueberschrift",
+      "einleitung"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -197,13 +198,17 @@ window.FUNDUS_DATA = [
     "kontext": "Ikkimel tritt im ZDF-Morgenmagazin auf, das Publikum bleibt regungslos. Über soziale Medien sorgt der Auftritt in den USA für Begeisterung.\n",
     "ueberschrift": {
       "text": "Nach TikTok-Post von US-Rapperin: US-Fans feiern Ikkimel nach viralem ZDF-Auftritt"
+    },
+    "einleitung": {
+      "text": "Ikkimels heiß diskutierter Auftritt im ZDF-Morgenmagazin sorgt jetzt in den USA für Begeisterung: Ein Tiktok-Post der US-Rapperin Doechii bringt die Musikerin ins Rampenlicht.\n"
     }
   },
   {
     "id": "fundus007",
     "thema": "Natur",
     "typ": [
-      "ueberschrift"
+      "ueberschrift",
+      "einleitung"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -227,13 +232,17 @@ window.FUNDUS_DATA = [
     "kontext": "Eine leuchtend pinke Heuschrecke wurde entdeckt.\n",
     "ueberschrift": {
       "text": "Pinke Heuschrecke in der Nähe von Trams entdeckt"
+    },
+    "einleitung": {
+      "text": "Eine leuchtend pinke Heuschrecke hat ein Biologe bei Trams im Landkreis Nordwestmecklenburg entdeckt. Die seltene Farbmutation, Erythrismus genannt, entsteht durch eine genetische Besonderheit - macht das auffällige Tier aber auch zur leichten Beute für Fressfeinde.\n"
     }
   },
   {
     "id": "fundus008",
     "thema": "Natur",
     "typ": [
-      "ueberschrift"
+      "ueberschrift",
+      "einleitung"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -256,13 +265,17 @@ window.FUNDUS_DATA = [
     "kontext": "Ein Wolf verirrt sich in eine Hamburger Einkaufspassage und beißt eine Frau.\n",
     "ueberschrift": {
       "text": "Mitten in Hamburg: Wolf beißt Frau in Einkaufspassage – das ist über den Angriff bekannt"
+    },
+    "einleitung": {
+      "text": "Wolf-Alarm mitten in Hamburg! Am Montag hat ein wilder Wolf eine Frau in Altona gebissen, unweit der dortigen Ikea-Filiale. Später lief das Tier offenbar quer über den Kiez bis in die Innenstadt, wo der Wolf offenbar direkt am Jungfernstieg aus der Binnenalster gefischt wurde. Mittlerweile gibt es erste bestätigte Informationen der Behörden.\n"
     }
   },
   {
     "id": "fundus009",
     "thema": "Natur",
     "typ": [
-      "ueberschrift"
+      "ueberschrift",
+      "einleitung"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -285,13 +298,17 @@ window.FUNDUS_DATA = [
     "kontext": "Eine Kuh in Kärnten zeigt erstaunliche kognitive Fähigkeiten und verblüfft die Wissenschaft.\n",
     "ueberschrift": {
       "text": "Kluge Kärntner Kuh verblüfft Wissenschaft"
+    },
+    "einleitung": {
+      "text": "Die 13-jährige Veronika aus Kärnten könnte die klügste Kuh der Welt sein. Denn sie verwendet Werkzeuge gezielt und flexibel. Wenn es sie juckt, kratzt sie sich mit einem Besen – abhängig von der Körperstelle mit Stiel oder Borsten. Ein Verhalten, das man bisher nur von Menschen und Schimpansen kannte.\n"
     }
   },
   {
     "id": "fundus010",
     "thema": "Regionales",
     "typ": [
-      "ueberschrift"
+      "ueberschrift",
+      "einleitung"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -314,13 +331,17 @@ window.FUNDUS_DATA = [
     "kontext": "Ein Polizeibericht darüber, wie ein Pferd in einen Pool fällt. In denselben Pool ist Jahre vorher schon einmal ein Pferd gefallen.\n",
     "ueberschrift": {
       "text": "Pferd fällt in Pool"
+    },
+    "einleitung": {
+      "text": "Täglich gehen zahlreiche Polizeipressemitteilungen bei unserer Redaktion ein. Hier ein Rückblick auf Meldungen, die im Zollernalbkreis besonders häufig gelesen wurden.\n"
     }
   },
   {
     "id": "fundus011",
     "thema": "Flugzeug",
     "typ": [
-      "ueberschrift"
+      "ueberschrift",
+      "einleitung"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -344,13 +365,17 @@ window.FUNDUS_DATA = [
     "kontext": "Ein Mann ohne Pilotenlizenz flog monatelang Passagierflugzeuge durch Europa.\n",
     "ueberschrift": {
       "text": "Falscher Kapitän flog Passagiere durch Europa"
+    },
+    "einleitung": {
+      "text": "Ohne die nötige Kapitänslizenz saß ein Mann im Cockpit von Passagierflugzeugen. Die litauische Airline Avion Express bestätigt den Betrugsfall und untersucht, wie es dazu kommen konnte.\n"
     }
   },
   {
     "id": "fundus012",
     "thema": "Tiere",
     "typ": [
-      "ueberschrift"
+      "ueberschrift",
+      "einleitung"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -374,13 +399,17 @@ window.FUNDUS_DATA = [
     "kontext": "Ein Waschbär bricht in einen US-Shop ein, betrinkt sich und schläft neben der Toilette seinen Rausch aus.\n",
     "ueberschrift": {
       "text": "„Maskierter Räuber“ schläft Rausch neben der Toilette aus: Waschbär betrinkt sich bei Einbruch in US-Shop"
+    },
+    "einleitung": {
+      "text": "In Virginia hat ein Waschbär mehrere Alkoholflaschen zu Bruch gebracht und seinen Rausch schließlich im Badezimmer ausgeschlafen. Tierschützer fanden das Tier stark angetrunken vor.\n"
     }
   },
   {
     "id": "fundus013",
     "thema": "Roboter",
     "typ": [
-      "ueberschrift"
+      "ueberschrift",
+      "einleitung"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -403,13 +432,17 @@ window.FUNDUS_DATA = [
     "kontext": "Kommentar über humanoide Roboter im Alltag.\n",
     "ueberschrift": {
       "text": "Humanoide Roboter: Hauptsache, die Geräte bleiben unter sich"
+    },
+    "einleitung": {
+      "text": "U1, Matilda, Robert, Isaac: In Russland, den USA und China wetteifern die Unternehmen um den tollsten menschlichen Roboter. Jetzt wird untereinander sogar geheiratet. Warum auch nicht?\n"
     }
   },
   {
     "id": "fundus014",
     "thema": "Verkehr",
     "typ": [
-      "ueberschrift"
+      "ueberschrift",
+      "einleitung"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -432,13 +465,17 @@ window.FUNDUS_DATA = [
     "kontext": "Eine Frau lässt ihr einjähriges Kind auf der A6 das Lenkrad halten, während sie das Handy benutzt.\n",
     "ueberschrift": {
       "text": "Einjähriges Kind am Steuer – skurriler Polizeieinsatz auf A6"
+    },
+    "einleitung": {
+      "text": "Die Polizei wird auf der A6 auf eine Autofahrerin aufmerksam, die am Steuer auf ihrem Handy tippt. Dann wird den Beamten klar, dass jemand anderes das Lenkrad in den Händen hält.\n"
     }
   },
   {
     "id": "fundus015",
     "thema": "Unfall",
     "typ": [
-      "ueberschrift"
+      "ueberschrift",
+      "einleitung"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -461,13 +498,17 @@ window.FUNDUS_DATA = [
     "kontext": "Eine Frau durchbricht in Frankreich die Glasfront eines Hallenbads und landet mit dem Auto im Schwimmbecken.\n",
     "ueberschrift": {
       "text": "Auto versinkt im Schwimmbad"
+    },
+    "einleitung": {
+      "text": "Am Donnerstag fuhr eine Fahrerin durch die Glasfront eines Schwimmbades. Das Auto landete im Becken und ging unter. Die Insassen wurden unverletzt geborgen.\n"
     }
   },
   {
     "id": "fundus016",
     "thema": "Verschwörung",
     "typ": [
-      "ueberschrift"
+      "ueberschrift",
+      "einleitung"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -492,13 +533,17 @@ window.FUNDUS_DATA = [
     "kontext": "Bielefeld lobt eine Million Euro für den Beweis aus, dass die Stadt nicht existiert (Bielefeld-Verschwörung).\n",
     "ueberschrift": {
       "text": "Eine Million Preisgeld für Beweis: Bielefeld gibt es nicht!"
+    },
+    "einleitung": {
+      "text": "Mit der Aktion \"Die #Bielefeldmillion – Das Ende einer Verschwörung\" will die Stadt Schluss machen mit der sogenannten Bielefeld-Verschwörung. Die hatte der Kieler Informatikstudent Achim Held vor 25 Jahren erfunden.\n"
     }
   },
   {
     "id": "fundus017",
     "thema": "Politik",
     "typ": [
-      "ueberschrift"
+      "ueberschrift",
+      "einleitung"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -522,13 +567,17 @@ window.FUNDUS_DATA = [
     "kontext": "Russische Abgeordnete erhalten bei einem USA-Besuch Socken mit Trump-Motiv als Geschenk.\n",
     "ueberschrift": {
       "text": "Neues aus Strumpfhausen"
+    },
+    "einleitung": {
+      "text": "Russische Abgeordnete bekommen bei einem Besuch in Washington Trump-Socken geschenkt. Es ist nicht das erste Mal, dass mit den Füßen Politik gemacht wird. Ein Blick in die Sockenschublade von Robert Habeck, Justin Trudeau und Sophie von der Tann.\n"
     }
   },
   {
     "id": "fundus018",
     "thema": "Promis",
     "typ": [
-      "ueberschrift"
+      "ueberschrift",
+      "einleitung"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -553,13 +602,17 @@ window.FUNDUS_DATA = [
     "kontext": "David Hasselhoff wird mit Gehhilfen gesehen, was bei seinen Fans für Sorge sorgt.\n",
     "ueberschrift": {
       "text": "Fans in Sorge: David Hasselhoff ist mit Gehhilfen unterwegs"
+    },
+    "einleitung": {
+      "text": "Fans von David Hasselhoff (73) treibt dieser Anblick die Sorgenfalten auf die Stirn: Der 73-Jährige wurde nach seinen Knie- und Hüftoperationen jetzt mit einer Gehhilfe in den Straßen von Los Angeles gesichtet. Gestützt auf eine Apparatur, deren Griffe laut Bunte einem Rollator ähneln, steuerte er über einen Parkplatz – dicht an seiner Seite war wie gewohnt Ehefrau Hayley Roberts (45), die ihren Mann aufmerksam begleitete. Diese neuen Aufnahmen folgen auf eine längere Leidensgeschichte: Die TV-Ikone litt jahrelang unter starken Schmerzen und war zeitweise sogar auf einen Rollstuhl angewiesen, bevor die notwendigen medizinischen Eingriffe im Frühjahr 2026 endlich erfolgen konnten.\n"
     }
   },
   {
     "id": "fundus019",
     "thema": "Wetter",
     "typ": [
-      "ueberschrift"
+      "ueberschrift",
+      "einleitung"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -584,13 +637,17 @@ window.FUNDUS_DATA = [
     "kontext": "Eine Wetterprognose kündigt für Juni 2026 einen Hitze-Hammer mit bis zu 37 Grad an.\n",
     "ueberschrift": {
       "text": "Extrem-Wetter im Juni 2026: Wetter-Experten prophezeien Hitze-Hammer mit bis zu 37 Grad"
+    },
+    "einleitung": {
+      "text": "Ein Hochdruckgebiet über Mitteleuropa lässt Deutschland schwitzen und sorgt für steigende Temperaturen. Experten prophezeien einen Hitze-Hammer mit bis zu 37 Grad. Die aktuelle Wetterprognose verrät, wo es besonders heiß wird.\n"
     }
   },
   {
     "id": "fundus020",
     "thema": "Gesundheit",
     "typ": [
-      "ueberschrift"
+      "ueberschrift",
+      "einleitung"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -615,6 +672,9 @@ window.FUNDUS_DATA = [
     "kontext": "Studien zeigen, wie viel Mikroplastik sich bereits im menschlichen Gehirn ansammelt. Allerdings ist es widerlegt, dass es ein ganzer Plastiklöffel ist. Clickbait.\n",
     "ueberschrift": {
       "text": "Löffelweise – so viel Plastik haben wir schon im Hirn"
+    },
+    "einleitung": {
+      "text": "Bis zu 30-mal mehr Mikroplastik als in Leber oder Niere haben US-Forscher in Hirnproben gefunden. In Demenzhirnen war die Konzentration nochmal höher.\n"
     }
   },
   {
@@ -2166,7 +2226,8 @@ window.FUNDUS_DATA = [
     "thema": "Politik",
     "typ": [
       "bild",
-      "ueberschrift"
+      "ueberschrift",
+      "einleitung"
     ],
     "echtheit": "fake",
     "freigabe": true,
@@ -2198,6 +2259,9 @@ window.FUNDUS_DATA = [
     },
     "ueberschrift": {
       "text": "\"Zeit für eine Teilung Deutschlands\" - Christopher Nolan"
+    },
+    "einleitung": {
+      "text": "Nolan und sein „The Odyssey“-Cast fordern den Wiederaufbau der Mauer zwischen Ost und Westdeutschland.\n"
     }
   },
   {
@@ -2511,6 +2575,7 @@ window.FUNDUS_DATA = [
     "thema": "Klimawandel",
     "typ": [
       "ueberschrift",
+      "einleitung",
       "claim"
     ],
     "echtheit": "echt",
@@ -2539,6 +2604,9 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Studien beweisen: Der CO2-Anstieg hat keinerlei Einfluss auf Dürren und Niederschläge!"
     },
+    "einleitung": {
+      "text": "Es gibt gleich drei neuere Studien, die basierend auf Baumringen aus drei verschiedenen Regionen die klimatischen Entwicklungen der letzten Jahrhunderte untersuchten. Die Ergebnisse sind deutlich – und belegen, dass die Niederschlagsmuster nicht vom CO2-Gehalt der Luft abhängig sind.\n"
+    },
     "claim": {
       "text": "Baumring-Studien beweisen, dass der CO2-Anstieg keinen Einfluss auf Dürren und Niederschläge hat und dass Dürren vor 1950 deutlich häufiger waren.",
       "bewertung": "Irreführend. Die als Beleg angeführte skandinavische Studie (Stridbeck et al., Climate of the Past 22, 461, 2026) untersucht CO2 überhaupt nicht – der Begriff kommt im Text nicht vor. Sie rekonstruiert den Mai-Juni-Niederschlag an einem einzigen Standort in Schweden; das Regressionsmodell erklärt nach Angaben der Autoren nur 35 Prozent der Niederschlagsvarianz, weshalb sich Langzeittrends oder ein Einfluss des aktuellen Klimawandels nach ihrer eigenen Einschätzung nicht sicher erkennen lassen. Die Studie nennt 2018 als eines der trockensten Jahre der gesamten Reihe und stützt damit gerade nicht die Aussage, Dürren seien vor 1950 ausgeprägter gewesen. Baumringdaten werden in der Forschung im Gegenteil herangezogen, um zu zeigen, dass der Klimawandel Dürren seit 1900 verschärft.\n"
@@ -2549,6 +2617,7 @@ window.FUNDUS_DATA = [
     "thema": "Klimawandel",
     "typ": [
       "ueberschrift",
+      "einleitung",
       "claim"
     ],
     "echtheit": "echt",
@@ -2577,6 +2646,9 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Neue Nature-Studie belegt: Wolken löschen den CO2-Effekt aus"
     },
+    "einleitung": {
+      "text": "Immer mehr beobachtungsbasierte Beweise zeigen: Die Auswirkungen von CO2 sind viel zu gering, um das Klima maßgeblich zu steuern. Eine neue Studie im renommierten Fachjournal Nature entlarvt die Rechentricks früherer Publikationen und zeigt, dass reale Wolkeneffekte den angeblichen Treibhauseffekt von CO2 bei Weitem übertreffen und sogar neutralisieren.\n"
+    },
     "claim": {
       "text": "Eine neue Nature-Studie belegt, dass Wolken den Treibhauseffekt von CO2 neutralisieren und im Netto-Effekt komplett auslöschen.",
       "bewertung": "Irreführend. Die Studie ist echt, trägt aber den Titel \"Clouds reduce downwelling longwave radiation over land in a warming climate\" und beschreibt, dass Wolkenveränderungen den wärmenden Effekt der Treibhausgase über Land teilweise abschwächen – nicht auslöschen. Der Effekt entsteht durch die Abnahme tiefer Bewölkung in einem sich erwärmenden Klima und ist damit eine Rückkopplung, also eine Folge der Erwärmung, kein Gegenbeweis. Gemessen wurde allein die langwellige Abwärtsstrahlung über Land; dass weniger Wolken zugleich mehr Sonnenlicht durchlassen, bleibt unberücksichtigt. Andere Forschung, etwa der Universität Leipzig (Science Advances, 2024), kommt zu dem Ergebnis, dass Wolkenveränderungen die Erwärmung insgesamt verstärken.\n"
@@ -2587,6 +2659,7 @@ window.FUNDUS_DATA = [
     "thema": "Gesundheit",
     "typ": [
       "ueberschrift",
+      "einleitung",
       "claim"
     ],
     "echtheit": "echt",
@@ -2616,6 +2689,9 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "7.800 Euro Kopfprämie für wundersame Corona-Vermehrung"
     },
+    "einleitung": {
+      "text": "Deutschen Krankenhäusern wird eine Prämie von 7.800 Euro und mehr für jeden regulären Patienten bezahlt, den man durch einen positiven Test statistisch in einen stationären Corona-Fall umdeuten kann.\n"
+    },
     "claim": {
       "text": "Krankenhäuser deuten Patienten mit einem positiven Test zu stationären Corona-Fällen um, um eine Kopfprämie von 7.800 Euro zu kassieren.",
       "bewertung": "Fehlender Kontext. Den Versorgungsaufschlag gab es wirklich: vom 1. November 2021 bis 19. März 2022, laut Bundesgesundheitsministerium zwischen 4.500 und 9.500 Euro pro Fall bei mindestens zwei Tagen stationärem Aufenthalt – also keine einheitlichen 7.800 Euro. Belege für ein bewusstes Umdeuten von Diagnosen nennt der Artikel nicht. Die Zuschläge werden regulär für jeden positiv getesteten Patienten gezahlt, unabhängig vom Behandlungsgrund; die Deutsche Krankenhausgesellschaft weist darauf hin, dass ein Zufallsbefund für Kliniken wegen Kontaktverfolgung und Personalquarantäne eher nachteilig ist. Quelle: Correctiv, 14. Dezember 2021.\n"
@@ -2626,6 +2702,7 @@ window.FUNDUS_DATA = [
     "thema": "Klimawandel",
     "typ": [
       "ueberschrift",
+      "einleitung",
       "claim"
     ],
     "echtheit": "echt",
@@ -2654,6 +2731,9 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "500 Wissenschaftler erklären: „Es gibt keinen Klimanotfall“"
     },
+    "einleitung": {
+      "text": "In einer „European Climate Declaration“ fordern 500 Wissenschaftler aus dreizehn Ländern eine neue Klimapolitik, und zwar auf der Grundlage seriöser wissenschaftlicher Analysen.\n"
+    },
     "claim": {
       "text": "500 Wissenschaftler aus dreizehn Ländern erklären in einem offenen Brief, dass es keinen Klimanotfall gibt.",
       "bewertung": "Teilweise falsch. Es handelt sich nicht um 500 Wissenschaftler: Der Brief selbst spricht von \"scientists and professionals\", nur fünf Unterzeichner sind ausdrücklich als Klimatologen ausgewiesen, und unter den übrigen finden sich Juristen, ein IT-Manager, ein Journalist und Politiker; viele sind emeritiert oder im Ruhestand, einzelne Qualifikationsangaben sind nachweislich falsch. Herausgeberin ist die Stiftung Clintel, mitgegründet von einem früheren Shell-Manager. Inhaltlich lassen die Thesen den Forschungsstand aus: Laut Stefan Rahmstorf (PIK) verläuft die Erwärmung \"ziemlich genauso wie vorhergesagt\", und der Düngeeffekt von CO2 bedeutet nicht, dass mehr CO2 der Umwelt nutzt – der IPCC erwartet sinkende Erträge bei Weizen, Reis und Mais. Climate Feedback bewertet die wissenschaftliche Glaubwürdigkeit des Briefes als sehr gering. Quelle: Correctiv, 11. Oktober 2019.\n"
@@ -2664,6 +2744,7 @@ window.FUNDUS_DATA = [
     "thema": "Klimawandel",
     "typ": [
       "ueberschrift",
+      "einleitung",
       "claim"
     ],
     "echtheit": "echt",
@@ -2691,6 +2772,9 @@ window.FUNDUS_DATA = [
     "kontext": "Report24 meldet am 23. August 2025, die isotopische Signatur des atmosphärischen CO2 habe sich seit 40 Jahren nicht verändert, der menschliche Einfluss sei \"nicht messbar\" und liege bei höchstens 4 Prozent. Grundlage ist eine echte Studie von Demetris Koutsoyiannis (Technische Universität Athen) im MDPI-Journal Sci. Der APA-Faktencheck stuft die Darstellung als Fehlinterpretation ein. Entscheidend ist der Unterschied zwischen \"nicht erkennbar\" und \"nicht vorhanden\": Der Autor schreibt in seiner Conclusio, menschliche Emissionen seien in seinen isotopenbasierten Datensätzen kaum erkennbar – eine Aussage über die Grenzen seiner Methode, nicht über die Wirklichkeit. Report24 macht daraus, es gebe den Einfluss nicht. Der prüfbare Kernpunkt ist eine Auslassung: Die Studie berücksichtigt das Kohlenstoffisotop C-14 nicht. Gerade dieses Isotop ist der direkte Nachweis, denn fossile Brennstoffe enthalten kein C-14 mehr – es zerfällt über Jahrtausende –, und der messbare Rückgang des C-14-Anteils in der Luft zeigt genau deshalb den fossilen Ursprung des zusätzlichen CO2. Der Paläoklimatologe Arno Kleber (TU Dresden) weist darauf hin, dass damit eines der drei wesentlichen Kohlenstoffisotope fehlt. Didaktisch ergiebig ist die Frage, was eine Studie nicht untersucht: Für die Gruppe lässt sich das in einem Satz prüfen – kommt C-14 darin vor? Damit reiht sich das Item in fundus079 und fundus080 ein und ergänzt sie um eine dritte Variante: Dort stellt eine Studie die Frage gar nicht beziehungsweise sagt das Gegenteil, hier wird die Einschränkung der Methode zur Aussage über die Welt umgedeutet.\n",
     "ueberschrift": {
       "text": "CO2-Signatur seit 40 Jahren unverändert – Menschlicher Einfluss nicht messbar"
+    },
+    "einleitung": {
+      "text": "Eine neue Studie der Technischen Universität Athen stellt die Klimawissenschaft auf den Kopf. Sie zeigt: In den letzten 40 Jahren hat sich die isotopische Signatur des atmosphärischen CO2 nicht verändert – menschliche Emissionen sind schlicht nicht erkennbar. Damit wird die Grundannahme der UNO und des IPCC, wonach fossile Brennstoffe die Hauptursache des Klimawandels seien, fundamental infrage gestellt.\n"
     },
     "claim": {
       "text": "Die isotopische Signatur des atmosphärischen CO2 hat sich seit 40 Jahren nicht verändert, der menschliche Einfluss ist nicht messbar.",
@@ -2907,6 +2991,147 @@ window.FUNDUS_DATA = [
     },
     "einleitung": {
       "text": "Die Staatsanwaltschaft ist davon überzeugt, dass der ehemalige Verkehrsminister falsch ausgesagt hat. Am Montag beginnt der Prozess in Berlin.\n"
+    }
+  },
+  {
+    "id": "fundus090",
+    "thema": "Regionales",
+    "typ": [
+      "bild",
+      "ueberschrift",
+      "einleitung"
+    ],
+    "echtheit": "echt",
+    "freigabe": true,
+    "status": "methodensprint",
+    "achsen": [
+      "echt-fake",
+      "lokal-global",
+      "sachlich-emotionalisierend",
+      "quelle-vertrauen",
+      "informieren-manipulieren",
+      "nobait-clickbait",
+      "wuerde-ich-sofort-teilen-wuerde-ich-nie-teilen",
+      "harmlos-gefaehrlich"
+    ],
+    "quelle": {
+      "name": "buchholz-aktuell.de (Tobias Johanning)",
+      "url": "https://buchholz-aktuell.de/buchholz/afd-kandidatin-zaehlt-in-buchholz-selbst-stimmen-aus-verstoss-gegen-das-wahlgesetz-19779/",
+      "datum": "2026-09-17T00:00:00.000Z",
+      "lizenz": "Screenshot (Zitat zu Bildungszwecken)"
+    },
+    "kontext": "Echter, sauber recherchierter Lokaljournalismus – und gerade deshalb ein gutes Item. Eine AfD-Kandidatin arbeitete bei der Kommunalwahl 2026 als Beisitzerin im Wahllokal und zählte dort Stimmen zur Bürgermeisterwahl mit. Das verstößt gegen § 13 Abs. 2 NKWG; die Landeswahlleitung Niedersachsen bestätigt den Vorgang. Der Verstoß ist also real und kein Gerücht.\nDer didaktische Wert liegt nicht im \"Fake erkennen\", sondern in der Einordnung: Der Artikel beantwortet die Frage, die er selbst aufwirft, gegen die eigene Schlagzeile. Er nennt zwar das auffällige AfD-Ergebnis in Trelde (22,1 % gegenüber 11,4 % stadtweit), schreibt aber ausdrücklich dazu, dass dies \"für sich genommen jedoch kein Beleg für Unregelmäßigkeiten\" sei – ländlicher Ortsteil, nur 476 Stimmen – und zitiert die Landeswahlleitung, wonach es keine Anhaltspunkte für eine Einflussnahme auf das Ergebnis gibt. Auch die Gegendarstellung der Stadt kommt vor. Das ist journalistisches Handwerk: Vorwurf benennen, Beleglage offenlegen, überschießende Schlüsse selbst abräumen.\nGenau diese Relativierung überlebt das Teilen aber nicht. Die Überschrift \"Verstoß gegen das Wahlgesetz\" plus ein Stimmzettel-Foto ergibt einen Screenshot, der sich ohne jede Veränderung als Beleg für \"Wahlbetrug\" weiterreichen lässt – die entlastenden Absätze stehen weit unten und werden mitgeteilt, aber nicht mitgelesen. Eignet sich für die Frage: Was macht ein Screenshot mit einem Artikel? Wo endet das, was hier tatsächlich belegt ist (Regelverstoß, Organisationsversagen der Stadt), und wo beginnt das, was man hineinliest (manipuliertes Wahlergebnis)?\nHinweis für den Einsatz: Der Artikel nennt die Kandidatin namentlich. Da es sich um eine lokal kandidierende Privatperson handelt, sollte der Name in der Arbeit mit der Gruppe nicht im Mittelpunkt stehen – der Fall funktioniert ohne ihn.\n",
+    "bild": {
+      "datei": "bilder/fundus090.png",
+      "beschreibung": "Screenshot eines Onlineartikels von buchholz-aktuell.de mit Rubrikenlabels \"Buchholz\" und \"Trelde\", Überschrift, Autorenzeile, Social-Media-Buttons und einem Foto von Briefwahlunterlagen zur Bürgermeisterwahl, darunter der Beginn des Fließtextes\n"
+    },
+    "ueberschrift": {
+      "text": "AfD-Kandidatin zählt in Buchholz selbst Stimmen aus – Verstoß gegen das Wahlgesetz"
+    },
+    "einleitung": {
+      "text": "Die AfD-Kandidatin hat am Sonntag in einem Buchholzer Wahllokal Stimmen für die Kommunalwahl 2026 ausgezählt. Eigentlich darf das nicht passieren. Wer bei einer Kommunalwahl selbst kandidiert, darf nicht in einem Wahllokal arbeiten. So steht es im Kommunalwahlgesetz. Doch der Stadt war offenbar nicht bekannt, dass sie auch Kandidatin ist.\n"
+    }
+  },
+  {
+    "id": "fundus091",
+    "thema": "Tiere",
+    "typ": [
+      "video"
+    ],
+    "echtheit": "echt",
+    "freigabe": true,
+    "status": "methodensprint",
+    "achsen": [
+      "echt-ki",
+      "echt-fake",
+      "glaube-ich-sofort-glaube-ich-nie",
+      "quelle-vertrauen",
+      "sachlich-emotionalisierend",
+      "wuerde-ich-sofort-teilen-wuerde-ich-nie-teilen",
+      "informieren-manipulieren"
+    ],
+    "quelle": {
+      "name": "LADbible-Repost, geteilt über Reddit r/BeAmazed; Urheber der Aufnahme unbekannt",
+      "url": "https://www.reddit.com/r/BeAmazed/comments/1tl4bkx/he_gives_a_squirrel_a_drink_of_water/",
+      "datum": null,
+      "lizenz": "Screenshot/Repost (Zitat zu Bildungszwecken)"
+    },
+    "kontext": "Ein Mensch hält einem Eichhörnchen eine Wasserflasche hin, das Tier umfasst den Flaschenhals mit den Vorderpfoten und trinkt. Eingebrannte Caption: \"I saw a squirrel in the heat, so I decided to share my water\". Die Aufnahme ist nach Prüfung mit hoher Wahrscheinlichkeit echt – interessant ist dieses Item aber gerade deshalb, weil es zeigt, wie unterschiedlich gut einzelne Echtheitsargumente tragen.\nWas belastbar für echt spricht: Die Pfoten greifen mit korrekt gegliederten Zehen und Krallen um den Flaschenhals, im Makro sichtbar bis zum Wassertropfen an der Kralle – eine klassische Schwachstelle generierter Videos, hier sauber. Das Flaschenetikett trägt lesbare, über alle Einstellungen stabile Schrift (\"KATTE EFENDİ\", \"SU\" = türkisch für Wasser), statt des typischen Pseudo-Texts. Das Tier ist als Kaukasisches Eichhörnchen (Sciurus anomalus) bestimmbar, was zur trockenen Hügellandschaft und zum türkischen Etikett passt – Motiv und Umgebung sind also artlich und geografisch stimmig. Der Wasserstand in der Flasche sinkt über die Laufzeit plausibel, Requisiten (Astform, Fraßlöcher in den Blättern, Etikett) bleiben auch über den Schnitt hinweg konsistent.\nWas als Argument schwächer trägt als gedacht – und didaktisch der eigentliche Punkt ist: Die Länge von 61 Sekunden wird gern als Echtheitsbeweis genommen (\"so lange kann KI nicht\"). Der Clip ist aber kein durchgehender Take: Bei 56,7 Sekunden liegt ein harter Schnitt in eine engere Einstellung (maschinell messbar, Szenenwechsel-Score 0,37 gegenüber unter 0,17 im gesamten übrigen Verlauf). Die Wechsel zwischen Totale und Makro davor sind dagegen kein Schnitt, sondern kontinuierliches Zoomen und Heranführen der Kamera. Es bleiben also rund 57 Sekunden am Stück – ein starkes Argument, aber eines, das man erst prüfen muss, statt es aus der Gesamtlaufzeit abzulesen. Gut geeignet, um Prüfargumente nach ihrer Belastbarkeit zu sortieren, statt sie nur zu sammeln: Die nominelle Länge sagt wenig, die längste ungeschnittene Einstellung sagt viel, und die Detailbefunde tragen unabhängig davon.\nZweite Ebene: Echtes Bild, gedeutete Geschichte. Belegt ist, dass ein Mensch einem Eichhörnchen Wasser gibt und dieses trinkt. Nicht belegt ist die Rahmung der Caption – ein Tier, das derart zutraulich aus einer Flasche trinkt, ist Menschen vermutlich gewohnt (Park, Rastplatz, Fütterung), was eine spontane Rettungsgeschichte unwahrscheinlicher macht als eine wiederholte Begegnung. Dazu kommt: Es handelt sich um einen LADbible-Repost mit eingebranntem Wasserzeichen und Caption, nicht um den Original-Upload. Urheber, Ort und Datum sind nicht auffindbar, die Metadaten durch Reddit-Reencodierung vollständig verloren. \"Echt\" heißt hier also: Die Aufnahme ist echt – über ihre Entstehungsgeschichte sagt das nichts.\n",
+    "video": {
+      "datei": "video/fundus091.mp4",
+      "beschreibung": "Hochformatvideo (61 s) in trockener Hügellandschaft: Eine Hand hält einem Eichhörnchen auf einem Ast eine blaue Wasserflasche hin; das Tier umgreift den Flaschenhals mit beiden Vorderpfoten und trinkt, Wasser tropft an den Pfoten vorbei. Eingeblendete Caption und LADbible-Wasserzeichen.\n"
+    }
+  },
+  {
+    "id": "fundus092",
+    "thema": "Verkehr",
+    "typ": [
+      "ueberschrift",
+      "einleitung"
+    ],
+    "echtheit": "echt",
+    "freigabe": true,
+    "status": "methodensprint",
+    "achsen": [
+      "meinung-fakt",
+      "sachlich-emotionalisierend",
+      "informieren-manipulieren",
+      "quelle-vertrauen",
+      "glaube-ich-sofort-glaube-ich-nie",
+      "lokal-global"
+    ],
+    "quelle": {
+      "name": "watson.ch (Michael Graber)",
+      "url": "https://www.watson.ch/schweiz/auto/316689873-so-viel-mehr-autounfaelle-verursachen-senioren-mehr-als-neulenker",
+      "datum": "2026-08-25T00:00:00.000Z",
+      "lizenz": null
+    },
+    "kontext": "Schweizer Onlineartikel zur Frage, ob die Fahrtauglichkeit von Senioren strenger überprüft werden soll. Anlass ist ein Vorstoss der Grünen-Nationalrätin Marionna Schlatter, den der Bundesrat ablehnt. Der Artikel steigt mit einem tödlichen Einzelfall ein (87-jähriger Fahrer, verunglückte Lehrerin) und stützt sich dann auf eine Zahl, die er nicht belegt: Über 80-Jährige verursachten – hochgerechnet auf die gefahrenen Kilometer – mehr Unfälle mit Personenschaden als 18- bis 24-Jährige. Ergiebig für die Arbeit an der Frage, welche Bezugsgrösse eine Statistik verwendet und was der emotionale Einstieg mit der Beweislage macht.\n",
+    "ueberschrift": {
+      "text": "Senioren verursachen mehr Autounfälle als Neulenker: Bundesrat will nichts unternehmen"
+    },
+    "einleitung": {
+      "text": "Ein Bericht sollte aufzeigen, wie die Verkehrstauglichkeit von Senioren besser überprüft und gefördert werden kann. Doch die Regierung winkt ab: Das bringe nichts.\n"
+    }
+  },
+  {
+    "id": "fundus093",
+    "thema": "Politik",
+    "typ": [
+      "video",
+      "claim"
+    ],
+    "echtheit": "fake",
+    "freigabe": true,
+    "status": "methodensprint",
+    "achsen": [
+      "echt-fake",
+      "glaube-ich-sofort-glaube-ich-nie",
+      "quelle-vertrauen",
+      "informieren-manipulieren",
+      "aufklaerend-irrefuehrend",
+      "harmlos-gefaehrlich",
+      "sachlich-emotionalisierend",
+      "wuerde-ich-sofort-teilen-wuerde-ich-nie-teilen"
+    ],
+    "quelle": {
+      "name": "X-Account \"The Saviour\" (Repost; Urheber unbekannt)",
+      "url": "https://perma.cc/ZEJ5-YX8M?type=standard",
+      "datum": "2026-09-18T00:00:00.000Z",
+      "lizenz": "Screenshot (Zitat zu Bildungszwecken)"
+    },
+    "quelle2": {
+      "name": "CORRECTIV Faktencheck (Steffen Kutzner)",
+      "url": "https://correctiv.org/faktencheck/2026/09/18/video-von-zerschnittenen-afd-stimmzetteln-in-berlin-ist-eine-faelschung/"
+    },
+    "kontext": "44-Sekunden-Video, angeblich aus einem Berliner Wahlamt: Eine Person öffnet rosa Briefwahlumschläge, entnimmt Stimmzettel und zerschneidet die mit AfD-Kreuz. Über 300.000 Aufrufe. CORRECTIV stuft es als Fälschung ein, der Landeswahlleiter für Berlin bestätigt, dass die Unterlagen anders aussehen als das Original.\nDidaktisch stark, weil die Fälschung nicht an der Bildtechnik scheitert, sondern am Sachwissen: Das Video ist ein durchgehender Take ohne Schnitt, ohne KI-Artefakte, ohne verräterische Physik – alles, worauf man bei Deepfakes zuerst schaut, ist unauffällig. Auffliegen lässt es das Requisit. Wer weiß, wie eine deutsche Briefwahl abläuft, sieht die Fehler sofort:\nErstens fehlt in allen Umschlägen der Wahlschein, den Wählende unterschreiben und beilegen müssen – ohne ihn wäre keine dieser Stimmen überhaupt gültig. Zweitens fehlt der zweite Stimmzettel für die Bezirksverordnetenversammlung. Drittens weicht die Typografie ab: Auf dem Stimmzettelumschlag ist die ganze Zeile fett gesetzt, im Original nur einzelne Wörter. Viertens haben die rosa Umschläge eine andere Form als echte. Fünftens tragen die Urnen einen aufgeklebten Berliner Bären – unüblich, wie der Landeswahlleiter anmerkt.\nZweite Ebene ist die Verbreitung: Das Video tauchte laut CORRECTIV praktisch gleichzeitig auf mehreren großen englischsprachigen X-Accounts auf. Die Forscherin Julia Smirnova (Center für Monitoring, Analyse und Strategie) ordnet es der russischen Kampagne Storm-1516 zu, die wiederholt mit Wahl-Desinformation auffiel. Das simultane Auftauchen auf mehreren Accounts ist selbst ein Prüfsignal – organische Viralität sieht anders aus als koordinierte Einspeisung.\nGute Übung: Erst das Video ansehen und sammeln lassen, was auffällt; dann die Frage stellen, was eigentlich alles in einem Briefwahlumschlag steckt. Der Fall zeigt, dass Faktenprüfung oft kein Technikproblem ist, sondern ein Wissensproblem – und dass Rückfrage bei der zuständigen Behörde ein gangbarer Weg ist.\n",
+    "video": {
+      "datei": "video/fundus093.mp4",
+      "beschreibung": "Hochformatvideo (44 s) in einem Büroraum: Auf einem Tisch liegen Stapel rosa Briefwahlumschläge und Stimmzettel, daneben zwei graue Mülltonnen mit aufgeklebtem Berliner Bären. Eine Person öffnet Umschläge, entnimmt Stimmzettel und zerschneidet einzelne davon mit einer Schere.\n"
+    },
+    "claim": {
+      "text": "Ein Video aus Berlin zeigt, wie Briefwahlstimmen für die AfD im Wahlamt aussortiert und zerschnitten werden.",
+      "bewertung": "Falsch. Das Video ist eine Fälschung. Die gezeigten Wahlunterlagen entsprechen nicht den echten Berliner Briefwahlunterlagen: In den Umschlägen fehlen die zwingend erforderlichen Wahlscheine ebenso wie der zweite Stimmzettel für die Bezirksverordnetenversammlung, die Typografie des Stimmzettelumschlags weicht ab (ganze Zeile fett statt einzelner Wörter), die rosa Umschläge haben eine andere Form, und die Urnen sind mit einem Berliner Bären beklebt, was unüblich ist. Der Landeswahlleiter für Berlin bestätigte gegenüber CORRECTIV, dass die Unterlagen im Video anders aussehen als das Original. Das Video erschien praktisch gleichzeitig auf mehreren großen englischsprachigen X-Accounts; die Forscherin Julia Smirnova ordnet es der russischen Desinformationskampagne Storm-1516 zu. Quelle: CORRECTIV, 18. September 2026.\n"
     }
   }
 ];
