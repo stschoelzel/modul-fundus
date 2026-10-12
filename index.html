@@ -950,7 +950,8 @@
 
   function toggleDetail(id, mainTr, detailTr) {
     const visible = detailTr.style.display !== 'none';
-    // close all
+    // close all - laufende Video-Player vorher pausieren, display:none stoppt sie nicht
+    document.querySelectorAll('.detail-row video').forEach(v => v.pause());
     document.querySelectorAll('.detail-row').forEach(r => r.style.display = 'none');
     document.querySelectorAll('tbody tr:not(.detail-row)').forEach(r => {
       r.classList.remove('expanded');
