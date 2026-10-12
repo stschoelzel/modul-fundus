@@ -121,9 +121,15 @@
     {{memeUrsprung_img}}
   </div>
 
-  <!-- Kein Platzhalter fuer Video: item.video.datei/beschreibung hat aktuell KEIN {{...}} in
-       getExportContext (index.html) - Video-Items zeigen in keiner Vorlage ein Vorschaubild.
-       Falls das mal noetig wird: in getExportContext + hier ergaenzen. -->
+  <!-- Video-Feld: item.video.beschreibung (Text) + {{video_img}}, das zu einem Standbild aus
+       item.video.datei wird (Sekunde 0.5, siehe resolveVideoFrames in index.html) - JPG/PDF
+       koennen kein Video einbetten. Ist item.video.datei ein externer Link (z.B. perma.cc),
+       gibt es kein Standbild; der Link steht dann im Text von {{video}}. -->
+  <div class="tpl-field" data-field="video">
+    <h4>Video</h4>
+    <p>{{video}}</p>
+    {{video_img}}
+  </div>
 
   <!-- Datum-Feld: item.quelle.datum (ISO-Datum als String). -->
   <div class="tpl-field" data-field="datum">

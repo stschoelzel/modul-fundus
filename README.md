@@ -16,6 +16,18 @@ Für alle, die den Fundus nur ansehen wollen:
 
 Fertig - kein Server, kein Node, kein npm nötig. `fundus-data.js` liegt bereits fertig gebaut im Repo und wird von `index.html` direkt eingebunden.
 
+## Apps
+
+Im Ordner `apps/` liegen eigenständige HTML-Werkzeuge, die zu einzelnen Methoden gehören. Sie sind oben rechts im schwarzen Kopfbereich von `index.html` als Buttons verlinkt und öffnen sich in einem neuen Tab. Jede Datei ist eine Standalone-Seite: Sie lässt sich auch direkt per Doppelklick öffnen, braucht keinen Server und hängt nicht am Build.
+
+| Datei | App | Methode |
+|---|---|---|
+| `apps/checkst-du.html` | Checkst du? | Checkst du? |
+| `apps/Meme-Generator.html` | Meme-Generator | Memix |
+| `apps/Nachrichten-Baukasten.html` | Nachrichten-Baukasten | Schlagzeile & Bild |
+
+Neue App ergänzen: HTML-Datei nach `apps/` legen und in `index.html` im `<nav class="apps-nav">` einen weiteren `<a class="app-btn">`-Block eintragen. Groß-/Kleinschreibung im Dateinamen muss exakt zum Link passen, GitHub Pages unterscheidet sie.
+
 ## Daten pflegen / lokale Entwicklung
 
 Neues Item anlegen? `yaml-helper.html` (per Doppelklick öffnen, kein Server nötig) fragt die Felder per Formular ab, schlägt die nächste freie `id` vor und generiert daraus den fertigen YAML-Block samt Angabe, wo die Mediendatei abgelegt werden muss - manuelles Tippen in `fundus.yaml` bleibt trotzdem nötig, das Tool erzeugt nur den Block zum Einfügen.
@@ -58,7 +70,7 @@ Nur relevant, wenn du `fundus.yaml` oder die Export-Vorlagen in `export-template
 | `artikel.text` | string | nein | Volltext oder Zusammenfassung des echten Artikels |
 | `meme.datei` | string | nein | Dateiname des Meme-Bildes. Kann ein relativer Pfad im Fundus-Ordner ODER eine absolute URL sein, falls das Bild nur verlinkt werden darf. |
 | `meme.ursprung` | string | nein | Wo das Meme zuerst auftauchte / Verbreitungskontext |
-| `video.datei` | string | nein | Dateiname im Video-Ordner, z.B. `video/fundus063.mp4`. Kann ein relativer Pfad im Fundus-Ordner ODER eine absolute URL sein, falls das Video nur verlinkt werden darf. |
+| `video.datei` | string | nein | Dateiname im Video-Ordner, z.B. `video/fundus063.mp4`. Kann ein relativer Pfad im Fundus-Ordner ODER eine absolute URL sein, falls das Video nur verlinkt werden darf. Videodateien (mp4/webm) bekommen in `index.html` Hover-Vorschau und Player, im JPG/PDF-Export ein Standbild; andere URLs (z.B. perma.cc) werden nur als Link angezeigt. |
 | `video.beschreibung` | string | nein | Kurze Beschreibung des Videoinhalts |
 | `claim.text` | string | nein | Zu prüfende Aussage (für Source Hunter) |
 | `claim.bewertung` | string | nein | Faktencheckergebnis + Quelle |

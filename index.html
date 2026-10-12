@@ -39,6 +39,7 @@
       display: flex;
       align-items: baseline;
       gap: 1.5rem;
+      flex-wrap: wrap;
     }
 
     header h1 {
@@ -47,9 +48,72 @@
       letter-spacing: 0.08em;
     }
 
-    header span {
+    header > span {
       color: var(--mid);
       font-size: 0.85rem;
+    }
+
+    /* Standalone-Apps (apps/) als Buttons rechts im Header */
+    .apps-nav {
+      margin-left: auto;
+      align-self: center;
+      display: flex;
+      align-items: stretch;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .apps-nav .apps-label {
+      align-self: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--mid);
+      margin-right: 0.25rem;
+    }
+
+    .app-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-family: inherit;
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 1.3;
+      text-transform: uppercase;
+      padding: 0.35rem 0.7rem;
+      border: 2px solid var(--accent);
+      background: var(--accent);
+      color: var(--black);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .app-btn b::after {
+      content: " \2197";
+    }
+
+    .app-btn small {
+      font-size: 0.65rem;
+      font-weight: 400;
+      text-transform: none;
+      letter-spacing: 0.04em;
+      color: var(--black);
+      opacity: 0.75;
+    }
+
+    .app-btn:hover,
+    .app-btn:focus-visible {
+      background: var(--black);
+      color: var(--accent);
+      outline: none;
+    }
+
+    .app-btn:hover small,
+    .app-btn:focus-visible small {
+      color: var(--accent);
+      opacity: 1;
     }
 
     .controls {
@@ -291,6 +355,7 @@
     dialog#lightbox[open] { display: flex; align-items: center; justify-content: center; }
     dialog#lightbox::backdrop { background: rgba(0, 0, 0, 0.9); }
     dialog#lightbox img { max-width: 100vw; max-height: 100vh; cursor: zoom-out; }
+    dialog#lightbox video { max-width: 100vw; max-height: 100vh; background: #000; }
 
     @media print {
       body > *:not(#export-print-area) { display: none !important; }
@@ -401,6 +466,20 @@
 <header>
   <h1>m.o.d.u.l.</h1>
   <span>Modular - Open - Dynamic - Universal - Ludic / Materialfundus</span>
+  <nav class="apps-nav" aria-label="Apps">
+    <span class="apps-label">Apps</span>
+    <a class="app-btn" href="apps/checkst-du.html" target="_blank" rel="noopener" title="Checkst du? in neuem Tab öffnen">
+      <b>Checkst du?</b>
+    </a>
+    <a class="app-btn" href="apps/Meme-Generator.html" target="_blank" rel="noopener" title="Meme-Generator in neuem Tab öffnen">
+      <b>Meme-Generator</b>
+      <small>Methode: Memix</small>
+    </a>
+    <a class="app-btn" href="apps/Nachrichten-Baukasten.html" target="_blank" rel="noopener" title="Nachrichten-Baukasten in neuem Tab öffnen">
+      <b>Nachrichten-Baukasten</b>
+      <small>Methode: Schlagzeile &amp; Bild</small>
+    </a>
+  </nav>
 </header>
 
 <div id="loading">Lade Fundus...</div>
@@ -499,6 +578,7 @@
 
 <dialog id="lightbox">
   <img id="lightbox-img" src="" alt="">
+  <video id="lightbox-video" controls playsinline style="display:none"></video>
 </dialog>
 
 <script>
@@ -509,6 +589,12 @@
   let activeAchse = null;
   let previewBox = null;
 
+  // Medienart einer video.datei: lokale/entfernte Videodatei -> 'video' (Vorschau + Player),
+  // alles andere (z.B. perma.cc-Archivlinks) -> 'link' (nur in neuem Tab oeffnen).
+  function videoKind(url) {
+    return /\.(mp4|webm|ogv|mov|m4v)(\?.*)?$/i.test(url) ? 'video' : 'link';
+  }
+
   function getPreviewBox() {
     if (!previewBox) {
       previewBox = document.createElement('div');
@@ -516,15 +602,32 @@
       previewBox.style.cssText = 'position:fixed; display:none; z-index:1000; border:2px solid var(--black); background:var(--white); padding:4px; pointer-events:none;';
       const img = document.createElement('img');
       img.style.cssText = 'max-width:220px; max-height:220px; display:block;';
-      previewBox.appendChild(img);
+      // Video zeigt mit preload=metadata nur das erste Bild - dank Range-Requests laedt der
+      // Browser dafuer nur wenige KB, nicht die ganze Datei.
+      const video = document.createElement('video');
+      video.muted = true;
+      video.playsInline = true;
+      video.preload = 'metadata';
+      video.style.cssText = 'max-width:220px; max-height:220px; display:none; background:#000;';
+      previewBox.append(img, video);
       document.body.appendChild(previewBox);
     }
     return previewBox;
   }
 
-  function showPreview(url, evt) {
+  function showPreview(url, evt, kind = 'image') {
     const box = getPreviewBox();
-    box.querySelector('img').src = url;
+    const img = box.querySelector('img');
+    const video = box.querySelector('video');
+    if (kind === 'video') {
+      if (video.getAttribute('src') !== url) video.src = url;
+      img.style.display = 'none';
+      video.style.display = 'block';
+    } else {
+      img.src = url;
+      video.style.display = 'none';
+      img.style.display = 'block';
+    }
     box.style.display = 'block';
     movePreview(evt);
   }
@@ -539,26 +642,54 @@
     if (previewBox) previewBox.style.display = 'none';
   }
 
-  // Hover-Vorschau + Klick-zum-Öffnen für bild.datei/meme.datei; funktioniert
-  // identisch für relative Pfade und absolute URLs.
-  function attachMediaPreview(el, url) {
+  // Hover-Vorschau + Klick-zum-Öffnen für bild.datei/meme.datei/video.datei; funktioniert
+  // identisch für relative Pfade und absolute URLs. kind: 'image' | 'video' | 'link'.
+  function attachMediaPreview(el, url, kind = 'image') {
     if (!url) return;
     el.style.cursor = 'pointer';
-    el.addEventListener('mouseenter', e => showPreview(url, e));
+    if (kind === 'link') {
+      el.title = 'Video extern öffnen';
+      el.addEventListener('click', e => { e.stopPropagation(); window.open(url, '_blank', 'noopener'); });
+      return;
+    }
+    el.addEventListener('mouseenter', e => showPreview(url, e, kind));
     el.addEventListener('mousemove', movePreview);
     el.addEventListener('mouseleave', hidePreview);
     el.addEventListener('click', e => {
       e.stopPropagation();
-      openLightbox(url);
+      openLightbox(url, kind);
     });
   }
 
-  function openLightbox(url) {
-    document.getElementById('lightbox-img').src = url;
-    document.getElementById('lightbox').showModal();
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxVideo = document.getElementById('lightbox-video');
+
+  function openLightbox(url, kind = 'image') {
+    if (kind === 'video') {
+      lightboxImg.style.display = 'none';
+      lightboxImg.removeAttribute('src');
+      lightboxVideo.style.display = 'block';
+      lightboxVideo.src = url;
+      lightboxVideo.play().catch(() => {});
+    } else {
+      lightboxVideo.style.display = 'none';
+      lightboxImg.style.display = 'block';
+      lightboxImg.src = url;
+    }
+    lightbox.showModal();
   }
 
-  document.getElementById('lightbox').addEventListener('click', function() { this.close(); });
+  // Schliessen per Klick auf den Hintergrund oder das Bild - nicht auf die Video-Steuerleiste.
+  lightbox.addEventListener('click', function(e) {
+    if (e.target === this || e.target === lightboxImg) this.close();
+  });
+  // Beim Schliessen (Klick oder Esc) Video stoppen und Download abbrechen.
+  lightbox.addEventListener('close', () => {
+    lightboxVideo.pause();
+    lightboxVideo.removeAttribute('src');
+    lightboxVideo.load();
+  });
 
   function loadFundus() {
     if (!Array.isArray(window.FUNDUS_DATA) || window.FUNDUS_DATA.length === 0) {
@@ -675,8 +806,8 @@
         dot.classList.add('dot');
         if ((item.typ || []).includes(t)) dot.classList.add('filled');
         td.appendChild(dot);
-        const mediaUrl = t === 'bild' ? item.bild?.datei : t === 'meme' ? item.meme?.datei : null;
-        if (mediaUrl) attachMediaPreview(td, mediaUrl);
+        const mediaUrl = t === 'bild' ? item.bild?.datei : t === 'meme' ? item.meme?.datei : t === 'video' ? item.video?.datei : null;
+        if (mediaUrl) attachMediaPreview(td, mediaUrl, t === 'video' ? videoKind(mediaUrl) : 'image');
         tr.appendChild(td);
       });
       // echtheit
@@ -758,6 +889,20 @@
     if (item.claim?.bewertung) fields.push({key: 'faktcheck', label: 'Faktcheck', val: item.claim.bewertung});
     if (item.bild?.beschreibung) fields.push({key: 'bild', label: 'Bild', val: item.bild.beschreibung, thumb: item.bild.datei});
     if (item.meme?.ursprung) fields.push({key: 'memeUrsprung', label: 'Meme-Ursprung', val: item.meme.ursprung, thumb: item.meme.datei});
+    if (item.video?.datei || item.video?.beschreibung) {
+      // video: Videodatei -> Player im Detail, Standbild im Export (siehe resolveVideoFrames);
+      // externer Link (z.B. perma.cc) -> nur ein Link, weil sich der nicht einbetten laesst.
+      const url = item.video.datei;
+      const f = {key: 'video', label: 'Video', val: item.video.beschreibung || ''};
+      if (url && videoKind(url) === 'video') {
+        f.video = url;
+      } else if (url) {
+        let host = url;
+        try { host = new URL(url).hostname; } catch {}
+        f.val += (f.val ? '<br>' : '') + `<a href="${url}" target="_blank" rel="noopener">Video öffnen (${host}) \u2197</a>`;
+      }
+      fields.push(f);
+    }
     if (item.quelle?.datum) fields.push({key: 'datum', label: 'Datum', val: item.quelle.datum});
     if (item.quelle?.lizenz) fields.push({key: 'lizenz', label: 'Lizenz', val: item.quelle.lizenz});
     if (item.quelle2?.name || item.quelle2?.url) {
@@ -786,6 +931,16 @@
         img.style.cssText = 'max-width:160px; max-height:160px; display:block; margin-top:0.4rem; cursor:pointer; border:2px solid #444;';
         img.addEventListener('click', e => { e.stopPropagation(); openLightbox(f.thumb); });
         div.appendChild(img);
+      }
+      if (f.video) {
+        const video = document.createElement('video');
+        video.src = f.video;
+        video.controls = true;
+        video.preload = 'metadata';
+        video.playsInline = true;
+        video.style.cssText = 'max-width:260px; max-height:260px; display:block; margin-top:0.4rem; border:2px solid #444; background:#000;';
+        video.addEventListener('click', e => e.stopPropagation());
+        div.appendChild(video);
       }
       box.appendChild(div);
     });
@@ -849,12 +1004,12 @@
 
   document.getElementById('export-cancel').addEventListener('click', () => exportDialog.close());
 
-  document.getElementById('export-create').addEventListener('click', () => {
+  document.getElementById('export-create').addEventListener('click', async () => {
     const format = document.querySelector('input[name="export-format"]:checked').value;
     const size = document.querySelector('input[name="export-size"]:checked').value;
     const checkedIdx = [...document.querySelectorAll('#export-fields input:checked')]
       .map(cb => Number(cb.dataset.fieldIdx));
-    const fields = getExportableFields(exportItem).filter((_, i) => checkedIdx.includes(i));
+    const fields = await resolveVideoFrames(getExportableFields(exportItem).filter((_, i) => checkedIdx.includes(i)));
     const cfg = PAGE_SIZES[size];
     const html = wrapExportHtml(renderExportBody(exportItem, fields), cfg);
     finishExport(html, size, format, `${exportItem.id}.jpg`);
@@ -862,17 +1017,18 @@
 
   // Vorlagen (export-templates/*.html, kompiliert nach export-templates-data.js) exportieren
   // sofort per Klick - kein Zwischenschritt wie bei "Erstellen".
-  function exportTemplate(tpl, format) {
+  async function exportTemplate(tpl, format) {
     const cfg = PAGE_SIZES[tpl.size];
-    const html = wrapTemplateHtml(renderTemplateBody(exportItem, tpl), cfg);
+    const fields = await resolveVideoFrames(getExportableFields(exportItem));
+    const html = wrapTemplateHtml(renderTemplateBody(exportItem, tpl, fields), cfg);
     finishExport(html, tpl.size, format, `${exportItem.id}_${tpl.id}.jpg`);
   }
 
   // Ersetzt {{token}}-Platzhalter (siehe getExportContext) im Vorlagen-HTML durch die
   // Item-Daten. Ein Feld-Wrapper mit data-field="..." wird entfernt, wenn sein <p> leer
   // bleibt und kein <img> enthaelt - Vorlagen muessen also nicht pruefen, ob ein Feld existiert.
-  function renderTemplateBody(item, tpl) {
-    const ctx = getExportContext(item);
+  function renderTemplateBody(item, tpl, fields = getExportableFields(item)) {
+    const ctx = getExportContext(item, fields);
     const substituted = tpl.html.replace(/\{\{(\w+)\}\}/g, (_, key) => ctx[key] ?? '');
     const container = document.createElement('div');
     container.innerHTML = substituted;
@@ -884,9 +1040,9 @@
     return container.innerHTML;
   }
 
-  function getExportContext(item) {
+  function getExportContext(item, fields = getExportableFields(item)) {
     const ctx = {id: item.id};
-    getExportableFields(item).forEach(f => {
+    fields.forEach(f => {
       ctx[f.key] = f.val;
       if (f.thumb) ctx[f.key + '_img'] = `<img src="${f.thumb}" class="tpl-img">`;
     });
@@ -986,6 +1142,49 @@
       img.onerror = reject;
       img.src = src;
     });
+  }
+
+  // Standbild aus einem Video (bei Sekunde 0.5) als data:-URL - JPG und PDF koennen kein
+  // Video einbetten. Scheitert wie toDataUrl bei fremden Domains ohne CORS-Freigabe.
+  function videoFrameDataUrl(src, at = 0.5) {
+    return new Promise((resolve, reject) => {
+      const v = document.createElement('video');
+      v.muted = true;
+      v.playsInline = true;
+      v.preload = 'auto';
+      v.crossOrigin = 'anonymous';
+      const timer = setTimeout(() => reject(new Error('Timeout beim Laden des Videos')), 20000);
+      v.onerror = () => { clearTimeout(timer); reject(new Error('Video konnte nicht geladen werden')); };
+      v.onloadedmetadata = () => { v.currentTime = Math.min(at, Math.max(0, (v.duration || 0) - 0.1)); };
+      v.onseeked = () => {
+        clearTimeout(timer);
+        const c = document.createElement('canvas');
+        c.width = v.videoWidth;
+        c.height = v.videoHeight;
+        c.getContext('2d').drawImage(v, 0, 0);
+        try {
+          resolve(c.toDataURL('image/jpeg', 0.9));
+        } catch (err) {
+          reject(err);
+        }
+      };
+      v.src = src;
+    });
+  }
+
+  // Ersetzt in einer Feldliste (getExportableFields) jedes Video durch ein Standbild als thumb,
+  // damit renderExportBody/renderTemplateBody es wie ein Bild behandeln.
+  async function resolveVideoFrames(fields) {
+    for (const f of fields) {
+      if (!f.video) continue;
+      try {
+        f.thumb = await videoFrameDataUrl(f.video);
+      } catch {
+        f.val += (f.val ? '<br>' : '') + '<span style="color:#c22; font-size:0.7rem;">Standbild aus dem Video konnte nicht eingebettet werden (Datei fehlt oder fremde Domain ohne CORS-Freigabe)</span>';
+      }
+      delete f.video;
+    }
+    return fields;
   }
 
   // Ersetzt img.src durch data:-URLs (siehe toDataUrl), direkt im uebergebenen Live-DOM-Element.
