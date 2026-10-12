@@ -139,6 +139,7 @@ window.FUNDUS_DATA = [
     "thema": "Umweltverschmutzung",
     "typ": [
       "ueberschrift",
+      "einleitung",
       "artikel"
     ],
     "echtheit": "echt",
@@ -153,18 +154,21 @@ window.FUNDUS_DATA = [
       "aufklaerend-irrefuehrend"
     ],
     "quelle": {
-      "name": "heute.de",
-      "url": "https://www.heute.de/beispiel/loeffelweise-plastik-im-hirn",
-      "datum": "2024-09-05T00:00:00.000Z",
+      "name": "heute.at",
+      "url": "https://www.heute.at/s/loeffelweise-so-viel-plastik-haben-wir-schon-im-hirn-120089093",
+      "datum": "2025-06-02T00:00:00.000Z",
       "lizenz": "Pressebild"
     },
     "quelle2": {
-      "name": "Correctiv Faktencheck",
-      "url": "https://correctiv.org/faktencheck/beispiel-plastik-im-hirn"
+      "name": "Deutschlandfunk",
+      "url": "https://www.deutschlandfunk.de/mikroplastik-gehirn-studien-demenz-100.html"
     },
-    "kontext": "Meldung über Mikroplastik im menschlichen Gehirn, dazu ein Faktencheck, der die Studienlage einordnet. Gut geeignet, um zu zeigen, dass auch bei seriösen Quellen eine zweite Einordnung sinnvoll ist.\n",
+    "kontext": "Neue Studien zeigen Mikroplastik dort, wo es eigentlich nicht sein sollte: im Gehirn. Ein Löffel Plastik im Gehirn – diese Behauptung ging viral. Doch wie belastbar ist sie? Fachleute streiten über Methoden, Befunde und Aussagekraft der Daten.\n",
     "ueberschrift": {
       "text": "Löffelweise - so viel Plastik haben wir schon im Hirn"
+    },
+    "einleitung": {
+      "text": "Bis zu 30-mal mehr Mikroplastik als in Leber oder Niere haben US-Forscher in Hirnproben gefunden. In Demenzhirnen war die Konzentration nochmal höher.\n"
     },
     "artikel": {
       "text": "[Volltext oder Zusammenfassung des Originalartikels]\n"
@@ -264,7 +268,7 @@ window.FUNDUS_DATA = [
     },
     "kontext": "Ein Wolf verirrt sich in eine Hamburger Einkaufspassage und beißt eine Frau.\n",
     "ueberschrift": {
-      "text": "Mitten in Hamburg: Wolf beißt Frau in Einkaufspassage – das ist über den Angriff bekannt"
+      "text": "Mitten in Hamburg: Wolf beißt Frau in Einkaufspassage – das ist über Angriff bekannt"
     },
     "einleitung": {
       "text": "Wolf-Alarm mitten in Hamburg! Am Montag hat ein wilder Wolf eine Frau in Altona gebissen, unweit der dortigen Ikea-Filiale. Später lief das Tier offenbar quer über den Kiez bis in die Innenstadt, wo der Wolf offenbar direkt am Jungfernstieg aus der Binnenalster gefischt wurde. Mittlerweile gibt es erste bestätigte Informationen der Behörden.\n"
@@ -333,7 +337,7 @@ window.FUNDUS_DATA = [
       "text": "Pferd fällt in Pool"
     },
     "einleitung": {
-      "text": "Täglich gehen zahlreiche Polizeipressemitteilungen bei unserer Redaktion ein. Hier ein Rückblick auf Meldungen, die im Zollernalbkreis besonders häufig gelesen wurden.\n"
+      "text": "Die Obernheimer Feuerwehrleute trauten ihren Augen kaum, als sie im Juni um kurz nach Mitternacht mit dem Stichwort „Tierrettung Pferd in Pool“ nach Tanneck gerufen wurden. „Ich dachte, mein Piepser spinnt und zeigt mir einen alten Einsatz“, berichtete damals Kommandant Markus Haas.  Denn vor fast fünf Jahren – im August 2020 – musste die Obernheimer Feuerwehr schon einmal ein Pferd aus genau demselben Pool befreien. Rückblick auf Meldungen, die im Zollernalbkreis besonders häufig gelesen wurden.\n"
     }
   },
   {
@@ -669,6 +673,10 @@ window.FUNDUS_DATA = [
       "datum": "2025-02-06T00:00:00.000Z",
       "lizenz": "Copyright"
     },
+    "quelle2": {
+      "name": "Deutschlandfunk",
+      "url": "https://www.deutschlandfunk.de/mikroplastik-gehirn-studien-demenz-100.html"
+    },
     "kontext": "Studien zeigen, wie viel Mikroplastik sich bereits im menschlichen Gehirn ansammelt. Allerdings ist es widerlegt, dass es ein ganzer Plastiklöffel ist. Clickbait.\n",
     "ueberschrift": {
       "text": "Löffelweise – so viel Plastik haben wir schon im Hirn"
@@ -698,7 +706,7 @@ window.FUNDUS_DATA = [
       "datum": "2026-07-20T00:00:00.000Z",
       "lizenz": "CC0"
     },
-    "kontext": "Reichstagsgebäude mit Menschenmenge, im Vordergrund filmt eine Hand mit Smartphone – wirkt wie ein authentischer Handy-Schnappschuss. Starkes Einstiegsbild: die Inschrift \"Dem deutschen Volke\" ist reines Fantasie-Kauderwelsch und das Display zeigt eine ganz andere Szene.\n",
+    "kontext": "Reichstagsgebäude mit Menschenmenge, im Vordergrund filmt eine Hand mit Smartphone – wirkt wie ein authentischer Handy-Schnappschuss. Starkes Einstiegsbild: Die Inschrift \"Dem deutschen Volke\" ist reines Fantasie-Kauderwelsch und das Display zeigt eine ganz andere Szene.\n",
     "bild": {
       "datei": "bilder/fundus021.jpg",
       "beschreibung": "Reichstagsgebäude in Berlin mit Besuchermenge davor, im Vordergrund eine Hand, die mit dem Smartphone filmt\n"
@@ -820,7 +828,7 @@ window.FUNDUS_DATA = [
       "datum": "2026-07-20T00:00:00.000Z",
       "lizenz": "CC0"
     },
-    "kontext": "Umgestürzter Baum auf einem PKW, Polizist macht Notizen, Feuerwehr im Hintergrund – klassisches Sturmschaden-Motiv für Lokalmedien. Enthält ein erfundenes Wasserzeichen \"LOKAL ANZEIGER\" und einen Kamera-Zeitstempel; das Nummernschild ist leer.\n",
+    "kontext": "Umgestürzter Baum auf einem Pkw, Polizist macht Notizen, Feuerwehr im Hintergrund – klassisches Sturmschaden-Motiv für Lokalmedien. Enthält ein erfundenes Wasserzeichen \"LOKAL ANZEIGER\" und einen Kamera-Zeitstempel.\n",
     "bild": {
       "datei": "bilder/fundus025.jpg",
       "beschreibung": "Großer umgestürzter Baumstamm auf einem silbernen Kleinwagen in einer Wohnstraße, Polizist und Feuerwehrfahrzeug daneben\n"
@@ -851,7 +859,7 @@ window.FUNDUS_DATA = [
       "datum": "2026-07-20T00:00:00.000Z",
       "lizenz": "CC0"
     },
-    "kontext": "Überflutete Fußgängerzone einer deutschen Kleinstadt mit Sandsäcken vor den Geschäften. Hochwasserbilder werden besonders häufig aus dem Kontext gerissen oder generiert – die Ladenschilder sind hier nur angedeutete Pseudo-Schrift.\n",
+    "kontext": "Überflutete Fußgängerzone einer deutschen Kleinstadt mit Sandsäcken vor den Geschäften. Hochwasserbilder werden besonders häufig aus dem Kontext gerissen oder generiert.\n",
     "bild": {
       "datei": "bilder/fundus026.jpg",
       "beschreibung": "Braun überflutete Fußgängerzone mit Fachwerk- und Altbauten, Sandsäcke vor Ladeneingängen, Menschen waten durchs Wasser\n"
@@ -1003,7 +1011,7 @@ window.FUNDUS_DATA = [
       "datum": "2026-07-20T00:00:00.000Z",
       "lizenz": "CC0"
     },
-    "kontext": "Mensa-Tablett mit Schnitzel, Pommes, Erbsen und Salat auf der Edelstahl-Ausgabe. Banales Alltagsmotiv – nützlich für die Frage, warum überhaupt jemand so ein Bild generieren sollte (Stock-Ersparnis, Bebilderung von Behauptungen).\n",
+    "kontext": "Mensa-Tablett mit Schnitzel, Pommes, Erbsen und Salat auf der Edelstahl-Ausgabe, allerdings ohne Teller. Banales Alltagsmotiv – nützlich für die Frage, warum überhaupt jemand so ein Bild generieren sollte (Stock-Ersparnis, Bebilderung von Behauptungen).\n",
     "bild": {
       "datei": "bilder/fundus031.jpg",
       "beschreibung": "Kantinentablett mit paniertem Schnitzel, Pommes, Erbsen und Beilagensalat auf einer Edelstahl-Essensausgabe\n"
@@ -1034,7 +1042,7 @@ window.FUNDUS_DATA = [
       "datum": "2026-07-20T00:00:00.000Z",
       "lizenz": "CC0"
     },
-    "kontext": "Doppelter Regenbogen über einem goldenen Getreidefeld vor schwarzer Gewitterwand. Klassisches \"zu schön um wahr zu sein\"-Bild, das als vermeintliches Leserfoto durch soziale Netzwerke wandert.\n",
+    "kontext": "Doppelter Regenbogen über einem goldenen Getreidefeld vor schwarzer Gewitterwand. Klassisches \"zu schön, um wahr zu sein\"-Bild, das als vermeintliches Leserfoto durch soziale Netzwerke wandert.\n",
     "bild": {
       "datei": "bilder/fundus032.jpg",
       "beschreibung": "Regenbogen über einem reifen Weizenfeld vor dunklen Gewitterwolken\n"
@@ -1096,10 +1104,10 @@ window.FUNDUS_DATA = [
       "datum": "2026-07-20T00:00:00.000Z",
       "lizenz": "CC0"
     },
-    "kontext": "Erschöpfte Pflegekraft mit heruntergezogener OP-Maske sitzt am Boden eines Krankenhausflurs – nachgebautes Pandemie-Ikonenbild. Für FSJ-Gruppen mit Einsatzstellen im Pflegebereich besonders anschlussfähig und emotional aufgeladen.\n",
+    "kontext": "Erschöpfte Pflegekraft mit heruntergezogener OP-Maske sitzt/liegt am Boden eines Krankenhausflurs – nachgebautes Pandemie-Ikonenbild. Für FSJ-Gruppen mit Einsatzstellen im Pflegebereich besonders anschlussfähig und emotional aufgeladen.\n",
     "bild": {
       "datei": "bilder/fundus034.jpg",
-      "beschreibung": "Pflegekraft in blauem Kasack sitzt erschöpft an der Wand eines Krankenhausflurs, OP-Maske unter dem Kinn\n"
+      "beschreibung": "Pflegekraft in blauem Kasack sitzt erschöpft an der Wand eines Krankenhausflurs, OP-Maske.\n"
     },
     "ki": {
       "model": "nano-banana-pro",
@@ -1313,10 +1321,10 @@ window.FUNDUS_DATA = [
       "datum": "2026-07-20T00:00:00.000Z",
       "lizenz": "CC0"
     },
-    "kontext": "Sechs Hände unterschiedlicher Hautfarbe kneten gemeinsam Teig – reines Symbolbild für Vielfalt und Zusammenhalt. Hier stimmen die Finger: gutes Gegenbeispiel dafür, dass die verbreitete Faustregel \"Hände checken\" nicht mehr trägt und stattdessen Quelle, Kontext und Plausibilität der Szene geprüft werden müssen.\n",
+    "kontext": "Sieben Hände unterschiedlicher Hautfarbe kneten gemeinsam Teig – reines Symbolbild für Vielfalt und Zusammenhalt. Hier stimmen die Finger: gutes Gegenbeispiel dafür, dass die verbreitete Faustregel \"Hände checken\" nicht mehr trägt und stattdessen Quelle, Kontext und Plausibilität der Szene geprüft werden müssen.\n",
     "bild": {
       "datei": "bilder/fundus041.jpg",
-      "beschreibung": "Sechs Hände verschiedener Hautfarben kneten gemeinsam einen Teigfladen auf einem bemehlten Holztisch\n"
+      "beschreibung": "Sieben Hände verschiedener Hautfarben kneten gemeinsam einen Teigfladen auf einem bemehlten Holztisch\n"
     },
     "ki": {
       "model": "flux-2-pro",
@@ -1468,7 +1476,7 @@ window.FUNDUS_DATA = [
     "kontext": "Demonstrierende halten ein Transparent \"GERECHTIGKEIT FÜR ALLE – Keine Gewalt, keine Unterdrückung\" in einer Altstadt. Der Text ist frei erfunden und sauber lesbar: zeigt, dass sich beliebige Botschaften auf beliebige Demos montieren lassen.\n",
     "bild": {
       "datei": "bilder/fundus046.jpg",
-      "beschreibung": "Fünf Personen halten ein weißes Transparent mit der Aufschrift \"Gerechtigkeit für alle\" auf einem Stadtplatz\n"
+      "beschreibung": "Fünf Personen halten ein weißes Transparent mit der Aufschrift \"Gerechtigkeit für alle\" auf einem Platz in einer Innenstadt\n"
     },
     "ki": {
       "model": "flux-2-pro",
@@ -1656,10 +1664,10 @@ window.FUNDUS_DATA = [
       "datum": "2026-02-06T00:00:00.000Z",
       "lizenz": "CC0"
     },
-    "kontext": "Containerschiff, das direkt neben einer verschneiten Straße entlangzufahren scheint, davor ein roter Gelenkbus (8 s, Hochformat). Spielt mit einem realen Phänomen – Schiffe im Nord-Ostsee-Kanal wirken tatsächlich, als führen sie über Land – und zeigt, wie \"so etwas gibt es wirklich\" die Prüfbereitschaft senkt.\n",
+    "kontext": "Schlechtes KI-Video: Containerschiff, das direkt hinter einem Bus auf einer verschneiten Straße entlangzufahren scheint (8 s, Hochformat). Beispiel für frühere schlechte KI-Videos.\n",
     "video": {
       "datei": "video/fundus053.mp4",
-      "beschreibung": "Containerschiff fährt scheinbar direkt neben einer verschneiten Straße entlang, roter Gelenkbus im Vordergrund\n"
+      "beschreibung": "Containerschiff fährt scheinbar direkt hinter einem Bus auf einer verschneiten Straße entlang.\n"
     },
     "ki": {
       "model": null,
@@ -1686,7 +1694,7 @@ window.FUNDUS_DATA = [
       "datum": "2026-02-06T00:00:00.000Z",
       "lizenz": "CC0"
     },
-    "kontext": "Zweite Variante derselben Szene: Containerschiff neben der Straße, roter Bus, Schneeränder (5 s, Hochformat). Als Paar mit fundus053 zeigt es, dass von einer vermeintlich einmaligen Zufallsaufnahme beliebig viele Fassungen existieren können.\n",
+    "kontext": "Zweite Variante derselben Szene: Schlechtes KI-Video eines Containerschiffs neben der Straße, roter Bus fährt rückwärts, Schrift auf dem Bus ergibt keinen Sinn (5 s, Hochformat).\n",
     "video": {
       "datei": "video/fundus054.mp4",
       "beschreibung": "Containerschiff neben einer verschneiten Straße, roter Bus fährt entgegen, Hochformat\n"
@@ -1748,7 +1756,7 @@ window.FUNDUS_DATA = [
       "datum": "2026-07-20T00:00:00.000Z",
       "lizenz": "CC0"
     },
-    "kontext": "Derselbe Prompt im Hochformat, gefilmt aus einem Fenster, Hagelkörner auf der Fensterbank (5 s). Gutes Paar mit fundus055: gleicher Prompt, gleiches Modell, anderes Seitenverhältnis – zeigt, wie stark das Format die wahrgenommene Echtheit steuert.\n",
+    "kontext": "Derselbe Prompt im Hochformat, gefilmt aus einem Fenster, Hagelkörner auf der Fensterbank (5 s). Gutes Paar mit fundus055: gleicher Prompt, gleiches Modell, anderes Seitenverhältnis – zeigt, wie stark das Format die wahrgenommene Echtheit steuert. Fehler im Video: Hagelkörner liegen auch im Raum auf der Fensterbank.\n",
     "video": {
       "datei": "video/fundus056.mp4",
       "beschreibung": "Hochformat-Aufnahme aus einem Fenster während eines Hagelschauers, Hagelkörner auf der Fensterbank\n"
@@ -1779,7 +1787,7 @@ window.FUNDUS_DATA = [
       "datum": "2026-07-20T00:00:00.000Z",
       "lizenz": "CC0"
     },
-    "kontext": "Nachrichtensprecherin am Studiotisch vor einer Weltkarte, mit Bauchbinde (4 s). Der Text in der Bauchbinde ist reines Kauderwelsch (\"DEGERI LLI DENGÜ FERNUTICEK\") – Schrift bleibt der zuverlässigste Tell in KI-Videos.\n",
+    "kontext": "Nachrichtensprecherin am Studiotisch vor einer Weltkarte, mit Bauchbinde (4 s). Der Text in der Bauchbinde ist reines Kauderwelsch (\"DEGERI LLI DENGÜ FERNUTICEK\") – Schrift bleibt der zuverlässigste Tell in KI-Videos. Die Stimme ahmt aber sehr gut eine Nachrichtensprecherin nach.\n",
     "video": {
       "datei": "video/fundus057.mp4",
       "beschreibung": "Nachrichtensprecherin an einem Studiotisch vor einer Weltkarte, Bauchbinde am unteren Bildrand\n"
@@ -1809,7 +1817,7 @@ window.FUNDUS_DATA = [
       "datum": "2026-07-20T00:00:00.000Z",
       "lizenz": "CC0"
     },
-    "kontext": "Fuchs und Hauskatze spielen in einem verschneiten Garten, gefilmt durch eine Fensterscheibe (5 s). Aus einem KI-Standbild animiert (image-to-video) – genau die Sorte Tiervideo, die millionenfach ungeprüft weitergereicht wird.\n",
+    "kontext": "Fuchs und Hauskatze spielen in einem verschneiten Garten, gefilmt durch eine Fensterscheibe (5 s). Aus einem KI-Standbild animiert (image-to-video) – genau die Sorte Tiervideo, die millionenfach ungeprüft weitergereicht wird. Erst wurde ein Bild mit KI generiert, das dann als Startframe für das Video verwendet wurde.\n",
     "video": {
       "datei": "video/fundus058.mp4",
       "beschreibung": "Fuchs und Hauskatze spielen in einem verschneiten Garten, gefilmt durch eine Fensterscheibe\n"
@@ -1840,7 +1848,7 @@ window.FUNDUS_DATA = [
       "datum": "2026-07-20T00:00:00.000Z",
       "lizenz": "CC0"
     },
-    "kontext": "Handkamera-Aufnahme aus einer Demonstration, dichte Menschenmenge zwischen Bürohochhäusern (9 s). Gesichter im Hintergrund verändern sich von Bild zu Bild und die Transparente sind leer – beides gut sichtbar, wenn man das Video anhält.\n",
+    "kontext": "Handkamera-Aufnahme aus einer Demonstration, dichte Menschenmenge zwischen Bürohochhäusern (9 s). Gesichter im Hintergrund verändern sich von Bild zu Bild und die Transparente werden falsch herum getragen – beides gut sichtbar, wenn man das Video anhält.\n",
     "video": {
       "datei": "video/fundus059.mp4",
       "beschreibung": "Handkamera-Aufnahme aus einer Demonstration, dichte Menschenmenge zwischen Bürohochhäusern\n"
@@ -1870,10 +1878,10 @@ window.FUNDUS_DATA = [
       "datum": "2026-07-20T00:00:00.000Z",
       "lizenz": "CC0"
     },
-    "kontext": "Orangensaft wird aus einer Karaffe in drei Gläser gegossen, Küche im Morgenlicht (5 s). Flüssigkeiten sind für Generatoren schwierig – der Blick auf Strahl und Füllstand lohnt sich; Bildsprache wie in einem Werbespot.\n",
+    "kontext": "Orangensaft wird aus einer Karaffe in ein Glas gegossen, Küche im Morgenlicht (5 s). Flüssigkeiten sind für Generatoren schwierig – der Blick auf Strahl und Füllstand lohnt sich (das Glas füllt sich viel zu langsam); Bildsprache wie in einem Werbespot.\n",
     "video": {
       "datei": "video/fundus060.mp4",
-      "beschreibung": "Orangensaft wird aus einer Karaffe in drei Gläser gegossen, Küche im Morgenlicht\n"
+      "beschreibung": "Orangensaft wird aus einer Karaffe in ein Glas gegossen, Küche im Morgenlicht\n"
     },
     "ki": {
       "model": "hailuo-2-3",
@@ -1900,7 +1908,7 @@ window.FUNDUS_DATA = [
       "datum": "2026-07-20T00:00:00.000Z",
       "lizenz": "CC0"
     },
-    "kontext": "Straßenverkäufer wendet Pfannkuchen auf einer großen Bratplatte, Kundschaft wartet dahinter (6 s, Hochformat). Hände und Werkzeug am Gerät sind die Stelle, an der das Video kippt.\n",
+    "kontext": "Straßenverkäufer wendet Pfannkuchen auf einer großen Bratplatte, Kundschaft wartet dahinter (6 s, Hochformat). Hände und Werkzeug am Gerät sind die Stelle, an der das Video kippt. Das Video wurde bewusst mit einem kleinen (schlechteren) Modell erstellt. \n",
     "video": {
       "datei": "video/fundus061.mp4",
       "beschreibung": "Straßenverkäufer wendet Pfannkuchen auf einer großen Bratplatte, wartende Kundschaft dahinter\n"
@@ -1930,7 +1938,7 @@ window.FUNDUS_DATA = [
       "datum": "2026-07-20T00:00:00.000Z",
       "lizenz": "CC0"
     },
-    "kontext": "Älterer Mann füttert auf einer Parkbank Tauben, eine landet auf seiner Hand, Herbstlaub (4 s, Hochformat). Bewusst unspektakulär – die überzeugendste Kategorie, weil am Motiv nichts zum Zweifeln einlädt.\n",
+    "kontext": "Älterer Mann füttert auf einer Parkbank Tauben, eine landet auf seiner Hand, Herbstlaub (4 s, Hochformat). Taube pickt neben die Körner auf die Hand. Bewusst unspektakulär – die überzeugendste Kategorie, weil am Motiv nichts zum Zweifeln einlädt.\n",
     "video": {
       "datei": "video/fundus062.mp4",
       "beschreibung": "Älterer Mann füttert auf einer Parkbank Tauben, eine landet auf seiner Hand, Herbstlaub\n"
@@ -1966,7 +1974,7 @@ window.FUNDUS_DATA = [
       "name": "Correctiv Faktencheck",
       "url": "https://correctiv.org/faktencheck/2026/09/08/landtagswahl-video-zeigt-keinen-briefwahlbetrug-in-sachsen-anhalt/"
     },
-    "kontext": "Angeblicher Briefwahlbetrug bei der Landtagswahl in Sachsen-Anhalt: Eine Person öffnet vermeintliche Briefwahlunterlagen, sortiert Stimmzettel und streicht einen mit AfD-Kreuz durch (\"Wie lange soll das noch weitergehen?\"), andere gelten als \"okay\". Verbreitet ab dem 4. September 2026 auf X, über 100.000 Aufrufe auf X und YouTube; eine KI-generierte englischsprachige Stimme kommentiert, \"dieser Wahlbetrug wurde nun per Video aufgenommen\". Correctiv bewertet das Video als falsch – die Unterlagen sind gefälscht: identische Wahlscheinnummern und Namen auf mehreren Dokumenten, falsch gefaltete Stimmzettel (Kreuze von außen sichtbar), fehlende Lochung der oberen rechten Ecke, Stimmzettel und Wahlschein im falschen Umschlag. Fachleute ordnen es der russischen Desinformationskampagne \"Storm-1516\" zu. Stark für Recherche-Übungen: Der Fake steckt nicht in der Bildqualität, sondern im Detailwissen über amtliche Unterlagen – Zweifeln allein reicht hier nicht, es braucht den Abgleich mit dem offiziellen Muster. Aufgeladenes Thema, für ältere oder geübte Gruppen.\n",
+    "kontext": "Angeblicher Briefwahlbetrug bei der Landtagswahl in Sachsen-Anhalt: Eine Person öffnet vermeintliche Briefwahlunterlagen, sortiert Stimmzettel und streicht einen mit AfD-Kreuz durch (\"Wie lange soll das noch weitergehen?\"), andere gelten als \"okay\". Verbreitet ab dem 4. September 2026 auf X, über 100.000 Aufrufe auf X und YouTube; eine KI-generierte Stimme kommentiert in gebrochenem Deutsch. Correctiv bewertet das Video als falsch – die Unterlagen sind gefälscht: identische Wahlscheinnummern und Namen auf mehreren Dokumenten, falsch gefaltete Stimmzettel (Kreuze von außen sichtbar), fehlende Lochung der oberen rechten Ecke, Stimmzettel und Wahlschein im falschen Umschlag. Fachleute ordnen es der russischen Desinformationskampagne \"Storm-1516\" zu. Stark für Recherche-Übungen: Der Fake steckt nicht in der Bildqualität, sondern im Detailwissen über amtliche Unterlagen – Zweifeln allein reicht hier nicht, es braucht den Abgleich mit dem offiziellen Muster. Aufgeladenes Thema, für ältere oder geübte Gruppen.\n",
     "video": {
       "datei": "video/fundus063.mp4",
       "beschreibung": "Person öffnet vermeintliche Briefwahlunterlagen, sortiert Stimmzettel und streicht einen Zettel mit AfD-Kreuz durch\n"
@@ -2035,10 +2043,10 @@ window.FUNDUS_DATA = [
       "name": "Correctiv Faktencheck",
       "url": "https://correctiv.org/aktuelles/2026/09/09/reanimation-krankenkasse-techniker/"
     },
-    "kontext": "Die Ärztin Laura Dalhaus erklärt im September 2026 auf Instagram, YouTube, TikTok und LinkedIn, drei Urteile des Bundessozialgerichts vom 20. August 2026 führten dazu, dass Krankenhäuser mitten in einer Reanimation die Krankenkasse prüfen könnten – und davon abhänge, ob weiterbehandelt wird. Correctiv ordnet das als irreführend ein. Anders als hier das Material zu fundus063 und fundus064 ist nichts gefälscht oder manipuliert: Die Urteile existieren, die Sprecherin ist eine echte Ärztin, die aus Überzeugung spricht – nur die Schlussfolgerung stimmt nicht. Geklagt hatten nicht die Kassen, sondern drei Krankenhäuser gegen Kassen; verhandelt wurde allein die Abrechnung von Reanimationen, die der Rettungsdienst begonnen hatte und die in der Klinik nur noch 6, 10 bzw. 20 Minuten weiterliefen. Das Gericht entschied, dass solch kurze Fortsetzungen nicht vollstationär abgerechnet werden dürfen, sondern über Notfallpauschalen – zur medizinischen Entscheidung sagen die Urteile nichts. BSG und beteiligte Kassen stellen übereinstimmend klar: \"Egal welche Krankenkasse – ein Patient wird reanimiert.\" Dalhaus nannte ihr Video später selbst eine \"absolute Zuspitzung\" und verwies auf den Verwaltungsaufwand als eigentlichen Kritikpunkt. Lohnender Fall für Fortgeschrittene: glaubwürdige Absenderin, echte Quellenlage, hohe Emotionalisierung – zu prüfen ist hier nicht die Echtheit, sondern der Schluss vom Urteil auf die Behauptung. Das Video liegt nicht lokal vor und ist nur über das Archiv abrufbar – für den Einsatz vorab öffnen und die Verfügbarkeit prüfen.\n",
+    "kontext": "Die Ärztin Laura Dalhaus erklärt im September 2026 auf Instagram, YouTube, TikTok und LinkedIn, drei Urteile des Bundessozialgerichts vom 20. August 2026 führten dazu, dass Krankenhäuser mitten in einer Reanimation die Krankenkasse prüfen könnten – und davon abhänge, ob weiterbehandelt wird. Correctiv ordnet das als irreführend ein. Anders als bei fundus063 und fundus064 ist hier nichts gefälscht oder manipuliert: Die Urteile existieren, die Sprecherin ist eine echte Ärztin, die aus Überzeugung spricht – nur die Schlussfolgerung stimmt nicht. Geklagt hatten nicht die Kassen, sondern drei Krankenhäuser gegen Kassen; verhandelt wurde allein die Abrechnung von Reanimationen, die der Rettungsdienst begonnen hatte und die in der Klinik nur noch 6, 10 bzw. 20 Minuten weiterliefen. Das Gericht entschied, dass solch kurze Fortsetzungen nicht vollstationär abgerechnet werden dürfen, sondern über Notfallpauschalen – zur medizinischen Entscheidung sagen die Urteile nichts. BSG und beteiligte Kassen stellen übereinstimmend klar: \"Egal welche Krankenkasse – ein Patient wird reanimiert.\" Dalhaus nannte ihr Video später selbst eine \"absolute Zuspitzung\" und verwies auf den Verwaltungsaufwand als eigentlichen Kritikpunkt. Lohnender Fall für Fortgeschrittene: glaubwürdige Absenderin, echte Quellenlage, hohe Emotionalisierung – zu prüfen ist hier nicht die Echtheit, sondern der Schluss vom Urteil auf die Behauptung. Das Video liegt nicht lokal vor und ist nur über das Archiv abrufbar – für den Einsatz vorab öffnen und die Verfügbarkeit prüfen.\n",
     "video": {
       "datei": "https://perma.cc/TX49-JPBA",
-      "beschreibung": "Ärztin spricht in einem Selfie-Video direkt in die Kamera über Urteile des Bundessozialgerichts und deren angebliche Folgen für Reanimationen\n"
+      "beschreibung": "Ärztin spricht in die Kamera über Urteile des Bundessozialgerichts und deren angebliche Folgen für Reanimationen\n"
     },
     "claim": {
       "text": "Nach den Urteilen des Bundessozialgerichts kann während einer Reanimation geprüft werden, bei welcher Krankenkasse jemand versichert ist – davon hängt ab, ob weiterbehandelt wird.",
@@ -2112,7 +2120,7 @@ window.FUNDUS_DATA = [
       "name": "Mimikama",
       "url": "https://www.mimikama.org/ki-bild-lehrerinnen-protest-pride-flaggen/"
     },
-    "kontext": "Vier Lehrerinnen im Klassenzimmer halten ein handgeschriebenes Schild: \"if you make us take the pride flags out of our classrooms we will quit teaching!\", im Hintergrund eine Regenbogenfahne. Kursierte in sozialen Netzwerken als echtes Protestfoto; laut Mimikama KI-generiert. Besonders geeignet fürs genaue Hinsehen, weil die Fehler nicht im Hauptmotiv liegen, sondern im Hintergrund – das Schild selbst ist sauber lesbar, der Rest der Klassenraum-Deko zerfällt. Konkret nachprüfbar im Bild: In der Alphabetleiste über der Tafel steht \"Bb Cc Dd Dd Ee Ff Gg Hh Jj Kk Ll Mm\" – Dd doppelt, Ii fehlt ganz. Der Plan \"TODAY'S SCHEDULE\" listet zweimal 9:00, dann \"10:00 - 5pm\" und springt danach auf 12, 13, 14, 15, 16, 17 Uhr. Unter \"CLASSROOM EXPECTATIONS\" ist nur die erste Zeile lesbar, die weiteren Stichpunkte lösen sich in Pseudo-Schrift auf; rechts beginnt ein Wort \"Churc...\" ohne Sinn. Auch die Hände der zweiten Frau von links verschmelzen zu einer flächigen Form und greifen das Schild nicht wirklich. Guter Anlass für die Frage, warum ein Bild trotzdem geteilt wird: Es bestätigt eine Haltung, und der Text auf dem Schild – die eigentliche Botschaft – ist fehlerfrei.\n",
+    "kontext": "Vier Lehrerinnen im Klassenzimmer halten ein handgeschriebenes Schild: \"if you make us take the pride flags out of our classrooms we will quit teaching!\", im Hintergrund eine Regenbogenfahne. Kursierte in sozialen Netzwerken als echtes Protestfoto; laut Mimikama KI-generiert. Besonders geeignet fürs genaue Hinsehen, weil die Fehler nicht im Hauptmotiv liegen, sondern im Hintergrund – das Schild selbst ist sauber lesbar, der Rest der Klassenraum-Deko zerfällt. Konkret nachprüfbar im Bild: In der Alphabetleiste über der Tafel steht \"Bb Cc Dd Dd Ee Ff Gg Hh Jj Kk Ll Mm\" – Aa fehlt, Dd doppelt, Ii fehlt ganz. Der Plan \"TODAY'S SCHEDULE\" listet zweimal 9:00, dann \"10:00 - 5pm\" und springt danach auf 12, 13, 14, 15, 16, 17 Uhr. Unter \"CLASSROOM EXPECTATIONS\" ist nur die erste Zeile lesbar, die weiteren Stichpunkte lösen sich in Pseudo-Schrift auf; rechts beginnt ein Wort \"Churc...\" ohne Sinn. Die Hände greifen das Schild nicht wirklich. Guter Anlass für die Frage, warum ein Bild trotzdem geteilt wird: Es bestätigt eine Haltung, und der Text auf dem Schild – die eigentliche Botschaft – ist fehlerfrei.\n",
     "bild": {
       "datei": "bilder/fundus067.jpg",
       "beschreibung": "Vier Lehrerinnen stehen in einem Klassenzimmer vor einer Regenbogenfahne und halten gemeinsam ein handgeschriebenes Protestschild mit Regenbogenherzen\n"
@@ -2145,7 +2153,7 @@ window.FUNDUS_DATA = [
       "name": "Know Your Meme",
       "url": "https://knowyourmeme.com/memes/ai-bunnies-jumping-on-a-trampoline-video"
     },
-    "kontext": "Weiße Kaninchen springen nachts auf einem Trampolin, aufgemacht wie die Aufnahme einer Ring-Überwachungskamera; die Caption gab es als echte Sicherheitskamera-Aufnahme aus (inklusive @Ring-Markierung). In zwei Tagen über 148,8 Millionen Aufrufe und 18 Millionen Likes. Wichtig für die Einordnung: Know Your Meme formuliert vorsichtig, das Video sei \"seemingly\" KI-generiert – die Urheberin hat das nie bestätigt, das Modell ist unbekannt (Veo 3 wird oft vermutet, ist aber nicht belegt), und der Prompt wurde nie veröffentlicht; kursierende Prompts stammen von Nachahmern. Der deutlichste Tell: Ein Kaninchen verschwindet mitten im Sprung. Sonstige Artefakte kaschiert die Überwachungskamera-Ästhetik mit Nachtsicht und niedriger Auflösung – schlechte Bildqualität ist hier also kein Echtheitsbeleg, sondern Teil der Täuschung. Aufschlussreich sind die Reaktionen: \"das erste KI-Video, das mich je erwischt hat\" (über 436.000 Likes) und, mit über 923.000 Likes, sinngemäß \"ich werde im Alter mal abgezockt\" – die Leute merken selbst, dass ihre Prüfroutine versagt hat. Das Original erkennt man an seinem Sound \"Bounce When She Walk\" von Ohboyprince; Kopien nutzen andere Tonspuren. Lässt sich gegen fundus069 stellen: hier wird KI-Material für echt gehalten, dort echtes Material für KI.\n",
+    "kontext": "Weiße Kaninchen springen nachts auf einem Trampolin, aufgemacht wie die Aufnahme einer Ring-Überwachungskamera; die Caption gab es als echte Sicherheitskamera-Aufnahme aus (inklusive @Ring-Markierung). In zwei Tagen über 148,8 Millionen Aufrufe und 18 Millionen Likes. Wichtig für die Einordnung: Know Your Meme formuliert vorsichtig, das Video sei \"seemingly\" KI-generiert – die Urheberin hat das nie bestätigt, das Modell ist unbekannt (Veo 3 wird oft vermutet, ist aber nicht belegt), und der Prompt wurde nie veröffentlicht; kursierende Prompts stammen von Nachahmern. Der deutlichste Tell: Ein Kaninchen verschwindet mitten im Sprung. Sonstige Artefakte kaschiert die Überwachungskamera-Ästhetik mit Nachtsicht und niedriger Auflösung – schlechte Bildqualität ist hier also kein Echtheitsbeleg, sondern Teil der Täuschung. Aufschlussreich sind die Reaktionen: \"das erste KI-Video, das mich je erwischt hat\" (über 436.000 Likes) und, mit über 923.000 Likes, sinngemäß \"ich werde im Alter mal abgezockt\" – die Leute merken selbst, dass ihre Prüfroutine versagt hat. Lässt sich gegen fundus069 stellen: Hier wird KI-Material für echt gehalten, dort echtes Material für KI.\n",
     "video": {
       "datei": "video/fundus068.mp4",
       "beschreibung": "Weiße Kaninchen springen nachts auf einem Trampolin, Nachtsicht-Optik einer Überwachungskamera\n"
@@ -2252,7 +2260,7 @@ window.FUNDUS_DATA = [
       "name": "Tagesspiegel (in eigener Sache)",
       "url": "https://www.tagesspiegel.de/politik/auch-tagesspiegel-titelseite-gefalscht-fake-kampagne-macht-stimmung-vor-landtagswahlen--offenbar-aus-russland-gesteuert-15762455.html"
     },
-    "kontext": "Gefälschte Titelseite des Tagesspiegel, datiert auf Freitag, den 31.7.2026 (\"82. Jahrgang | Nr. 26 389\"). Der Aufmacher zeigt Christopher Nolan mit der Zeile \"Zeit für eine Teilung Deutschlands\" und der Unterzeile, Nolan und sein \"The Odyssey\"-Cast forderten den Wiederaufbau der Mauer. Der Tagesspiegel hat die Fälschung selbst öffentlich gemacht und ordnet sie der russischen Operation \"Matrjoschka\" zu – benannt nach den ineinander schachtelbaren Holzpuppen –, die vor den Landtagswahlen gezielt Spannungen zwischen Ost und West schüren soll und über X und Bluesky verbreitet wird; Grundlage sind Recherchen des Kollektivs Antibot4Navalny. Dabei blieb es nicht bei dieser einen Ausgabe: Die Zeitung nennt eine weitere gefälschte Titelseite mit der Zeile \"Baut diese Mauer wieder auf!\", gefälscht wurden außerdem Titelseiten des Handelsblatts. Zum Umfang der Kampagne zählte Euronews für die erste Woche 49 gefälschte Videos und 12 verfälschte Zeitungstitel, NewsGuard über einen längeren Zeitraum 723 Falschmeldungen, die 134 Nachrichtenmarken imitierten, darunter Der Spiegel und Deutsche Welle. Beide Quellen mahnen zur Vorsicht bei Reichweitenzahlen, die oft aufgebläht werden, um Beteiligung vorzutäuschen. Didaktisch stark, weil die Fälschung nicht am Layout scheitert: Kopfleiste, Schriftbild, Wetterkasten und die übrigen Meldungen der Seite wirken wie eine reguläre Ausgabe, untergeschoben ist nur der Aufmacher. Prüfen lässt sich das nicht am Aussehen, sondern nur am Abgleich mit der echten Ausgabe dieses Datums oder an der schlichten Frage, warum ein Regisseur so etwas fordern sollte. Zusammen mit fundus072 und fundus073 als Set derselben Kampagne zeigbar. Weitere Einordnung bei NewsGuard: https://www.newsguardtech.com/special-reports/new-russian-influence-campaign-aims-to-re-divide-germany-into-east-and-west/ Aufgeladenes Thema, für ältere oder geübte Gruppen.\n",
+    "kontext": "Gefälschte Titelseite des Tagesspiegels, datiert auf Freitag, den 31.7.2026 (\"82. Jahrgang | Nr. 26 389\"). Der Aufmacher zeigt Christopher Nolan mit der Zeile \"Zeit für eine Teilung Deutschlands\" und der Unterzeile, Nolan und sein \"The Odyssey\"-Cast forderten den Wiederaufbau der Mauer. Der Tagesspiegel hat die Fälschung selbst öffentlich gemacht und ordnet sie der russischen Operation \"Matrjoschka\" zu – benannt nach den ineinander schachtelbaren Holzpuppen –, die vor den Landtagswahlen gezielt Spannungen zwischen Ost und West schüren soll und über X und Bluesky verbreitet wird; Grundlage sind Recherchen des Kollektivs Antibot4Navalny. Dabei blieb es nicht bei dieser einen Ausgabe: Die Zeitung nennt eine weitere gefälschte Titelseite mit der Zeile \"Baut diese Mauer wieder auf!\", gefälscht wurden außerdem Titelseiten des Handelsblatts. Zum Umfang der Kampagne zählte Euronews für die erste Woche 49 gefälschte Videos und 12 verfälschte Zeitungstitel, NewsGuard über einen längeren Zeitraum 723 Falschmeldungen, die 134 Nachrichtenmarken imitierten, darunter Der Spiegel und Deutsche Welle. Beide Quellen mahnen zur Vorsicht bei Reichweitenzahlen, die oft aufgebläht werden, um Beteiligung vorzutäuschen. Didaktisch stark, weil die Fälschung nicht am Layout scheitert: Kopfleiste, Schriftbild, Wetterkasten und die übrigen Meldungen der Seite wirken wie eine reguläre Ausgabe, untergeschoben ist nur der Aufmacher. Prüfen lässt sich das nicht am Aussehen, sondern nur am Abgleich mit der echten Ausgabe dieses Datums oder an der schlichten Frage, warum ein Regisseur so etwas fordern sollte. Zusammen mit fundus072 und fundus073 als Set derselben Kampagne zeigbar. Weitere Einordnung bei NewsGuard: https://www.newsguardtech.com/special-reports/new-russian-influence-campaign-aims-to-re-divide-germany-into-east-and-west/ Aufgeladenes Thema, für ältere oder geübte Gruppen.\n",
     "bild": {
       "datei": "bilder/fundus071.png",
       "beschreibung": "Gefälschte Tagesspiegel-Titelseite mit einem Bild von Christopher Nolan als Aufmacher und der Schlagzeile zur Teilung Deutschlands\n"
@@ -2512,7 +2520,7 @@ window.FUNDUS_DATA = [
       "name": "Correctiv Faktencheck",
       "url": "https://correctiv.org/faktencheck/2026/07/27/nein-diese-studien-belegen-nicht-dass-die-grippe-impfung-von-kleinkindern-voellig-wirkungslos-ist/"
     },
-    "kontext": "Tweet des österreichischen Blogs TKP vom 31. Mai 2026 (707 Aufrufe) mit Vorschau auf den eigenen Artikel \"Massenimpfung von Kleinkindern gegen Grippe völlig wirkungslos - Studie\". Correctiv bewertet die Darstellung als größtenteils falsch. Der Fall unterscheidet sich von plumpen Fälschungen: Die zitierten Studien existieren, sie sind peer-reviewed beziehungsweise als Preprint verfügbar, und auch die FDA-Daten zu Fieberkrämpfen gibt es. Irreführend ist die Auswahl dessen, was weggelassen wird. Die spanische Studie aus Katalonien untersuchte laut ihren Autorinnen und Autoren keinen individuellen Impfschutz, sondern Effekte auf Bevölkerungsebene, und nennt selbst Gründe für das Ergebnis – etwa Impfquoten von nur 19 und 27 Prozent, zu gering für einen messbaren Bevölkerungseffekt. Die Zahl eines um 27 Prozent erhöhten Infektionsrisikos stammt aus einer veralteten Fassung der Cleveland-Clinic-Studie; deren Autor Nabin K. Shrestha stellte klar, die Ergebnisse seien \"kein Beleg dafür, dass Impfungen gegen Influenza als völlig wirkungslos bezeichnet werden können\". Fieberkrämpfe treten laut FDA bei rund 21 bis 44 Fällen pro Million Impfdosen auf und gelten der Deutschen Gesellschaft für Kinder- und Jugendmedizin als \"im medizinischen Sinne harmlos\"; sie kommen auch bei einer Grippeerkrankung selbst vor. Didaktisch ergiebig sind drei Muster: die Verwechslung von Bevölkerungs- und Individualebene, relative Risiken ohne absolute Zahlen, und der rhetorische Schluss \"Wirksamkeit: null. Risiko: real.\" Vergleichsmaterial zu fundus003, passt zu Recherche-Übungen, in denen die Originalstudie gesucht wird.\n",
+    "kontext": "Tweet des österreichischen Blogs TKP vom 31. Mai 2026 (707 Aufrufe) mit Vorschau auf den eigenen Artikel \"Massenimpfung von Kleinkindern gegen Grippe völlig wirkungslos - Studie\". Correctiv bewertet die Darstellung als größtenteils falsch. Der Fall unterscheidet sich von plumpen Fälschungen: Die zitierten Studien existieren, sie sind peer-reviewed beziehungsweise als Preprint verfügbar, und auch die FDA-Daten zu Fieberkrämpfen gibt es. Irreführend ist die Auswahl dessen, was weggelassen wird. Die spanische Studie aus Katalonien untersuchte laut ihren Autorinnen und Autoren keinen individuellen Impfschutz, sondern Effekte auf Bevölkerungsebene, und nennt selbst Gründe für das Ergebnis – etwa Impfquoten von nur 19 und 27 Prozent, zu gering für einen messbaren Bevölkerungseffekt. Die Zahl eines um 27 Prozent erhöhten Infektionsrisikos stammt aus einer veralteten Fassung der Cleveland-Clinic-Studie; deren Autor Nabin K. Shrestha stellte klar, die Ergebnisse seien \"kein Beleg dafür, dass Impfungen gegen Influenza als völlig wirkungslos bezeichnet werden können\". Fieberkrämpfe treten laut FDA bei rund 21 bis 44 Fällen pro Million Impfdosen auf und gelten der Deutschen Gesellschaft für Kinder- und Jugendmedizin als \"im medizinischen Sinne harmlos\"; sie kommen auch bei einer Grippeerkrankung selbst vor. Didaktisch ergiebig sind drei Muster: die Verwechslung von Bevölkerungs- und Individualebene, relative Risiken ohne absolute Zahlen und der rhetorische Schluss \"Wirksamkeit: null. Risiko: real.\" Vergleichsmaterial zu fundus003, passt zu Recherche-Übungen, in denen die Originalstudie gesucht wird.\n",
     "bild": {
       "datei": "bilder/fundus077.png",
       "beschreibung": "Screenshot eines TKP-Tweets mit Artikelvorschau, Foto einer Ärztin, die ein Kind neben seiner Mutter impft\n"
@@ -2560,10 +2568,10 @@ window.FUNDUS_DATA = [
       "name": "Correctiv Faktencheck",
       "url": "https://correctiv.org/faktencheck/2026/08/31/historisches-niedrigwasser-der-elbe-kein-gegenbeweis-zu-klimawandel/"
     },
-    "kontext": "YouTube-Short vom 6. August 2026, das historische Fotos der ausgetrockneten Elbe an der Dresdner Augustusbrücke von 1904 gegen den menschengemachten Klimawandel in Stellung bringt: Trockenheit habe es schon immer gegeben. Correctiv bewertet das als falsch. Die Fotos selbst sind echt, sie stammen aus dem Stadtarchiv Dresden und einer Sammlung der Sächsischen Zeitung und zeigen eine tatsächliche Dürre, die Dresden damals sogar für Bagger- und Ausbesserungsarbeiten im Flussbett nutzte. Der Denkfehler liegt in der Häufigkeit: 1904 war ein Extremereignis nach rund hundert Jahren – der niedrigste Stand seit 1811 –, während 2005, 2015, 2022 und 2026 binnen gut zwanzig Jahren aufeinander folgten. Genau diese Häufung macht laut Fachleuten den Klimawandel aus. Der DWD weist darauf hin, dass neun der zehn wärmsten Jahre seit 1881 nach 2000 lagen, was sich durch natürliche Schwankungen nicht erklären lässt. Zusätzlich lohnt der Blick auf die Machart, die im Faktencheck nicht behandelt wird: Die Postkarte \"Grösster Tiefstand der Elbe, Juli 1904\" erscheint zunächst schwarzweiß und geht dann in eine kolorierte, animierte Fassung über, in der Passanten flüssig durchs Bild laufen und Wolken ziehen – eine Aufnahme von 1904 kann das nicht zeigen, hier wurde Archivmaterial per KI bewegt und eingefärbt. Dazwischen steht eine echte aktuelle Aufnahme des trockenen Flussbetts. Damit lassen sich zwei Ebenen trennen: die Bearbeitung des Materials und der Fehlschluss im Argument. Auch ohne die KI-Animation wäre die Aussage falsch – ein guter Anlass für die Frage, ob ein Beleg dadurch besser wird, dass das Bild echt ist.\n",
+    "kontext": "YouTube-Short vom 6. August 2026, das historische Fotos der ausgetrockneten Elbe an der Dresdner Augustusbrücke von 1904 gegen den menschengemachten Klimawandel in Stellung bringt: Trockenheit habe es schon immer gegeben. Correctiv bewertet das als falsch. Die Fotos selbst sind echt, sie stammen aus dem Stadtarchiv Dresden und einer Sammlung der Sächsischen Zeitung und zeigen eine tatsächliche Dürre, die Dresden damals sogar für Bagger- und Ausbesserungsarbeiten im Flussbett nutzte. Der Denkfehler liegt in der Häufigkeit: 1904 war ein Extremereignis nach rund hundert Jahren – der niedrigste Stand seit 1811 –, während 2005, 2015, 2022 und 2026 binnen gut zwanzig Jahren aufeinander folgten. Genau diese Häufung macht laut Fachleuten den Klimawandel aus. Der DWD weist darauf hin, dass neun der zehn wärmsten Jahre seit 1881 nach 2000 lagen, was sich durch natürliche Schwankungen nicht erklären lässt. Zusätzlich lohnt der Blick auf die Machart, die im Faktencheck nicht behandelt wird: Die Postkarte \"Grösster Tiefstand der Elbe, Juli 1904\" erscheint zunächst schwarzweiß und geht dann in eine kolorierte Fassung über. Eine Aufnahme von 1904 kann das nicht zeigen, hier wurde Archivmaterial per KI erweitert und eingefärbt. Dazwischen steht eine echte aktuelle Aufnahme des trockenen Flussbetts. Damit lassen sich zwei Ebenen trennen: die Bearbeitung des Materials und der Fehlschluss im Argument. Auch ohne die KI-Animation wäre die Aussage falsch – ein guter Anlass für die Frage, ob ein Beleg dadurch besser wird, dass das Bild echt ist.\n",
     "video": {
       "datei": "video/fundus078.mp4",
-      "beschreibung": "Hochformat-Video mit historischen Aufnahmen des trockenen Elbbetts an der Dresdner Augustusbrücke von 1904, teils koloriert und animiert, dazu eine aktuelle Aufnahme des Flussbetts\n"
+      "beschreibung": "Hochformat-Video mit historischen Aufnahmen des trockenen Elbbetts an der Dresdner Augustusbrücke von 1904, teils koloriert und mit KI erweitert, dazu eine aktuelle Aufnahme des Flussbetts.\n"
     },
     "claim": {
       "text": "Extremes Niedrigwasser der Elbe gab es schon 1904 – das widerlegt den menschengemachten Klimawandel.",
@@ -2642,7 +2650,7 @@ window.FUNDUS_DATA = [
       "name": "Originalstudie, Nature (2025), \"Clouds reduce downwelling longwave radiation over land in a warming climate\"",
       "url": "https://www.nature.com/articles/s41586-024-08323-x"
     },
-    "kontext": "Report24 berichtet am 27. Juni 2026 über eine echte Nature-Studie und schreibt, Wolken würden den CO2-Effekt \"auslöschen\", ihn \"im Netto-Effekt komplett\" tilgen und \"einfach ausradieren\". Die Studie existiert, die Zahlen stimmen – nur sagt sie etwas anderes. Vier Punkte lassen sich daran zeigen. Erstens die Wortwahl: Die Autorinnen und Autoren sprechen davon, dass Wolkenveränderungen den wärmenden Effekt steigender Treibhausgase über Land teilweise abschwächen können; aus \"teilweise abschwächen\" wird bei Report24 \"komplett tilgen\". Zweitens die Richtung des Effekts: Er entsteht laut Studie vor allem dadurch, dass die tiefe Bewölkung in einem sich erwärmenden Klima abnimmt – schon der Titel endet auf \"in a warming climate\". Die Wolkenänderung ist also eine Folge der Erwärmung, und eine Folge kann ihre Ursache nicht widerlegen; es handelt sich um eine Rückkopplung, nicht um eine Gegenkraft. Drittens der Ausschnitt: Gemessen wird ausschließlich langwellige Strahlung nach unten und nur über Land. Weniger tiefe Wolken bedeuten aber auch, dass mehr Sonnenlicht den Boden erreicht – diese Seite der Bilanz kommt nicht vor. Eine Studie der Universität Leipzig (Quaas u.a., Science Advances 2024) beschreibt genau das: Weil die Wolkendecke tagsüber stärker abnimmt als nachts, sinkt der kühlende Albedoeffekt, was die Erwärmung zusätzlich verstärkt (https://www.ingenieur.de/fachmedien/vdi-energie-umwelt/umwelt/luft/veraenderte-wolkenbildung-heizt-globale-erwaermung-zusaetzlich-an/). Viertens der Umgang mit der älteren Arbeit von Daniel Feldman (2015), die Report24 als \"rein fiktive, modellierte Atmosphäre\" abtut: Sie heißt \"Observational determination\", beruht also auf Messungen, und zwar an wolkenfreien Tagen. Muster: echte Studie, echte Zahlen, aus dem Zusammenhang gerissen. Bildet mit fundus079 ein Paar – dort wird eine Studie zitiert, die die Frage gar nicht stellt, hier eine, die das Gegenteil des Behaupteten nahelegt.\n",
+    "kontext": "Report24 berichtet am 27. Juni 2026 über eine echte Nature-Studie und schreibt, Wolken würden den CO2-Effekt \"auslöschen\", ihn \"im Netto-Effekt komplett\" tilgen und \"einfach ausradieren\". Die Studie existiert, die Zahlen stimmen – nur sagt sie etwas anderes. Vier Punkte lassen sich daran zeigen. Erstens die Wortwahl: Die Autor:innen sprechen davon, dass Wolkenveränderungen den wärmenden Effekt steigender Treibhausgase über Land teilweise abschwächen können; aus \"teilweise abschwächen\" wird bei Report24 \"komplett tilgen\". Zweitens die Richtung des Effekts: Er entsteht laut Studie vor allem dadurch, dass die tiefe Bewölkung in einem sich erwärmenden Klima abnimmt – schon der Titel endet auf \"in a warming climate\". Die Wolkenänderung ist also eine Folge der Erwärmung, und eine Folge kann ihre Ursache nicht widerlegen; es handelt sich um eine Rückkopplung, nicht um eine Gegenkraft. Drittens der Ausschnitt: Gemessen wird ausschließlich langwellige Strahlung nach unten und nur über Land. Weniger tiefe Wolken bedeuten aber auch, dass mehr Sonnenlicht den Boden erreicht – diese Seite der Bilanz kommt nicht vor. Eine Studie der Universität Leipzig und der Sun-Yat-sen-Universität (Luo, Quaas & Han: \"Diurnally asymmetric cloud cover trends amplify greenhouse warming\", Science Advances 2024, https://doi.org/10.1126/sciadv.ado5179) beschreibt genau das: Weil die Wolkendecke tagsüber stärker abnimmt als nachts, sinkt der kühlende Albedoeffekt, was die Erwärmung zusätzlich verstärkt (https://www.ingenieur.de/fachmedien/vdi-energie-umwelt/umwelt/luft/veraenderte-wolkenbildung-heizt-globale-erwaermung-zusaetzlich-an/). Viertens der Umgang mit der älteren Arbeit von Daniel Feldman (2015), die Report24 als \"rein fiktive, modellierte Atmosphäre\" abtut: Sie heißt \"Observational determination\", beruht also auf Messungen, und zwar an wolkenfreien Tagen. Muster: echte Studie, echte Zahlen, aus dem Zusammenhang gerissen. Bildet mit fundus079 ein Paar – dort wird eine Studie zitiert, die die Frage gar nicht stellt, hier eine, die das Gegenteil des Behaupteten nahelegt.\n",
     "ueberschrift": {
       "text": "Neue Nature-Studie belegt: Wolken löschen den CO2-Effekt aus"
     },
@@ -2651,7 +2659,7 @@ window.FUNDUS_DATA = [
     },
     "claim": {
       "text": "Eine neue Nature-Studie belegt, dass Wolken den Treibhauseffekt von CO2 neutralisieren und im Netto-Effekt komplett auslöschen.",
-      "bewertung": "Irreführend. Die Studie ist echt, trägt aber den Titel \"Clouds reduce downwelling longwave radiation over land in a warming climate\" und beschreibt, dass Wolkenveränderungen den wärmenden Effekt der Treibhausgase über Land teilweise abschwächen – nicht auslöschen. Der Effekt entsteht durch die Abnahme tiefer Bewölkung in einem sich erwärmenden Klima und ist damit eine Rückkopplung, also eine Folge der Erwärmung, kein Gegenbeweis. Gemessen wurde allein die langwellige Abwärtsstrahlung über Land; dass weniger Wolken zugleich mehr Sonnenlicht durchlassen, bleibt unberücksichtigt. Andere Forschung, etwa der Universität Leipzig (Science Advances, 2024), kommt zu dem Ergebnis, dass Wolkenveränderungen die Erwärmung insgesamt verstärken.\n"
+      "bewertung": "Irreführend. Die Studie ist echt, trägt aber den Titel \"Clouds reduce downwelling longwave radiation over land in a warming climate\" und beschreibt, dass Wolkenveränderungen den wärmenden Effekt der Treibhausgase über Land teilweise abschwächen – nicht auslöschen. Der Effekt entsteht durch die Abnahme tiefer Bewölkung in einem sich erwärmenden Klima und ist damit eine Rückkopplung, also eine Folge der Erwärmung, kein Gegenbeweis. Gemessen wurde allein die langwellige Abwärtsstrahlung über Land; dass weniger Wolken zugleich mehr Sonnenlicht durchlassen, bleibt unberücksichtigt. Andere Forschung, etwa von Luo, Quaas & Han (\"Diurnally asymmetric cloud cover trends amplify greenhouse warming\", Science Advances 2024, https://doi.org/10.1126/sciadv.ado5179), kommt zu dem Ergebnis, dass Wolkenveränderungen die Erwärmung insgesamt verstärken.\n"
     }
   },
   {
@@ -2685,7 +2693,7 @@ window.FUNDUS_DATA = [
       "name": "Correctiv Faktencheck",
       "url": "https://correctiv.org/faktencheck/2021/12/14/krankenhaeuser-bekommen-versorgungszuschlaege-fuer-alle-positiv-getesteten-patienten-um-mehraufwand-auszugleichen/"
     },
-    "kontext": "Achgut-Beitrag vom 7. Dezember 2021: Kliniken deuteten Patienten mit einem Zufallsbefund – etwa einem verstauchten Knöchel plus positivem Test – zu stationären Corona-Fällen um und verdienten sich daran \"eine goldene Nase\". Correctiv bewertet das am 14. Dezember 2021 als \"fehlender Kontext\". Der wahre Kern: Den Versorgungsaufschlag gab es tatsächlich, vom 1. November 2021 bis 19. März 2022, laut Bundesgesundheits- ministerium je nach Fall zwischen 4.500 und 9.500 Euro, Voraussetzung waren mindestens zwei Tage stationärer Aufenthalt. Belege für ein bewusstes Umdeuten liefert der Artikel aber nicht, und die Pointe der Gegenrede ist bemerkenswert: Kliniken müssen gar nichts umdeuten, weil sie den Zuschlag ohnehin für jeden positiv getesteten Patienten erhalten, gesetzlich vorgesehen und transparent. Die Deutsche Krankenhausgesellschaft nennt einen Zufallsbefund für Kliniken sogar nachteilig, weil Kontaktverfolgung und Quarantäne von Personal Aufwand bedeuten. Zwei Erweiterungen machen das Item besonders brauchbar. Erstens die Verbreitungskette: Derselbe Text erschien wortgleich bei Reitschuster (https://reitschuster.de/post/bericht-zur-coronalage-7-800-euro-kopfpraemie-fuer-wundersame-corona-vermehrung/), bei Haolam und in Auszügen bei Politikstube – mehrfaches Auftauchen wirkt wie Bestätigung durch unabhängige Quellen, ist aber nur eine Kopie. Zweitens eine echte Grauzone: Achgut ging juristisch gegen die Facebook-Kennzeichnung vor und erwirkte am 29. Dezember 2021 eine einstweilige Verfügung des Landgerichts Karlsruhe, mit der Facebook die Löschung und die Kennzeichnung als \"fehlender Kontext\" untersagt wurde (Darstellung von Achgut selbst, also einer Verfahrenspartei: https://www.achgut.com/artikel/landgericht_karlsruhe_untersagt_facebook_erneut_faktencheck_durch_correctiv). Wichtig für die Einordnung: Verhandelt wurde die Zulässigkeit der Plattform- Kennzeichnung, nicht die sachliche Richtigkeit des Faktenchecks – ein Gericht hat also nicht festgestellt, dass die Behauptung stimmt. Genau diese Unterscheidung lohnt sich in der Arbeit mit älteren Gruppen: Wer darf Inhalte kennzeichnen, und was folgt aus einem Gerichtsentscheid für die Frage, was wahr ist?\n",
+    "kontext": "Achgut-Beitrag vom 7. Dezember 2021: Kliniken deuteten Patienten mit einem Zufallsbefund – etwa einem verstauchten Knöchel plus positivem Test – zu stationären Corona-Fällen um und verdienten sich daran \"eine goldene Nase\". Correctiv bewertet das am 14. Dezember 2021 als \"fehlender Kontext\". Der wahre Kern: Den Versorgungsaufschlag gab es tatsächlich, vom 1. November 2021 bis 19. März 2022, laut Bundesgesundheitsministerium je nach Fall zwischen 4.500 und 9.500 Euro, Voraussetzung waren mindestens zwei Tage stationärer Aufenthalt. Belege für ein bewusstes Umdeuten liefert der Artikel aber nicht, und die Pointe der Gegenrede ist bemerkenswert: Kliniken müssen gar nichts umdeuten, weil sie den Zuschlag ohnehin für jeden positiv getesteten Patienten erhalten, gesetzlich vorgesehen und transparent. Die Deutsche Krankenhausgesellschaft nennt einen Zufallsbefund für Kliniken sogar nachteilig, weil Kontaktverfolgung und Quarantäne von Personal Aufwand bedeuten. Zwei Erweiterungen machen das Item besonders brauchbar. Erstens die Verbreitungskette: Derselbe Text erschien wortgleich bei Reitschuster (https://reitschuster.de/post/bericht-zur-coronalage-7-800-euro-kopfpraemie-fuer-wundersame-corona-vermehrung/), bei Haolam und in Auszügen bei Politikstube – mehrfaches Auftauchen wirkt wie Bestätigung durch unabhängige Quellen, ist aber nur eine Kopie. Zweitens eine echte Grauzone: Achgut ging juristisch gegen die Facebook-Kennzeichnung vor und erwirkte am 29. Dezember 2021 eine einstweilige Verfügung des Landgerichts Karlsruhe, mit der Facebook die Löschung und die Kennzeichnung als \"fehlender Kontext\" untersagt wurde (Darstellung von Achgut selbst, also einer Verfahrenspartei: https://www.achgut.com/artikel/landgericht_karlsruhe_untersagt_facebook_erneut_faktencheck_durch_correctiv). Wichtig für die Einordnung: Verhandelt wurde die Zulässigkeit der Plattform-Kennzeichnung, nicht die sachliche Richtigkeit des Faktenchecks – ein Gericht hat also nicht festgestellt, dass die Behauptung stimmt. Genau diese Unterscheidung lohnt sich in der Arbeit mit älteren Gruppen: Wer darf Inhalte kennzeichnen, und was folgt aus einem Gerichtsentscheid für die Frage, was wahr ist?\n",
     "ueberschrift": {
       "text": "7.800 Euro Kopfprämie für wundersame Corona-Vermehrung"
     },
@@ -2727,7 +2735,7 @@ window.FUNDUS_DATA = [
       "name": "Correctiv Faktencheck",
       "url": "https://correctiv.org/faktencheck/2019/10/11/offener-brief-zum-klimawandel-weder-haben-500-wissenschaftler-unterzeichnet-noch-stimmen-alle-behauptungen/"
     },
-    "kontext": "Tichys Einblick meldet am 26. September 2019, 500 Wissenschaftler aus dreizehn Ländern hätten in einer \"European Climate Declaration\" erklärt, es gebe keinen Klimanotfall. Correctiv bewertet das als teilweise falsch. Der Fall unterscheidet sich von fundus079 und fundus080: Dort wird über den Inhalt von Studien getäuscht, hier über die Autorität der Absender – das Argument liegt allein in der Zahl 500. Nachprüfbar ist zweierlei. Erstens die Unterzeichnenden: Der Brief selbst spricht von \"scientists and professionals\", also ausdrücklich nicht nur von Wissenschaftlern. Nur fünf werden explizit als Klimatologen geführt; bei einer Suche nach \"climate\" finden sich 46 Personen, davon 13 Naturwissenschaftler. Unter den Unterzeichnenden sind ein auf Steuerrecht spezialisierter Anwalt, ein früherer IT-Manager, ein Journalist und Clintel-Mitgründer sowie ein Politiker; 72 Treffer entfallen auf \"Emeritus\", 59 auf \"retired\". Einzelne Angaben sind schlicht falsch, etwa bei Carl-Otto Weiss, der als emeritierter Professor geführt wird, aber nie Professor war. Zweitens die Herkunft: Hinter dem Brief steht die niederländische Climate Intelligence Foundation (Clintel), 2019 mitgegründet von Guus Berkhout, einem früheren Shell-Manager; mindestens drei deutsche Unterzeichner haben Verbindungen zum Institut Eike. Auch inhaltlich hält der Brief nicht, was er verspricht: Er fordert statistische Belege für Naturkatastrophen, liefert selbst aber keine Quellen, und Climate Feedback kommt nach Prüfung durch sechs Forschende zu einer sehr geringen wissenschaftlichen Glaubwürdigkeit. Aufschlussreich ist ein Detail aus der Stichprobe: Von zehn angeschriebenen Unterzeichnern bestätigten acht ihre Unterschrift, einer schrieb jedoch, er teile nicht alle Aussagen – der Anstieg der CO2-Konzentration sei \"ein Problem, das angegangen werden muss\". Unterschrift heißt also nicht Zustimmung zu allem. Gute Übung: Nicht den Inhalt prüfen, sondern die Unterschriftenliste – wer sind diese Leute, und in welchem Fach?\n",
+    "kontext": "Tichys Einblick meldet am 26. September 2019, 500 Wissenschaftler aus dreizehn Ländern hätten in einer \"European Climate Declaration\" erklärt, es gebe keinen Klimanotfall. Correctiv bewertet das als teilweise falsch. Der Fall unterscheidet sich von fundus079 und fundus080: Dort wird über den Inhalt von Studien getäuscht, hier über die Autorität der Absender – das Argument liegt allein in der Zahl 500. Nachprüfbar ist zweierlei. Erstens die Unterzeichnenden: Der Brief selbst spricht von \"scientists and professionals\", also ausdrücklich nicht nur von Wissenschaftlern. Nur fünf werden explizit als Klimatologen geführt; bei einer Suche nach \"climate\" finden sich 46 Personen, davon 13 Naturwissenschaftler. Unter den Unterzeichnenden sind ein auf Steuerrecht spezialisierter Anwalt, ein früherer IT-Manager, ein Journalist und Clintel-Mitgründer sowie ein Politiker; 72 Treffer entfallen auf \"Emeritus\", 59 auf \"retired\". Einzelne Angaben sind schlicht falsch, etwa bei Carl-Otto Weiss, der als emeritierter Professor geführt wird, aber nie Professor war. Zweitens die Herkunft: Hinter dem Brief steht die niederländische Climate Intelligence Foundation (Clintel), 2019 mitgegründet von Guus Berkhout, einem früheren Shell-Manager; mindestens drei deutsche Unterzeichner haben Verbindungen zum Institut EIKE. Auch inhaltlich hält der Brief nicht, was er verspricht: Er fordert statistische Belege für Naturkatastrophen, liefert selbst aber keine Quellen, und Climate Feedback kommt nach Prüfung durch sechs Forschende zu einer sehr geringen wissenschaftlichen Glaubwürdigkeit. Aufschlussreich ist ein Detail aus der Stichprobe: Von zehn angeschriebenen Unterzeichnern bestätigten acht ihre Unterschrift, einer schrieb jedoch, er teile nicht alle Aussagen – der Anstieg der CO2-Konzentration sei \"ein Problem, das angegangen werden muss\". Unterschrift heißt also nicht Zustimmung zu allem. Gute Übung: Nicht den Inhalt prüfen, sondern die Unterschriftenliste – wer sind diese Leute, und in welchem Fach?\n",
     "ueberschrift": {
       "text": "500 Wissenschaftler erklären: „Es gibt keinen Klimanotfall“"
     },
@@ -2852,7 +2860,7 @@ window.FUNDUS_DATA = [
       "url": "https://unsplash.com/de/fotos/eine-menschenmenge-die-um-einen-stadtplatz-lauft-tekWRCXzokc",
       "lizenz": "Unsplash License"
     },
-    "kontext": "Echtes Foto vom Berliner Alexanderplatz, in dem eine Person im Vordergrund durch einen Feuerspucker ersetzt wurde. Alles andere – Weltzeituhr, Gebäude, Trams, Fahrräder, Passanten, Lichtstimmung – stammt aus der Originalaufnahme von Tommao Wang. Das macht die Kategorie aus: keine vollständig erfundene Szene, sondern ein authentisches Bild mit einem eingesetzten Element, und genau solche Teilbearbeitungen sind im Alltag die häufigeren. Als Prüfaufgabe eignet sich der Vergleich mit dem verlinkten Original, denn das Eingefügte ist an der Stelle zu erkennen, wo Bild und Prompt auseinandergehen: Die Anweisung verlangte eine Flamme nach rechts oben in den leeren Himmel, tatsächlich zieht sie quer über die Weltzeituhr und verdeckt sie teilweise. Der Feuerstrahl geht zudem nicht sichtbar von der Fackel in der Hand aus, und die im Prompt geforderten warmen Reflexe auf dem Pflaster fehlen weitgehend – der Boden bleibt im kühlen Grau des Originals, obwohl direkt darüber eine meterhohe Flamme brennt. Die fehlende Lichtwirkung auf die Umgebung ist ein verlässlicheres Indiz als die Flamme selbst. Besonders ergiebig ist dieses Item für die Metadaten-Ebene. Die Datei kam als PNG aus dem Generator und trug eine signierte C2PA-Provenienzangabe von Google (\"Made with Google AI\"). Für den Fundus wurde sie nach JPEG umgewandelt und mit IPTC/XMP-Feldern nach dem Standard für KI-Bearbeitungen ausgezeichnet: DigitalSourceType \"compositeWithTrainedAlgorithmicMedia\", Urheber, Quelle und der vollständige Prompt im Feld Instructions. Die C2PA-Signatur hat diesen Formatwechsel nicht überlebt – genau das ist der Punkt, den sich zeigen lässt: Bilder können ihre Herkunft mitbringen, aber schon ein Speichern in einem anderen Format, ein neuer Export oder ein Screenshot entfernt diese Angaben rückstandslos. Die selbst gesetzten IPTC/XMP-Felder überstehen den Formatwechsel und lassen sich mit exiftool auslesen. Gegenstück zu den vollständig generierten Bildern wie fundus024.\n",
+    "kontext": "Echtes Foto vom Berliner Alexanderplatz, in dem eine Person im Vordergrund durch einen Feuerspucker ersetzt wurde. Alles andere – Weltzeituhr, Gebäude, Trams, Fahrräder, Passanten, Lichtstimmung – stammt aus der Originalaufnahme von Tommao Wang. Das macht die Kategorie aus: keine vollständig erfundene Szene, sondern ein authentisches Bild mit einem eingesetzten Element, und genau solche Teilbearbeitungen sind im Alltag die häufigeren. Als Prüfaufgabe eignet sich der Vergleich mit dem verlinkten Original, denn das Eingefügte ist an der Stelle zu erkennen, wo Bild und Prompt auseinandergehen: Die Anweisung verlangte eine Flamme nach rechts oben in den leeren Himmel, tatsächlich zieht sie quer über die Weltzeituhr und verdeckt sie teilweise. Der Feuerstrahl geht zudem nicht sichtbar von der Fackel in der Hand aus, und die im Prompt geforderten warmen Reflexe auf dem Pflaster fehlen weitgehend – der Boden bleibt im kühlen Grau des Originals, obwohl direkt darüber eine meterhohe Flamme brennt. Die fehlende Lichtwirkung auf die Umgebung ist ein verlässlicheres Indiz als die Flamme selbst. Gegenstück zu den vollständig generierten Bildern wie fundus024.\n",
     "bild": {
       "datei": "bilder/fundus085.jpg",
       "beschreibung": "Feuerspucker von hinten auf dem Berliner Alexanderplatz, eine große orange Flamme zieht schräg nach oben über die Weltzeituhr, im Hintergrund Passanten, Trams und Fahrräder\n"
@@ -2886,7 +2894,7 @@ window.FUNDUS_DATA = [
       "datum": "2017-01-22T00:00:00.000Z",
       "lizenz": "Unsplash License"
     },
-    "kontext": "Echtes Schwarzweißfoto einer Polizeikette bei einem Protest in Washington, in dem der Beamte am Ursprung des Sprühstrahls durch einen Clown mit Siphonflasche ersetzt wurde. Alles andere stammt aus dem Original von Spenser H – Kamerateam, Schilder, Straßenschilder und der Sprühstrahl selbst. Für die Arbeit ist dieses Bild vor allem als Vergleichsfall zu fundus085 interessant, weil sich hier gut zeigen lässt, wo solche Bearbeitungen auseinanderfallen. Mehrere Vorgaben des Prompts wurden nicht eingelöst, und zwar nachprüfbar am Bild. Verlangt waren genau zwei Beine und ausdrücklich keine zusätzlichen Füße; tatsächlich steht hinter dem linken Clownschuh ein zweites helles Hosenbein mit weiterem Clownschuh, dahinter ein dunkler Stiefel. Der Clown sollte hinter den Schilden stehen und vom Brustkorb abwärts nur durch das zerkratzte Plexiglas zu sehen sein, gedämpft und kontrastärmer; im Bild steht er davor, sein Kostüm ist unverdeckt und klar. Gefordert war ein Dreiviertelprofil nach links mit konzentriertem Ausdruck und geschlossenem Mund; im Bild blickt er frontal in die Kamera und lacht. Und er sollte sich in Helligkeit, Schärfe und Korn den umstehenden Beamten angleichen – er ist heller und schärfer als seine Umgebung. Daraus lässt sich zweierlei ableiten: Generatoren führen Anweisungen nicht zuverlässig aus, und die verräterischen Stellen liegen selten im Hauptmotiv, sondern an den Rändern, wo Eingefügtes auf Vorhandenes trifft – Füße, Überlappungen, Lichtstimmung. Anders als fundus085 brachte diese Datei keinerlei Metadaten mit, weder C2PA noch IPTC; die Herkunftsangaben wurden erst für den Fundus gesetzt. Das eignet sich für den direkten Vergleich: Dasselbe Werkzeug, einmal mit und einmal ohne Provenienzdaten.\n",
+    "kontext": "Echtes Schwarzweißfoto einer Polizeikette bei einem Protest in Washington, in dem der Beamte am Ursprung des Sprühstrahls durch einen Clown mit Siphonflasche ersetzt wurde. Alles andere stammt aus dem Original von Spenser H – Kamerateam, Schilde, Straßenschilder und der Sprühstrahl selbst. Für die Arbeit ist dieses Bild vor allem als Vergleichsfall zu fundus085 interessant, weil sich hier gut zeigen lässt, wo solche Bearbeitungen auseinanderfallen. Mehrere Vorgaben des Prompts wurden nicht eingelöst, und zwar nachprüfbar am Bild. Der Clown sollte hinter den Schilden stehen und vom Brustkorb abwärts nur durch das zerkratzte Plexiglas zu sehen sein, gedämpft und kontrastärmer; im Bild steht er davor, sein Kostüm ist unverdeckt und klar. Er sollte sich in Helligkeit, Schärfe und Korn den umstehenden Beamten angleichen – er ist heller und schärfer als seine Umgebung. Daraus lässt sich zweierlei ableiten: Generatoren führen Anweisungen nicht zuverlässig aus, und die verräterischen Stellen liegen selten im Hauptmotiv, sondern an den Rändern, wo Eingefügtes auf Vorhandenes trifft – Füße, Überlappungen, Lichtstimmung.\n",
     "bild": {
       "datei": "bilder/fundus086.jpg",
       "beschreibung": "Schwarzweißfoto einer Reihe von Polizisten mit Schutzschilden auf einem Zebrastreifen, in ihrer Mitte ein Clown mit Perücke und Siphonflasche, aus der ein Sprühstrahl nach links zieht\n"
@@ -2920,7 +2928,7 @@ window.FUNDUS_DATA = [
       "datum": "2024-07-30T00:00:00.000Z",
       "lizenz": "Unsplash License"
     },
-    "kontext": "Echte analoge Strandaufnahme aus Kroatien, in die nachträglich eine kauernde Person mit Strandtasche eingefügt wurde. Das Original von Lawrence Chismorie zeigt dieselbe Szene ohne diese Figur. Von den drei Bearbeitungen im Fundus ist diese die überzeugendste: Das grobe Filmkorn, die warmen Farben und die Lichtlecks am Rand setzen sich über die eingefügte Person fort, Kleidung und Haltung wirken beiläufig. Gerade deshalb lohnt der genaue Blick, denn auch hier weicht das Ergebnis vom Prompt ab, und die Abweichungen liegen wieder am Rand statt im Motiv. Am deutlichsten sind die Badelatschen: Statt eines Paares liegen drei einzelne rosa Latschen im Bild, alle gleich ausgerichtet. Die Person sollte außerdem teilweise vom Schirmrand und den Fransen verdeckt sein, sitzt aber frei daneben; ihr Kopf sollte zum Wasser gedreht sein, blickt jedoch nach unten in die Tasche. Und das Licht stimmt nicht: Verlangt waren Oberkörper in praller Sonne, Tasche im Schirmschatten sowie harte Schatten in derselben Richtung wie beim Schirmmast; im Bild liegt die Person weitgehend im Schatten und wirft selbst keinen erkennbaren Schlagschatten auf die Kiesel, während die Latschen daneben deutliche Schatten haben. Ein Körper ohne Schatten bei Mittagssonne ist eines der zuverlässigsten Indizien überhaupt. Zusammen mit fundus085 und fundus086 ergibt sich eine Reihe mit steigender Qualität, an der sich zeigen lässt, dass die Prüffragen dieselben bleiben: Stimmen Schatten, Anzahl und Überlappungen? Wie fundus086 kam auch diese Datei ohne Metadaten; die Herkunftsangaben wurden erst für den Fundus gesetzt.\n",
+    "kontext": "Echte analoge Strandaufnahme aus Kroatien, in die nachträglich eine kauernde Person mit Strandtasche eingefügt wurde. Das Original von Lawrence Chismorie zeigt dieselbe Szene ohne diese Figur. Von den drei Bearbeitungen im Fundus ist diese die überzeugendste: Die warmen Farben und die Lichtlecks am Rand setzen sich über die eingefügte Person fort, Kleidung und Haltung wirken beiläufig. Zusammen mit fundus085 und fundus086 ergibt sich eine Reihe mit steigender Qualität, an der sich zeigen lässt, dass die Prüffragen dieselben bleiben: Stimmen Schatten, Anzahl und Überlappungen? Wie fundus086 kam auch diese Datei ohne Metadaten; die Herkunftsangaben wurden erst für den Fundus gesetzt.\n",
     "bild": {
       "datei": "bilder/fundus087.jpg",
       "beschreibung": "Analoge Strandaufnahme mit Kiefernzweigen, gestreiften Sonnenschirmen und Meer, im Vordergrund eine kauernde Person mit Basecap, die in eine Strandtasche greift\n"
@@ -2981,7 +2989,7 @@ window.FUNDUS_DATA = [
       "datum": "2026-09-21T00:00:00.000Z",
       "lizenz": null
     },
-    "kontext": "taz Onlineartikel\n",
+    "kontext": "taz-Onlineartikel\n",
     "bild": {
       "datei": "https://taz.de/picture/8749860/1200/41722401.webp",
       "beschreibung": "Andreas Scheuer in der Anhörung"
@@ -3020,7 +3028,7 @@ window.FUNDUS_DATA = [
       "datum": "2026-09-17T00:00:00.000Z",
       "lizenz": "Screenshot (Zitat zu Bildungszwecken)"
     },
-    "kontext": "Echter, sauber recherchierter Lokaljournalismus – und gerade deshalb ein gutes Item. Eine AfD-Kandidatin arbeitete bei der Kommunalwahl 2026 als Beisitzerin im Wahllokal und zählte dort Stimmen zur Bürgermeisterwahl mit. Das verstößt gegen § 13 Abs. 2 NKWG; die Landeswahlleitung Niedersachsen bestätigt den Vorgang. Der Verstoß ist also real und kein Gerücht.\nDer didaktische Wert liegt nicht im \"Fake erkennen\", sondern in der Einordnung: Der Artikel beantwortet die Frage, die er selbst aufwirft, gegen die eigene Schlagzeile. Er nennt zwar das auffällige AfD-Ergebnis in Trelde (22,1 % gegenüber 11,4 % stadtweit), schreibt aber ausdrücklich dazu, dass dies \"für sich genommen jedoch kein Beleg für Unregelmäßigkeiten\" sei – ländlicher Ortsteil, nur 476 Stimmen – und zitiert die Landeswahlleitung, wonach es keine Anhaltspunkte für eine Einflussnahme auf das Ergebnis gibt. Auch die Gegendarstellung der Stadt kommt vor. Das ist journalistisches Handwerk: Vorwurf benennen, Beleglage offenlegen, überschießende Schlüsse selbst abräumen.\nGenau diese Relativierung überlebt das Teilen aber nicht. Die Überschrift \"Verstoß gegen das Wahlgesetz\" plus ein Stimmzettel-Foto ergibt einen Screenshot, der sich ohne jede Veränderung als Beleg für \"Wahlbetrug\" weiterreichen lässt – die entlastenden Absätze stehen weit unten und werden mitgeteilt, aber nicht mitgelesen. Eignet sich für die Frage: Was macht ein Screenshot mit einem Artikel? Wo endet das, was hier tatsächlich belegt ist (Regelverstoß, Organisationsversagen der Stadt), und wo beginnt das, was man hineinliest (manipuliertes Wahlergebnis)?\nHinweis für den Einsatz: Der Artikel nennt die Kandidatin namentlich. Da es sich um eine lokal kandidierende Privatperson handelt, sollte der Name in der Arbeit mit der Gruppe nicht im Mittelpunkt stehen – der Fall funktioniert ohne ihn.\n",
+    "kontext": "Echter, sauber recherchierter Lokaljournalismus – und gerade deshalb ein gutes Item. Eine AfD-Kandidatin arbeitete bei der Kommunalwahl 2026 als Beisitzerin im Wahllokal und zählte dort Stimmen zur Bürgermeisterwahl mit. Das verstößt gegen § 13 Abs. 2 NKWG; die Landeswahlleitung Niedersachsen bestätigt den Vorgang. Der Verstoß ist also real und kein Gerücht.\nDer didaktische Wert liegt nicht im \"Fake erkennen\", sondern in der Einordnung: Der Artikel beantwortet die Frage, die er selbst aufwirft, gegen die eigene Schlagzeile. Er nennt zwar das auffällige AfD-Ergebnis in Trelde (22,1 % gegenüber 11,4 % stadtweit), schreibt aber ausdrücklich dazu, dass dies \"für sich genommen jedoch kein Beleg für Unregelmäßigkeiten\" sei – ländlicher Ortsteil, nur 476 Stimmen – und zitiert die Landeswahlleitung, wonach es keine Anhaltspunkte für eine Einflussnahme auf das Ergebnis gibt. Auch die Gegendarstellung der Stadt kommt vor. Das ist journalistisches Handwerk: Vorwurf benennen, Beleglage offenlegen, überschießende Schlüsse selbst abräumen.\nGenau diese Relativierung überlebt das Teilen aber nicht. Die Überschrift \"Verstoß gegen das Wahlgesetz\" plus ein Stimmzettel-Foto ergibt einen Screenshot, der sich ohne jede Veränderung als Beleg für \"Wahlbetrug\" weiterreichen lässt – die entlastenden Absätze stehen weit unten und werden mitgeteilt, aber nicht mitgelesen. Eignet sich für die Frage: Was macht ein Screenshot mit einem Artikel? Wo endet das, was hier tatsächlich belegt ist (Regelverstoß, Organisationsversagen der Stadt), und wo beginnt das, was man hineinliest (manipuliertes Wahlergebnis)?\n",
     "bild": {
       "datei": "bilder/fundus090.png",
       "beschreibung": "Screenshot eines Onlineartikels von buchholz-aktuell.de mit Rubrikenlabels \"Buchholz\" und \"Trelde\", Überschrift, Autorenzeile, Social-Media-Buttons und einem Foto von Briefwahlunterlagen zur Bürgermeisterwahl, darunter der Beginn des Fließtextes\n"
@@ -3086,7 +3094,7 @@ window.FUNDUS_DATA = [
       "datum": "2026-08-25T00:00:00.000Z",
       "lizenz": null
     },
-    "kontext": "Schweizer Onlineartikel zur Frage, ob die Fahrtauglichkeit von Senioren strenger überprüft werden soll. Anlass ist ein Vorstoss der Grünen-Nationalrätin Marionna Schlatter, den der Bundesrat ablehnt. Der Artikel steigt mit einem tödlichen Einzelfall ein (87-jähriger Fahrer, verunglückte Lehrerin) und stützt sich dann auf eine Zahl, die er nicht belegt: Über 80-Jährige verursachten – hochgerechnet auf die gefahrenen Kilometer – mehr Unfälle mit Personenschaden als 18- bis 24-Jährige. Ergiebig für die Arbeit an der Frage, welche Bezugsgrösse eine Statistik verwendet und was der emotionale Einstieg mit der Beweislage macht.\n",
+    "kontext": "Schweizer Onlineartikel zur Frage, ob die Fahrtauglichkeit von Senioren strenger überprüft werden soll. Anlass ist ein Vorstoß der Grünen-Nationalrätin Marionna Schlatter, den der Bundesrat ablehnt. Der Artikel steigt mit einem tödlichen Einzelfall ein (87-jähriger Fahrer, verunglückte Lehrerin) und stützt sich dann auf eine Zahl, die er nicht belegt: Über 80-Jährige verursachten – hochgerechnet auf die gefahrenen Kilometer – mehr Unfälle mit Personenschaden als 18- bis 24-Jährige. Ergiebig für die Arbeit an der Frage, welche Bezugsgröße eine Statistik verwendet und was der emotionale Einstieg mit der Beweislage macht.\n",
     "ueberschrift": {
       "text": "Senioren verursachen mehr Autounfälle als Neulenker: Bundesrat will nichts unternehmen"
     },
@@ -3124,7 +3132,7 @@ window.FUNDUS_DATA = [
       "name": "CORRECTIV Faktencheck (Steffen Kutzner)",
       "url": "https://correctiv.org/faktencheck/2026/09/18/video-von-zerschnittenen-afd-stimmzetteln-in-berlin-ist-eine-faelschung/"
     },
-    "kontext": "44-Sekunden-Video, angeblich aus einem Berliner Wahlamt: Eine Person öffnet rosa Briefwahlumschläge, entnimmt Stimmzettel und zerschneidet die mit AfD-Kreuz. Über 300.000 Aufrufe. CORRECTIV stuft es als Fälschung ein, der Landeswahlleiter für Berlin bestätigt, dass die Unterlagen anders aussehen als das Original.\nDidaktisch stark, weil die Fälschung nicht an der Bildtechnik scheitert, sondern am Sachwissen: Das Video ist ein durchgehender Take ohne Schnitt, ohne KI-Artefakte, ohne verräterische Physik – alles, worauf man bei Deepfakes zuerst schaut, ist unauffällig. Auffliegen lässt es das Requisit. Wer weiß, wie eine deutsche Briefwahl abläuft, sieht die Fehler sofort:\nErstens fehlt in allen Umschlägen der Wahlschein, den Wählende unterschreiben und beilegen müssen – ohne ihn wäre keine dieser Stimmen überhaupt gültig. Zweitens fehlt der zweite Stimmzettel für die Bezirksverordnetenversammlung. Drittens weicht die Typografie ab: Auf dem Stimmzettelumschlag ist die ganze Zeile fett gesetzt, im Original nur einzelne Wörter. Viertens haben die rosa Umschläge eine andere Form als echte. Fünftens tragen die Urnen einen aufgeklebten Berliner Bären – unüblich, wie der Landeswahlleiter anmerkt.\nZweite Ebene ist die Verbreitung: Das Video tauchte laut CORRECTIV praktisch gleichzeitig auf mehreren großen englischsprachigen X-Accounts auf. Die Forscherin Julia Smirnova (Center für Monitoring, Analyse und Strategie) ordnet es der russischen Kampagne Storm-1516 zu, die wiederholt mit Wahl-Desinformation auffiel. Das simultane Auftauchen auf mehreren Accounts ist selbst ein Prüfsignal – organische Viralität sieht anders aus als koordinierte Einspeisung.\nGute Übung: Erst das Video ansehen und sammeln lassen, was auffällt; dann die Frage stellen, was eigentlich alles in einem Briefwahlumschlag steckt. Der Fall zeigt, dass Faktenprüfung oft kein Technikproblem ist, sondern ein Wissensproblem – und dass Rückfrage bei der zuständigen Behörde ein gangbarer Weg ist.\n",
+    "kontext": "44-Sekunden-Video, angeblich aus einem Berliner Wahlamt: Eine Person öffnet rosa Briefwahlumschläge, entnimmt Stimmzettel und zerschneidet die mit AfD-Kreuz. Über 300.000 Aufrufe. CORRECTIV stuft es als Fälschung ein, der Landeswahlleiter für Berlin bestätigt, dass die Unterlagen anders aussehen als das Original.\nDidaktisch stark, weil die Fälschung nicht an der Bildtechnik scheitert, sondern am Sachwissen: Das Video ist ein durchgehender Take ohne Schnitt, ohne KI-Artefakte, ohne verräterische Physik – alles, worauf man bei Deepfakes zuerst schaut, ist unauffällig. Auffliegen lässt es das Requisit. Wer weiß, wie eine deutsche Briefwahl abläuft, sieht die Fehler sofort:\nErstens fehlt in allen Umschlägen der Wahlschein, den Wählende unterschreiben und beilegen müssen – ohne ihn wäre keine dieser Stimmen überhaupt gültig. Zweitens fehlt der zweite Stimmzettel für die Bezirksverordnetenversammlung. Drittens weicht die Typografie ab: Auf dem Stimmzettelumschlag ist die ganze Zeile fett gesetzt, im Original nur einzelne Wörter. Viertens haben die rosa Umschläge eine andere Form als echte. Fünftens tragen die Urnen einen aufgeklebten Berliner Bären – unüblich, wie der Landeswahlleiter anmerkt.\nZweite Ebene ist die Verbreitung: Das Video tauchte laut CORRECTIV praktisch gleichzeitig auf mehreren großen englischsprachigen X-Accounts auf. Das Center für Monitoring, Analyse und Strategie ordnet es der russischen Kampagne Storm-1516 zu, die wiederholt mit Wahl-Desinformation auffiel. Das simultane Auftauchen auf mehreren Accounts ist selbst ein Prüfsignal – organische Viralität sieht anders aus als koordinierte Einspeisung.\nGute Übung: Erst das Video ansehen und sammeln lassen, was auffällt; dann die Frage stellen, was eigentlich alles in einem Briefwahlumschlag steckt. Der Fall zeigt, dass Faktenprüfung oft kein Technikproblem ist, sondern ein Wissensproblem – und dass Rückfrage bei der zuständigen Behörde ein gangbarer Weg ist.\n",
     "video": {
       "datei": "video/fundus093.mp4",
       "beschreibung": "Hochformatvideo (44 s) in einem Büroraum: Auf einem Tisch liegen Stapel rosa Briefwahlumschläge und Stimmzettel, daneben zwei graue Mülltonnen mit aufgeklebtem Berliner Bären. Eine Person öffnet Umschläge, entnimmt Stimmzettel und zerschneidet einzelne davon mit einer Schere.\n"
