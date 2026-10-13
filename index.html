@@ -905,6 +905,13 @@
     }
     if (item.quelle?.datum) fields.push({key: 'datum', label: 'Datum', val: item.quelle.datum});
     if (item.quelle?.lizenz) fields.push({key: 'lizenz', label: 'Lizenz', val: item.quelle.lizenz});
+    if (item.quelle?.name || item.quelle?.url) {
+      const qUrl = ['~', 'null'].includes(item.quelle.url) ? null : item.quelle.url;
+      const val = qUrl
+        ? `<a href="${qUrl}" target="_blank" rel="noopener">${item.quelle.name || qUrl}</a>`
+        : item.quelle.name;
+      fields.push({key: 'quelle', label: 'Quelle', val});
+    }
     if (item.quelle2?.name || item.quelle2?.url) {
       const val = item.quelle2.url
         ? `<a href="${item.quelle2.url}" target="_blank">${item.quelle2.name || item.quelle2.url}</a>`
