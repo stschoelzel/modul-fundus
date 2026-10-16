@@ -1099,6 +1099,7 @@
   // fertig aufgebautes, groessen-fertiges Markup (wrapExportHtml/wrapTemplateHtml).
   async function finishExport(html, size, format, filename) {
     exportDialog.close();
+    html = writeOutLinks(html);
     if (format === 'pdf') {
       const area = document.getElementById('export-print-area');
       area.innerHTML = html;
@@ -1109,6 +1110,22 @@
       const cfg = PAGE_SIZES[size];
       await rasterizeToJpg(html, cfg.width, cfg.height, filename);
     }
+  }
+
+  // Exporte werden auch ausgedruckt - dort ist ein Hyperlink nicht klickbar, darum steht die
+  // URL zusaetzlich ausgeschrieben unter dem Linktext (ausser der Linktext ist schon die URL).
+  function writeOutLinks(html) {
+    const container = document.createElement('div');
+    container.innerHTML = html;
+    container.querySelectorAll('a[href]').forEach(a => {
+      const url = a.getAttribute('href');
+      if (!/^https?:\/\//i.test(url) || a.textContent.trim() === url) return;
+      const span = document.createElement('span');
+      span.style.cssText = 'display:block; font-size:0.75em; color:#555; word-break:break-all;';
+      span.textContent = url;
+      a.after(span);
+    });
+    return container.innerHTML;
   }
 
   // ID steht immer oben rechts in grau, unabhaengig von der Feldauswahl.
