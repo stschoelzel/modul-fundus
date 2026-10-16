@@ -6,7 +6,7 @@ window.FUNDUS_DATA = [
     "typ": [
       "bild",
       "ueberschrift",
-      "einleitung",
+      "leadsatz",
       "artikel"
     ],
     "echtheit": "echt",
@@ -34,7 +34,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Tausende demonstrieren im Hambacher Forst"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Am Samstag versammelten sich rund 5.000 Menschen im Hambacher Forst, um gegen die geplante Rodung zu protestieren. Aktivist*innen und Anwohner*innen blockierten gemeinsam Zufahrtswege.\n"
     },
     "artikel": {
@@ -139,7 +139,7 @@ window.FUNDUS_DATA = [
     "thema": "Umweltverschmutzung",
     "typ": [
       "ueberschrift",
-      "einleitung",
+      "leadsatz",
       "artikel"
     ],
     "echtheit": "echt",
@@ -167,7 +167,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Löffelweise - so viel Plastik haben wir schon im Hirn"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Bis zu 30-mal mehr Mikroplastik als in Leber oder Niere haben US-Forscher in Hirnproben gefunden. In Demenzhirnen war die Konzentration nochmal höher.\n"
     },
     "artikel": {
@@ -179,7 +179,7 @@ window.FUNDUS_DATA = [
     "thema": "Musik",
     "typ": [
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -203,7 +203,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Nach TikTok-Post von US-Rapperin: US-Fans feiern Ikkimel nach viralem ZDF-Auftritt"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Ikkimels heiß diskutierter Auftritt im ZDF-Morgenmagazin sorgt jetzt in den USA für Begeisterung: Ein Tiktok-Post der US-Rapperin Doechii bringt die Musikerin ins Rampenlicht.\n"
     }
   },
@@ -212,7 +212,7 @@ window.FUNDUS_DATA = [
     "thema": "Natur",
     "typ": [
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -237,7 +237,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Pinke Heuschrecke in der Nähe von Trams entdeckt"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Eine leuchtend pinke Heuschrecke hat ein Biologe bei Trams im Landkreis Nordwestmecklenburg entdeckt. Die seltene Farbmutation, Erythrismus genannt, entsteht durch eine genetische Besonderheit - macht das auffällige Tier aber auch zur leichten Beute für Fressfeinde.\n"
     }
   },
@@ -246,7 +246,7 @@ window.FUNDUS_DATA = [
     "thema": "Natur",
     "typ": [
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -270,7 +270,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Mitten in Hamburg: Wolf beißt Frau in Einkaufspassage – das ist über Angriff bekannt"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Wolf-Alarm mitten in Hamburg! Am Montag hat ein wilder Wolf eine Frau in Altona gebissen, unweit der dortigen Ikea-Filiale. Später lief das Tier offenbar quer über den Kiez bis in die Innenstadt, wo der Wolf offenbar direkt am Jungfernstieg aus der Binnenalster gefischt wurde. Mittlerweile gibt es erste bestätigte Informationen der Behörden.\n"
     }
   },
@@ -279,7 +279,7 @@ window.FUNDUS_DATA = [
     "thema": "Natur",
     "typ": [
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -303,7 +303,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Kluge Kärntner Kuh verblüfft Wissenschaft"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Die 13-jährige Veronika aus Kärnten könnte die klügste Kuh der Welt sein. Denn sie verwendet Werkzeuge gezielt und flexibel. Wenn es sie juckt, kratzt sie sich mit einem Besen – abhängig von der Körperstelle mit Stiel oder Borsten. Ein Verhalten, das man bisher nur von Menschen und Schimpansen kannte.\n"
     }
   },
@@ -312,7 +312,7 @@ window.FUNDUS_DATA = [
     "thema": "Regionales",
     "typ": [
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -336,7 +336,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Pferd fällt in Pool"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Die Obernheimer Feuerwehrleute trauten ihren Augen kaum, als sie im Juni um kurz nach Mitternacht mit dem Stichwort „Tierrettung Pferd in Pool“ nach Tanneck gerufen wurden. „Ich dachte, mein Piepser spinnt und zeigt mir einen alten Einsatz“, berichtete damals Kommandant Markus Haas.  Denn vor fast fünf Jahren – im August 2020 – musste die Obernheimer Feuerwehr schon einmal ein Pferd aus genau demselben Pool befreien. Rückblick auf Meldungen, die im Zollernalbkreis besonders häufig gelesen wurden.\n"
     }
   },
@@ -345,7 +345,7 @@ window.FUNDUS_DATA = [
     "thema": "Flugzeug",
     "typ": [
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -370,7 +370,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Falscher Kapitän flog Passagiere durch Europa"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Ohne die nötige Kapitänslizenz saß ein Mann im Cockpit von Passagierflugzeugen. Die litauische Airline Avion Express bestätigt den Betrugsfall und untersucht, wie es dazu kommen konnte.\n"
     }
   },
@@ -379,7 +379,7 @@ window.FUNDUS_DATA = [
     "thema": "Tiere",
     "typ": [
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -404,7 +404,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "„Maskierter Räuber“ schläft Rausch neben der Toilette aus: Waschbär betrinkt sich bei Einbruch in US-Shop"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "In Virginia hat ein Waschbär mehrere Alkoholflaschen zu Bruch gebracht und seinen Rausch schließlich im Badezimmer ausgeschlafen. Tierschützer fanden das Tier stark angetrunken vor.\n"
     }
   },
@@ -413,7 +413,7 @@ window.FUNDUS_DATA = [
     "thema": "Roboter",
     "typ": [
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -437,7 +437,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Humanoide Roboter: Hauptsache, die Geräte bleiben unter sich"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "U1, Matilda, Robert, Isaac: In Russland, den USA und China wetteifern die Unternehmen um den tollsten menschlichen Roboter. Jetzt wird untereinander sogar geheiratet. Warum auch nicht?\n"
     }
   },
@@ -446,7 +446,7 @@ window.FUNDUS_DATA = [
     "thema": "Verkehr",
     "typ": [
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -470,7 +470,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Einjähriges Kind am Steuer – skurriler Polizeieinsatz auf A6"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Die Polizei wird auf der A6 auf eine Autofahrerin aufmerksam, die am Steuer auf ihrem Handy tippt. Dann wird den Beamten klar, dass jemand anderes das Lenkrad in den Händen hält.\n"
     }
   },
@@ -479,7 +479,7 @@ window.FUNDUS_DATA = [
     "thema": "Unfall",
     "typ": [
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -503,7 +503,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Auto versinkt im Schwimmbad"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Am Donnerstag fuhr eine Fahrerin durch die Glasfront eines Schwimmbades. Das Auto landete im Becken und ging unter. Die Insassen wurden unverletzt geborgen.\n"
     }
   },
@@ -512,7 +512,7 @@ window.FUNDUS_DATA = [
     "thema": "Verschwörung",
     "typ": [
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -538,7 +538,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Eine Million Preisgeld für Beweis: Bielefeld gibt es nicht!"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Mit der Aktion \"Die #Bielefeldmillion – Das Ende einer Verschwörung\" will die Stadt Schluss machen mit der sogenannten Bielefeld-Verschwörung. Die hatte der Kieler Informatikstudent Achim Held vor 25 Jahren erfunden.\n"
     }
   },
@@ -547,7 +547,7 @@ window.FUNDUS_DATA = [
     "thema": "Politik",
     "typ": [
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -572,7 +572,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Neues aus Strumpfhausen"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Russische Abgeordnete bekommen bei einem Besuch in Washington Trump-Socken geschenkt. Es ist nicht das erste Mal, dass mit den Füßen Politik gemacht wird. Ein Blick in die Sockenschublade von Robert Habeck, Justin Trudeau und Sophie von der Tann.\n"
     }
   },
@@ -581,7 +581,7 @@ window.FUNDUS_DATA = [
     "thema": "Promis",
     "typ": [
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -607,7 +607,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Fans in Sorge: David Hasselhoff ist mit Gehhilfen unterwegs"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Fans von David Hasselhoff (73) treibt dieser Anblick die Sorgenfalten auf die Stirn: Der 73-Jährige wurde nach seinen Knie- und Hüftoperationen jetzt mit einer Gehhilfe in den Straßen von Los Angeles gesichtet. Gestützt auf eine Apparatur, deren Griffe laut Bunte einem Rollator ähneln, steuerte er über einen Parkplatz – dicht an seiner Seite war wie gewohnt Ehefrau Hayley Roberts (45), die ihren Mann aufmerksam begleitete. Diese neuen Aufnahmen folgen auf eine längere Leidensgeschichte: Die TV-Ikone litt jahrelang unter starken Schmerzen und war zeitweise sogar auf einen Rollstuhl angewiesen, bevor die notwendigen medizinischen Eingriffe im Frühjahr 2026 endlich erfolgen konnten.\n"
     }
   },
@@ -616,7 +616,7 @@ window.FUNDUS_DATA = [
     "thema": "Wetter",
     "typ": [
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -642,7 +642,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Extrem-Wetter im Juni 2026: Wetter-Experten prophezeien Hitze-Hammer mit bis zu 37 Grad"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Ein Hochdruckgebiet über Mitteleuropa lässt Deutschland schwitzen und sorgt für steigende Temperaturen. Experten prophezeien einen Hitze-Hammer mit bis zu 37 Grad. Die aktuelle Wetterprognose verrät, wo es besonders heiß wird.\n"
     }
   },
@@ -651,7 +651,7 @@ window.FUNDUS_DATA = [
     "thema": "Gesundheit",
     "typ": [
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -681,7 +681,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Löffelweise – so viel Plastik haben wir schon im Hirn"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Bis zu 30-mal mehr Mikroplastik als in Leber oder Niere haben US-Forscher in Hirnproben gefunden. In Demenzhirnen war die Konzentration nochmal höher.\n"
     }
   },
@@ -2235,7 +2235,7 @@ window.FUNDUS_DATA = [
     "typ": [
       "bild",
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "fake",
     "freigabe": true,
@@ -2268,7 +2268,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "\"Zeit für eine Teilung Deutschlands\" - Christopher Nolan"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Nolan und sein „The Odyssey“-Cast fordern den Wiederaufbau der Mauer zwischen Ost und Westdeutschland.\n"
     }
   },
@@ -2354,7 +2354,7 @@ window.FUNDUS_DATA = [
     "typ": [
       "bild",
       "ueberschrift",
-      "einleitung",
+      "leadsatz",
       "claim"
     ],
     "echtheit": "echt",
@@ -2388,7 +2388,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Scharfes in der Hose: Messer-Migranten in Deutschland"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Messerattacken haben in der BRD Hochkonjunktur - und jetzt wissen wir schwarz auf weiß, woran das liegt. Denn laut dem jetzt vorliegenden Jahresbericht 2023 der Bundespolizei greifen Menschen mit Migrationshintergrund sechsmal häufiger zum Messer und neigen zu mehr Kriminalität, wie die obere Grafik zeigt. Und die fast schon täglichen Horror-Meldungen über Messerstechereien gehören mittlerweile schon zum Alltag. Bei 8.951 Fällen im Jahr 2023 entspricht das 24,5 Messerattacken pro Tag...\n"
     },
     "claim": {
@@ -2402,7 +2402,7 @@ window.FUNDUS_DATA = [
     "typ": [
       "bild",
       "ueberschrift",
-      "einleitung",
+      "leadsatz",
       "claim"
     ],
     "echtheit": "echt",
@@ -2436,7 +2436,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "„Webcams“ ausgeschaltet, um die Macht der Masse nicht zu zeigen!?"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "In Bayern, Berlin, BaWü usw. wurden die Straßen-Überwachungskameras einfach deaktiviert. Kamera aus! Hamburg schreibt warum: \"politische Vorgaben\"!\n"
     },
     "claim": {
@@ -2494,7 +2494,7 @@ window.FUNDUS_DATA = [
     "typ": [
       "bild",
       "ueberschrift",
-      "einleitung",
+      "leadsatz",
       "claim"
     ],
     "echtheit": "echt",
@@ -2528,7 +2528,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Massenimpfung von Kleinkindern gegen Grippe völlig wirkungslos – Studie"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Eine neue peer-reviewte Studie aus Spanien hat die flächendeckende Grippeimpfung von Kindern im Alter von 6 Monaten bis 5 Jahren evaluiert. Das Ergebnis ist vernichtend: keinerlei messbare Reduktion von Grippefällen oder Krankenhauseinweisungen. Parallel dazu hat die US-Arzneimittelbehörde FDA still und leise ein erhöhtes Risiko für Fieberkrämpfe - eine neurologische Schädigung - nach Grippeimpfung bei Kleinkindern bestätigt. Wirksamkeit: null. Risiko: real.\n"
     },
     "claim": {
@@ -2583,7 +2583,7 @@ window.FUNDUS_DATA = [
     "thema": "Klimawandel",
     "typ": [
       "ueberschrift",
-      "einleitung",
+      "leadsatz",
       "claim"
     ],
     "echtheit": "echt",
@@ -2612,7 +2612,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Studien beweisen: Der CO2-Anstieg hat keinerlei Einfluss auf Dürren und Niederschläge!"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Es gibt gleich drei neuere Studien, die basierend auf Baumringen aus drei verschiedenen Regionen die klimatischen Entwicklungen der letzten Jahrhunderte untersuchten. Die Ergebnisse sind deutlich – und belegen, dass die Niederschlagsmuster nicht vom CO2-Gehalt der Luft abhängig sind.\n"
     },
     "claim": {
@@ -2625,7 +2625,7 @@ window.FUNDUS_DATA = [
     "thema": "Klimawandel",
     "typ": [
       "ueberschrift",
-      "einleitung",
+      "leadsatz",
       "claim"
     ],
     "echtheit": "echt",
@@ -2654,7 +2654,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Neue Nature-Studie belegt: Wolken löschen den CO2-Effekt aus"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Immer mehr beobachtungsbasierte Beweise zeigen: Die Auswirkungen von CO2 sind viel zu gering, um das Klima maßgeblich zu steuern. Eine neue Studie im renommierten Fachjournal Nature entlarvt die Rechentricks früherer Publikationen und zeigt, dass reale Wolkeneffekte den angeblichen Treibhauseffekt von CO2 bei Weitem übertreffen und sogar neutralisieren.\n"
     },
     "claim": {
@@ -2667,7 +2667,7 @@ window.FUNDUS_DATA = [
     "thema": "Gesundheit",
     "typ": [
       "ueberschrift",
-      "einleitung",
+      "leadsatz",
       "claim"
     ],
     "echtheit": "echt",
@@ -2697,7 +2697,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "7.800 Euro Kopfprämie für wundersame Corona-Vermehrung"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Deutschen Krankenhäusern wird eine Prämie von 7.800 Euro und mehr für jeden regulären Patienten bezahlt, den man durch einen positiven Test statistisch in einen stationären Corona-Fall umdeuten kann.\n"
     },
     "claim": {
@@ -2710,7 +2710,7 @@ window.FUNDUS_DATA = [
     "thema": "Klimawandel",
     "typ": [
       "ueberschrift",
-      "einleitung",
+      "leadsatz",
       "claim"
     ],
     "echtheit": "echt",
@@ -2739,7 +2739,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "500 Wissenschaftler erklären: „Es gibt keinen Klimanotfall“"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "In einer „European Climate Declaration“ fordern 500 Wissenschaftler aus dreizehn Ländern eine neue Klimapolitik, und zwar auf der Grundlage seriöser wissenschaftlicher Analysen.\n"
     },
     "claim": {
@@ -2752,7 +2752,7 @@ window.FUNDUS_DATA = [
     "thema": "Klimawandel",
     "typ": [
       "ueberschrift",
-      "einleitung",
+      "leadsatz",
       "claim"
     ],
     "echtheit": "echt",
@@ -2781,7 +2781,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "CO2-Signatur seit 40 Jahren unverändert – Menschlicher Einfluss nicht messbar"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Eine neue Studie der Technischen Universität Athen stellt die Klimawissenschaft auf den Kopf. Sie zeigt: In den letzten 40 Jahren hat sich die isotopische Signatur des atmosphärischen CO2 nicht verändert – menschliche Emissionen sind schlicht nicht erkennbar. Damit wird die Grundannahme der UNO und des IPCC, wonach fossile Brennstoffe die Hauptursache des Klimawandels seien, fundamental infrage gestellt.\n"
     },
     "claim": {
@@ -2795,7 +2795,7 @@ window.FUNDUS_DATA = [
     "typ": [
       "bild",
       "ueberschrift",
-      "einleitung",
+      "leadsatz",
       "claim"
     ],
     "echtheit": "fake",
@@ -2829,7 +2829,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "„Gefährlicher Kriegstreiber“ – Frau muss wegen Kritik an Friedrich Merz 170.000€ zahlen"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Ein Urteil, das für Fassungslosigkeit sorgt: Eine Frau wurde vom Gericht zu einer Geldstrafe von 170.000 Euro verurteilt, weil sie CDU-Chef Friedrich Merz öffentlich als \"gefährlichen Kriegstreiber\" bezeichnet hatte. Der Vorfall zeigt, wie stark der politische Diskurs in Deutschland mittlerweile polarisieren kann - und lässt Fragen zur Meinungsfreiheit aufkommen.\n"
     },
     "claim": {
@@ -2978,7 +2978,7 @@ window.FUNDUS_DATA = [
     "typ": [
       "bild",
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -2997,7 +2997,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Hat Scheuer bei der Aufklärung des Maut-Debakels gelogen?"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Die Staatsanwaltschaft ist davon überzeugt, dass der ehemalige Verkehrsminister falsch ausgesagt hat. Am Montag beginnt der Prozess in Berlin.\n"
     }
   },
@@ -3007,7 +3007,7 @@ window.FUNDUS_DATA = [
     "typ": [
       "bild",
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -3036,7 +3036,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "AfD-Kandidatin zählt in Buchholz selbst Stimmen aus – Verstoß gegen das Wahlgesetz"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Die AfD-Kandidatin hat am Sonntag in einem Buchholzer Wahllokal Stimmen für die Kommunalwahl 2026 ausgezählt. Eigentlich darf das nicht passieren. Wer bei einer Kommunalwahl selbst kandidiert, darf nicht in einem Wahllokal arbeiten. So steht es im Kommunalwahlgesetz. Doch der Stadt war offenbar nicht bekannt, dass sie auch Kandidatin ist.\n"
     }
   },
@@ -3075,7 +3075,7 @@ window.FUNDUS_DATA = [
     "thema": "Verkehr",
     "typ": [
       "ueberschrift",
-      "einleitung"
+      "leadsatz"
     ],
     "echtheit": "echt",
     "freigabe": true,
@@ -3098,7 +3098,7 @@ window.FUNDUS_DATA = [
     "ueberschrift": {
       "text": "Senioren verursachen mehr Autounfälle als Neulenker: Bundesrat will nichts unternehmen"
     },
-    "einleitung": {
+    "leadsatz": {
       "text": "Ein Bericht sollte aufzeigen, wie die Verkehrstauglichkeit von Senioren besser überprüft und gefördert werden kann. Doch die Regierung winkt ab: Das bringe nichts.\n"
     }
   },

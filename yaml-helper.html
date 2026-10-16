@@ -68,7 +68,7 @@
   <fieldset><div class="checks" id="typChecks">
     <label><input type="checkbox" value="bild"> bild</label>
     <label><input type="checkbox" value="ueberschrift"> ueberschrift</label>
-    <label><input type="checkbox" value="einleitung"> einleitung</label>
+    <label><input type="checkbox" value="leadsatz"> leadsatz</label>
     <label><input type="checkbox" value="artikel"> artikel</label>
     <label><input type="checkbox" value="meme"> meme</label>
     <label><input type="checkbox" value="claim"> claim</label>
@@ -109,8 +109,8 @@
   <div class="field"><label>ueberschrift.text</label><input type="text" id="ueberschriftText"></div>
 </div>
 
-<div class="section" id="sec-einleitung"><h3>einleitung</h3>
-  <div class="field"><label>einleitung.text</label><textarea id="einleitungText"></textarea></div>
+<div class="section" id="sec-leadsatz"><h3>leadsatz</h3>
+  <div class="field"><label>leadsatz.text</label><textarea id="leadsatzText"></textarea></div>
 </div>
 
 <div class="section" id="sec-artikel"><h3>artikel</h3>
@@ -246,9 +246,9 @@ function render(){
     const t = yStr($('ueberschriftText').value);
     y += `  ueberschrift:\n    text: ${t || '""'}\n`;
   }
-  if (types.includes('einleitung')) {
-    const t = yBlock('    ', $('einleitungText').value);
-    y += `  einleitung:\n    text: ${t || '""'}\n`;
+  if (types.includes('leadsatz')) {
+    const t = yBlock('    ', $('leadsatzText').value);
+    y += `  leadsatz:\n    text: ${t || '""'}\n`;
   }
   if (types.includes('artikel')) {
     const t = yBlock('    ', $('artikelText').value);

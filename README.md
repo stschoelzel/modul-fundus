@@ -51,7 +51,7 @@ Nur relevant, wenn du `fundus.yaml` oder die Export-Vorlagen in `export-template
 |---|---|---|---|
 | `id` | string | ja | eindeutige ID, z.B. `fundus001` |
 | `thema` | string | ja | Oberthema (z.B. "Klimawandel", "Migration", "KI") |
-| `typ` | list | ja | Welche Felder vorhanden sind; Werte: `bild`, `ueberschrift`, `einleitung`, `artikel`, `meme`, `claim`, `video` |
+| `typ` | list | ja | Welche Felder vorhanden sind; Werte: `bild`, `ueberschrift`, `leadsatz`, `artikel`, `meme`, `claim`, `video` |
 | `echtheit` | enum | ja | `echt` / `ki-generiert` / `manipuliert` / `fake` |
 | `freigabe` | bool | ja | Darf das Item mit Jugendlichen verwendet werden? |
 | `status` | enum | ja | Herkunft/Stand des Items, siehe [Status](#status) |
@@ -66,7 +66,7 @@ Nur relevant, wenn du `fundus.yaml` oder die Export-Vorlagen in `export-template
 | `bild.datei` | string | nein | Dateiname im Fundus-Ordner, z.B. `DS001_titelbild.jpg`. Kann ein relativer Pfad im Fundus-Ordner ODER eine absolute URL sein, falls das Bild nur verlinkt werden darf. |
 | `bild.beschreibung` | string | nein | Alt-Text / kurze Bildbeschreibung |
 | `ueberschrift.text` | string | nein | Die echte Überschrift |
-| `einleitung.text` | string | nein | Der echte Einleitungsabsatz |
+| `leadsatz.text` | string | nein | Der echte Leadsatz |
 | `artikel.text` | string | nein | Volltext oder Zusammenfassung des echten Artikels |
 | `meme.datei` | string | nein | Dateiname des Meme-Bildes. Kann ein relativer Pfad im Fundus-Ordner ODER eine absolute URL sein, falls das Bild nur verlinkt werden darf. |
 | `meme.ursprung` | string | nein | Wo das Meme zuerst auftauchte / Verbreitungskontext |
@@ -172,7 +172,7 @@ Die Bezeichung der id ist tatsächlich egal, sie muss nur einzigartig sein.
 
 **Mehrzeiliger Text: `>` und `|`**
 
-Für längere Texte (`kontext`, `einleitung.text` usw.) reicht eine einzelne Zeile oft nicht. Zwei Varianten dafür:
+Für längere Texte (`kontext`, `leadsatz.text` usw.) reicht eine einzelne Zeile oft nicht. Zwei Varianten dafür:
 
 - `>` (folded) - Zeilenumbrüche im Quelltext werden beim Einlesen zu Leerzeichen; es entsteht ein normaler Fließtext-Absatz. Das ist der Normalfall in unserer YAML.
 - `|` (literal) - Zeilenumbrüche bleiben exakt erhalten, für Fälle wo Umbrüche wichtig sind (z.B. Gedichte, Code).
@@ -198,7 +198,7 @@ wird beim Einlesen zu einem durchgehenden Satz, nicht zu zwei Zeilen.
 ```yaml
 - id: fundus001
   thema: Klimawandel
-  typ: [bild, ueberschrift, einleitung, artikel]
+  typ: [bild, ueberschrift, leadsatz, artikel]
   echtheit: echt
   freigabe: true
   status: deprecated
@@ -216,7 +216,7 @@ wird beim Einlesen zu einem durchgehenden Satz, nicht zu zwei Zeilen.
     beschreibung: Luftaufnahme eines Waldstücks mit Menschenmenge auf einer Lichtung
   ueberschrift:
     text: "Tausende demonstrieren im Hambacher Forst"
-  einleitung:
+  leadsatz:
     text: >
       Am Samstag versammelten sich rund 5.000 Menschen im Hambacher Forst,
       um gegen die geplante Rodung zu protestieren. Aktivist*innen und
@@ -382,7 +382,7 @@ Welches `typ`-Feld ermöglicht welche Module:
 |---|---|
 | `bild` | Deutungshoheit, Bild ohne Titel, Titel ohne Bild (Auflösung), Checkst du? |
 | `ueberschrift` | Bild ohne Titel (Auflösung), Titel ohne Bild, Newsflash |
-| `einleitung` | Newsflash |
+| `leadsatz` | Newsflash |
 | `artikel` | Newsflash (Auflösung) |
 | `meme` | Memix, Checkst du? |
 | `claim` | Source Hunter, Checkst du? |
@@ -401,7 +401,7 @@ In `index.html` gibt es pro Item einen Export-Dialog (Klick auf die Zeile, dann 
 - `export-templates.css` - Styles, für alle Vorlagen gemeinsam.
 - `<id>-preview.png` (oder `.jpg`/`.jpeg`/`.svg`) - optionales Vorschaubild, erscheint beim Hover auf "Vorschau" im Export-Dialog. Fehlt es, zeigt der Dialog "kein Vorschaubild" statt des Hover-Links.
 
-**Platzhalter in den HTML-Dateien:** `{{id}}` sowie ein `{{key}}` pro Feld aus der [Feldübersicht](#feldübersicht) - `kontext`, `ueberschrift`, `einleitung`, `claim`, `faktcheck`, `bild`, `memeUrsprung`, `datum`, `lizenz`, `quelle2`, `kiModel`, `kiPrompt`, `achsen`. Für `bild` und `memeUrsprung` gibt es zusätzlich `{{bild_img}}`/`{{memeUrsprung_img}}` - wird zu einem `<img>`-Tag, falls eine Datei hinterlegt ist.
+**Platzhalter in den HTML-Dateien:** `{{id}}` sowie ein `{{key}}` pro Feld aus der [Feldübersicht](#feldübersicht) - `kontext`, `ueberschrift`, `leadsatz`, `claim`, `faktcheck`, `bild`, `memeUrsprung`, `datum`, `lizenz`, `quelle2`, `kiModel`, `kiPrompt`, `achsen`. Für `bild` und `memeUrsprung` gibt es zusätzlich `{{bild_img}}`/`{{memeUrsprung_img}}` - wird zu einem `<img>`-Tag, falls eine Datei hinterlegt ist.
 
 Ein Feld, das ein Item nicht hat, muss die Vorlage nicht selbst abfangen: ein umschließendes Element mit `data-field="<key>"` wird beim Export automatisch entfernt, wenn sein `<p>` leer bleibt und kein `<img>` enthält. Beispiel aus `indexkarte1.html`:
 

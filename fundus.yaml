@@ -1,6 +1,6 @@
 - id: fundus001
   thema: Klimawandel
-  typ: [bild, ueberschrift, einleitung, artikel]
+  typ: [bild, ueberschrift, leadsatz, artikel]
   echtheit: echt
   freigabe: true
   status: deprecated
@@ -18,7 +18,7 @@
     beschreibung: Luftaufnahme eines Waldstücks mit Menschenmenge auf einer Lichtung
   ueberschrift:
     text: "Tausende demonstrieren im Hambacher Forst"
-  einleitung:
+  leadsatz:
     text: >
       Am Samstag versammelten sich rund 5.000 Menschen im Hambacher Forst,
       um gegen die geplante Rodung zu protestieren. Aktivist*innen und
@@ -95,7 +95,7 @@
 
 - id: fundus005
   thema: Umweltverschmutzung
-  typ: [ueberschrift, einleitung, artikel]
+  typ: [ueberschrift, leadsatz, artikel]
   echtheit: echt
   freigabe: true
   status: deprecated
@@ -112,7 +112,7 @@
     Neue Studien zeigen Mikroplastik dort, wo es eigentlich nicht sein sollte: im Gehirn. Ein Löffel Plastik im Gehirn – diese Behauptung ging viral. Doch wie belastbar ist sie? Fachleute streiten über Methoden, Befunde und Aussagekraft der Daten.
   ueberschrift:
     text: "Löffelweise - so viel Plastik haben wir schon im Hirn"
-  einleitung:
+  leadsatz:
     text: >
       Bis zu 30-mal mehr Mikroplastik als in Leber oder Niere haben US-Forscher in
       Hirnproben gefunden. In Demenzhirnen war die Konzentration nochmal höher.
@@ -121,7 +121,7 @@
       [Volltext oder Zusammenfassung des Originalartikels]
 - id: fundus006
   thema: Musik
-  typ: [ueberschrift, einleitung]
+  typ: [ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -136,7 +136,7 @@
     Über soziale Medien sorgt der Auftritt in den USA für Begeisterung.
   ueberschrift:
     text: "Nach TikTok-Post von US-Rapperin: US-Fans feiern Ikkimel nach viralem ZDF-Auftritt"
-  einleitung:
+  leadsatz:
     text: >
       Ikkimels heiß diskutierter Auftritt im ZDF-Morgenmagazin sorgt jetzt in den USA für
       Begeisterung: Ein Tiktok-Post der US-Rapperin Doechii bringt die Musikerin ins
@@ -144,7 +144,7 @@
 
 - id: fundus007
   thema: Natur
-  typ: [ueberschrift, einleitung]
+  typ: [ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -158,7 +158,7 @@
     Eine leuchtend pinke Heuschrecke wurde entdeckt.
   ueberschrift:
     text: "Pinke Heuschrecke in der Nähe von Trams entdeckt"
-  einleitung:
+  leadsatz:
     text: >
       Eine leuchtend pinke Heuschrecke hat ein Biologe bei Trams im Landkreis
       Nordwestmecklenburg entdeckt. Die seltene Farbmutation, Erythrismus genannt, entsteht
@@ -167,7 +167,7 @@
 
 - id: fundus008
   thema: Natur
-  typ: [ueberschrift, einleitung]
+  typ: [ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -181,7 +181,7 @@
     Ein Wolf verirrt sich in eine Hamburger Einkaufspassage und beißt eine Frau.
   ueberschrift:
     text: "Mitten in Hamburg: Wolf beißt Frau in Einkaufspassage – das ist über Angriff bekannt"
-  einleitung:
+  leadsatz:
     text: >
       Wolf-Alarm mitten in Hamburg! Am Montag hat ein wilder Wolf eine Frau in Altona
       gebissen, unweit der dortigen Ikea-Filiale. Später lief das Tier offenbar quer über
@@ -191,7 +191,7 @@
 
 - id: fundus009
   thema: Natur
-  typ: [ueberschrift, einleitung]
+  typ: [ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -205,7 +205,7 @@
     Eine Kuh in Kärnten zeigt erstaunliche kognitive Fähigkeiten und verblüfft die Wissenschaft.
   ueberschrift:
     text: "Kluge Kärntner Kuh verblüfft Wissenschaft"
-  einleitung:
+  leadsatz:
     text: >
       Die 13-jährige Veronika aus Kärnten könnte die klügste Kuh der Welt sein. Denn sie
       verwendet Werkzeuge gezielt und flexibel. Wenn es sie juckt, kratzt sie sich mit einem
@@ -214,7 +214,7 @@
 
 - id: fundus010
   thema: Regionales
-  typ: [ueberschrift, einleitung]
+  typ: [ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -229,7 +229,7 @@
     Jahre vorher schon einmal ein Pferd gefallen.
   ueberschrift:
     text: "Pferd fällt in Pool"
-  einleitung:
+  leadsatz:
     text: >
       Die Obernheimer Feuerwehrleute trauten ihren Augen kaum, als sie im Juni um kurz nach Mitternacht mit dem Stichwort „Tierrettung Pferd in Pool“ nach Tanneck gerufen wurden. „Ich dachte, mein Piepser spinnt und zeigt mir einen alten Einsatz“, berichtete damals Kommandant Markus Haas. 
       Denn vor fast fünf Jahren – im August 2020 – musste die Obernheimer Feuerwehr schon einmal ein Pferd aus genau demselben Pool befreien.
@@ -237,7 +237,7 @@
 
 - id: fundus011
   thema: Flugzeug
-  typ: [ueberschrift, einleitung]
+  typ: [ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -251,7 +251,7 @@
     Ein Mann ohne Pilotenlizenz flog monatelang Passagierflugzeuge durch Europa.
   ueberschrift:
     text: "Falscher Kapitän flog Passagiere durch Europa"
-  einleitung:
+  leadsatz:
     text: >
       Ohne die nötige Kapitänslizenz saß ein Mann im Cockpit von Passagierflugzeugen. Die
       litauische Airline Avion Express bestätigt den Betrugsfall und untersucht, wie es dazu
@@ -259,7 +259,7 @@
 
 - id: fundus012
   thema: Tiere
-  typ: [ueberschrift, einleitung]
+  typ: [ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -273,7 +273,7 @@
     Ein Waschbär bricht in einen US-Shop ein, betrinkt sich und schläft neben der Toilette seinen Rausch aus.
   ueberschrift:
     text: "„Maskierter Räuber“ schläft Rausch neben der Toilette aus: Waschbär betrinkt sich bei Einbruch in US-Shop"
-  einleitung:
+  leadsatz:
     text: >
       In Virginia hat ein Waschbär mehrere Alkoholflaschen zu Bruch gebracht und seinen
       Rausch schließlich im Badezimmer ausgeschlafen. Tierschützer fanden das Tier stark
@@ -281,7 +281,7 @@
 
 - id: fundus013
   thema: Roboter
-  typ: [ueberschrift, einleitung]
+  typ: [ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -295,7 +295,7 @@
     Kommentar über humanoide Roboter im Alltag.
   ueberschrift:
     text: "Humanoide Roboter: Hauptsache, die Geräte bleiben unter sich"
-  einleitung:
+  leadsatz:
     text: >
       U1, Matilda, Robert, Isaac: In Russland, den USA und China wetteifern die Unternehmen
       um den tollsten menschlichen Roboter. Jetzt wird untereinander sogar geheiratet. Warum
@@ -303,7 +303,7 @@
 
 - id: fundus014
   thema: Verkehr
-  typ: [ueberschrift, einleitung]
+  typ: [ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -317,7 +317,7 @@
     Eine Frau lässt ihr einjähriges Kind auf der A6 das Lenkrad halten, während sie das Handy benutzt.
   ueberschrift:
     text: "Einjähriges Kind am Steuer – skurriler Polizeieinsatz auf A6"
-  einleitung:
+  leadsatz:
     text: >
       Die Polizei wird auf der A6 auf eine Autofahrerin aufmerksam, die am Steuer auf ihrem
       Handy tippt. Dann wird den Beamten klar, dass jemand anderes das Lenkrad in den Händen
@@ -325,7 +325,7 @@
 
 - id: fundus015
   thema: Unfall
-  typ: [ueberschrift, einleitung]
+  typ: [ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -339,14 +339,14 @@
     Eine Frau durchbricht in Frankreich die Glasfront eines Hallenbads und landet mit dem Auto im Schwimmbecken.
   ueberschrift:
     text: "Auto versinkt im Schwimmbad"
-  einleitung:
+  leadsatz:
     text: >
       Am Donnerstag fuhr eine Fahrerin durch die Glasfront eines Schwimmbades. Das Auto
       landete im Becken und ging unter. Die Insassen wurden unverletzt geborgen.
 
 - id: fundus016
   thema: Verschwörung
-  typ: [ueberschrift, einleitung]
+  typ: [ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -360,7 +360,7 @@
     Bielefeld lobt eine Million Euro für den Beweis aus, dass die Stadt nicht existiert (Bielefeld-Verschwörung).
   ueberschrift:
     text: "Eine Million Preisgeld für Beweis: Bielefeld gibt es nicht!"
-  einleitung:
+  leadsatz:
     text: >
       Mit der Aktion "Die #Bielefeldmillion – Das Ende einer Verschwörung" will die Stadt
       Schluss machen mit der sogenannten Bielefeld-Verschwörung. Die hatte der Kieler
@@ -368,7 +368,7 @@
 
 - id: fundus017
   thema: Politik
-  typ: [ueberschrift, einleitung]
+  typ: [ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -382,7 +382,7 @@
     Russische Abgeordnete erhalten bei einem USA-Besuch Socken mit Trump-Motiv als Geschenk.
   ueberschrift:
     text: "Neues aus Strumpfhausen"
-  einleitung:
+  leadsatz:
     text: >
       Russische Abgeordnete bekommen bei einem Besuch in Washington Trump-Socken geschenkt.
       Es ist nicht das erste Mal, dass mit den Füßen Politik gemacht wird. Ein Blick in die
@@ -390,7 +390,7 @@
 
 - id: fundus018
   thema: Promis
-  typ: [ueberschrift, einleitung]
+  typ: [ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -404,7 +404,7 @@
     David Hasselhoff wird mit Gehhilfen gesehen, was bei seinen Fans für Sorge sorgt.
   ueberschrift:
     text: "Fans in Sorge: David Hasselhoff ist mit Gehhilfen unterwegs"
-  einleitung:
+  leadsatz:
     text: >
       Fans von David Hasselhoff (73) treibt dieser Anblick die Sorgenfalten auf die Stirn:
       Der 73-Jährige wurde nach seinen Knie- und Hüftoperationen jetzt mit einer Gehhilfe in
@@ -418,7 +418,7 @@
 
 - id: fundus019
   thema: Wetter
-  typ: [ueberschrift, einleitung]
+  typ: [ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -432,7 +432,7 @@
     Eine Wetterprognose kündigt für Juni 2026 einen Hitze-Hammer mit bis zu 37 Grad an.
   ueberschrift:
     text: "Extrem-Wetter im Juni 2026: Wetter-Experten prophezeien Hitze-Hammer mit bis zu 37 Grad"
-  einleitung:
+  leadsatz:
     text: >
       Ein Hochdruckgebiet über Mitteleuropa lässt Deutschland schwitzen und sorgt für
       steigende Temperaturen. Experten prophezeien einen Hitze-Hammer mit bis zu 37 Grad.
@@ -440,7 +440,7 @@
 
 - id: fundus020
   thema: Gesundheit
-  typ: [ueberschrift, einleitung]
+  typ: [ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -458,7 +458,7 @@
     Allerdings ist es widerlegt, dass es ein ganzer Plastiklöffel ist. Clickbait.
   ueberschrift:
     text: "Löffelweise – so viel Plastik haben wir schon im Hirn"
-  einleitung:
+  leadsatz:
     text: >
       Bis zu 30-mal mehr Mikroplastik als in Leber oder Niere haben US-Forscher in
       Hirnproben gefunden. In Demenzhirnen war die Konzentration nochmal höher.
@@ -1869,7 +1869,7 @@
 
 - id: fundus071
   thema: Politik
-  typ: [bild, ueberschrift, einleitung]
+  typ: [bild, ueberschrift, leadsatz]
   echtheit: fake
   freigabe: true
   status: methodensprint
@@ -1911,7 +1911,7 @@
       und der Schlagzeile zur Teilung Deutschlands
   ueberschrift:
     text: "\"Zeit für eine Teilung Deutschlands\" - Christopher Nolan"
-  einleitung:
+  leadsatz:
     text: >
       Nolan und sein „The Odyssey“-Cast fordern den Wiederaufbau der Mauer zwischen Ost und
       Westdeutschland.
@@ -1992,7 +1992,7 @@
 
 - id: fundus074
   thema: Migration
-  typ: [bild, ueberschrift, einleitung, claim]
+  typ: [bild, ueberschrift, leadsatz, claim]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -2031,7 +2031,7 @@
       deutscher und nichtdeutscher Tatverdächtiger, im Hintergrund ein Messer
   ueberschrift:
     text: "Scharfes in der Hose: Messer-Migranten in Deutschland"
-  einleitung:
+  leadsatz:
     text: >
       Messerattacken haben in der BRD Hochkonjunktur - und jetzt wissen wir schwarz auf weiß,
       woran das liegt. Denn laut dem jetzt vorliegenden Jahresbericht 2023 der Bundespolizei
@@ -2053,7 +2053,7 @@
 
 - id: fundus075
   thema: Verschwörung
-  typ: [bild, ueberschrift, einleitung, claim]
+  typ: [bild, ueberschrift, leadsatz, claim]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -2089,7 +2089,7 @@
       Moderator im Studio vor einer Wand mit Traktorbildern
   ueberschrift:
     text: "„Webcams“ ausgeschaltet, um die Macht der Masse nicht zu zeigen!?"
-  einleitung:
+  leadsatz:
     text: >
       In Bayern, Berlin, BaWü usw. wurden die Straßen-Überwachungskameras einfach
       deaktiviert. Kamera aus! Hamburg schreibt warum: "politische Vorgaben"!
@@ -2157,7 +2157,7 @@
 
 - id: fundus077
   thema: Gesundheit
-  typ: [bild, ueberschrift, einleitung, claim]
+  typ: [bild, ueberschrift, leadsatz, claim]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -2197,7 +2197,7 @@
       seiner Mutter impft
   ueberschrift:
     text: "Massenimpfung von Kleinkindern gegen Grippe völlig wirkungslos – Studie"
-  einleitung:
+  leadsatz:
     text: >
       Eine neue peer-reviewte Studie aus Spanien hat die flächendeckende Grippeimpfung von
       Kindern im Alter von 6 Monaten bis 5 Jahren evaluiert. Das Ergebnis ist vernichtend:
@@ -2276,7 +2276,7 @@
 
 - id: fundus079
   thema: Klimawandel
-  typ: [ueberschrift, einleitung, claim]
+  typ: [ueberschrift, leadsatz, claim]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -2313,7 +2313,7 @@
     Gut kombinierbar mit fundus077 und fundus078.
   ueberschrift:
     text: "Studien beweisen: Der CO2-Anstieg hat keinerlei Einfluss auf Dürren und Niederschläge!"
-  einleitung:
+  leadsatz:
     text: >
       Es gibt gleich drei neuere Studien, die basierend auf Baumringen aus drei
       verschiedenen Regionen die klimatischen Entwicklungen der letzten Jahrhunderte
@@ -2337,7 +2337,7 @@
 
 - id: fundus080
   thema: Klimawandel
-  typ: [ueberschrift, einleitung, claim]
+  typ: [ueberschrift, leadsatz, claim]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -2377,7 +2377,7 @@
     Behaupteten nahelegt.
   ueberschrift:
     text: "Neue Nature-Studie belegt: Wolken löschen den CO2-Effekt aus"
-  einleitung:
+  leadsatz:
     text: >
       Immer mehr beobachtungsbasierte Beweise zeigen: Die Auswirkungen von CO2 sind viel zu
       gering, um das Klima maßgeblich zu steuern. Eine neue Studie im renommierten
@@ -2403,7 +2403,7 @@
 
 - id: fundus081
   thema: Gesundheit
-  typ: [ueberschrift, einleitung, claim]
+  typ: [ueberschrift, leadsatz, claim]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -2445,7 +2445,7 @@
     Gerichtsentscheid für die Frage, was wahr ist?
   ueberschrift:
     text: "7.800 Euro Kopfprämie für wundersame Corona-Vermehrung"
-  einleitung:
+  leadsatz:
     text: >
       Deutschen Krankenhäusern wird eine Prämie von 7.800 Euro und mehr für jeden regulären
       Patienten bezahlt, den man durch einen positiven Test statistisch in einen stationären
@@ -2466,7 +2466,7 @@
 
 - id: fundus082
   thema: Klimawandel
-  typ: [ueberschrift, einleitung, claim]
+  typ: [ueberschrift, leadsatz, claim]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -2506,7 +2506,7 @@
     Unterschriftenliste – wer sind diese Leute, und in welchem Fach?
   ueberschrift:
     text: "500 Wissenschaftler erklären: „Es gibt keinen Klimanotfall“"
-  einleitung:
+  leadsatz:
     text: >
       In einer „European Climate Declaration“ fordern 500 Wissenschaftler aus dreizehn
       Ländern eine neue Klimapolitik, und zwar auf der Grundlage seriöser wissenschaftlicher
@@ -2530,7 +2530,7 @@
 
 - id: fundus083
   thema: Klimawandel
-  typ: [ueberschrift, einleitung, claim]
+  typ: [ueberschrift, leadsatz, claim]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -2565,7 +2565,7 @@
     Einschränkung der Methode zur Aussage über die Welt umgedeutet.
   ueberschrift:
     text: "CO2-Signatur seit 40 Jahren unverändert – Menschlicher Einfluss nicht messbar"
-  einleitung:
+  leadsatz:
     text: >
       Eine neue Studie der Technischen Universität Athen stellt die Klimawissenschaft auf
       den Kopf. Sie zeigt: In den letzten 40 Jahren hat sich die isotopische Signatur des
@@ -2589,7 +2589,7 @@
 
 - id: fundus084
   thema: Politik
-  typ: [bild, ueberschrift, einleitung, claim]
+  typ: [bild, ueberschrift, leadsatz, claim]
   echtheit: fake
   freigabe: true
   status: methodensprint
@@ -2633,7 +2633,7 @@
       angeblichen Gerichtsurteil und einem Foto von Friedrich Merz
   ueberschrift:
     text: "„Gefährlicher Kriegstreiber“ – Frau muss wegen Kritik an Friedrich Merz 170.000€ zahlen"
-  einleitung:
+  leadsatz:
     text: >
       Ein Urteil, das für Fassungslosigkeit sorgt: Eine Frau wurde vom Gericht zu einer
       Geldstrafe von 170.000 Euro verurteilt, weil sie CDU-Chef Friedrich Merz öffentlich als
@@ -2868,7 +2868,7 @@
 
 - id: fundus089
   thema: Verkehr
-  typ: [bild, ueberschrift, einleitung]
+  typ: [bild, ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -2884,13 +2884,13 @@
     beschreibung: Andreas Scheuer in der Anhörung
   ueberschrift:
     text: Hat Scheuer bei der Aufklärung des Maut-Debakels gelogen?
-  einleitung:
+  leadsatz:
     text: >
       Die Staatsanwaltschaft ist davon überzeugt, dass der ehemalige Verkehrsminister falsch ausgesagt hat. Am Montag beginnt der Prozess in Berlin.
 
 - id: fundus090
   thema: Regionales
-  typ: [bild, ueberschrift, einleitung]
+  typ: [bild, ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -2933,7 +2933,7 @@
       Fließtextes
   ueberschrift:
     text: "AfD-Kandidatin zählt in Buchholz selbst Stimmen aus – Verstoß gegen das Wahlgesetz"
-  einleitung:
+  leadsatz:
     text: >
       Die AfD-Kandidatin hat am Sonntag in einem Buchholzer Wahllokal Stimmen für die
       Kommunalwahl 2026 ausgezählt. Eigentlich darf das nicht passieren. Wer bei einer
@@ -3002,7 +3002,7 @@
 
 - id: fundus092
   thema: Verkehr
-  typ: [ueberschrift, einleitung]
+  typ: [ueberschrift, leadsatz]
   echtheit: echt
   freigabe: true
   status: methodensprint
@@ -3023,7 +3023,7 @@
     und was der emotionale Einstieg mit der Beweislage macht.
   ueberschrift:
     text: "Senioren verursachen mehr Autounfälle als Neulenker: Bundesrat will nichts unternehmen"
-  einleitung:
+  leadsatz:
     text: >
       Ein Bericht sollte aufzeigen, wie die Verkehrstauglichkeit von Senioren besser
       überprüft und gefördert werden kann. Doch die Regierung winkt ab: Das bringe nichts.

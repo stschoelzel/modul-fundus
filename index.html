@@ -582,7 +582,7 @@
 </dialog>
 
 <script>
-  const ALL_TYPEN = ['bild', 'ueberschrift', 'einleitung', 'artikel', 'meme', 'claim', 'video'];
+  const ALL_TYPEN = ['bild', 'ueberschrift', 'leadsatz', 'artikel', 'meme', 'claim', 'video'];
   const ECHTHEIT_ORDER = ['echt', 'manipuliert', 'ki-generiert', 'fake'];
 
   let allData = [];
@@ -884,7 +884,7 @@
 
     if (item.kontext) fields.push({key: 'kontext', label: 'Kontext', val: item.kontext});
     if (item.ueberschrift?.text) fields.push({key: 'ueberschrift', label: 'Überschrift', val: item.ueberschrift.text});
-    if (item.einleitung?.text) fields.push({key: 'einleitung', label: 'Einleitung', val: item.einleitung.text});
+    if (item.leadsatz?.text) fields.push({key: 'leadsatz', label: 'Leadsatz', val: item.leadsatz.text});
     if (item.claim?.text) fields.push({key: 'claim', label: 'Claim', val: item.claim.text});
     if (item.claim?.bewertung) fields.push({key: 'faktcheck', label: 'Faktcheck', val: item.claim.bewertung});
     if (item.bild?.beschreibung) fields.push({key: 'bild', label: 'Bild', val: item.bild.beschreibung, thumb: item.bild.datei});
