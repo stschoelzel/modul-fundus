@@ -1105,7 +1105,13 @@
       area.innerHTML = html;
       await waitForImages(area);
       setPrintPageSize(size);
+      // Browser schlagen beim "Als PDF speichern" den Seitentitel als Dateinamen vor -
+      // darum kurz auf denselben Namen wie beim JPG setzen. window.print() blockiert, bis
+      // der Druckdialog zu ist, danach den alten Titel wiederherstellen.
+      const oldTitle = document.title;
+      document.title = filename.replace(/\.jpg$/, '');
       window.print();
+      document.title = oldTitle;
     } else {
       const cfg = PAGE_SIZES[size];
       await rasterizeToJpg(html, cfg.width, cfg.height, filename);
